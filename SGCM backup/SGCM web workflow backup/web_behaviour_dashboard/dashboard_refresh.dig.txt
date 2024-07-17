@@ -1,0 +1,17 @@
++main:
+  _parallel: true
+  +main_dashboard: 
+    +call_post_builds:
+      http>: "https://console-next.treasuredata.com/reporting/datamodels/3bfbf2c0-0b02-4cd2-9588-a88a72ff7a49/builds"
+      method: POST
+      headers:
+        - authorization: "TD1 12404/c389641542964cdc042eac58638d7ad035e532a1"
+        - cache-control: "no-cache"
+        - accept: "application/json"
+        - content-type: "application/json"
+      content:
+        buildType: "full"
+      content_format: "json"
+      store_content: true
+    +echo:
+      echo>: ${http.last_content}

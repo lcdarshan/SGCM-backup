@@ -1,0 +1,323 @@
+delete from "web_dashboard_db".rentcars_analytical_table where date_rentcars = cast(CURRENT_DATE as varchar)|| ' 00:00:00' or date_rentcars=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00';
+insert into "web_dashboard_db".rentcars_analytical_table
+with a as --main date table 
+(
+  select distinct CONCAT(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date from "web_sgcm_bronze_db".web_sgcm_pageviews where TD_TIME_FORMAT(time,'yyyy-MM-dd') = cast(CURRENT_DATE as varchar) or TD_TIME_FORMAT(time,'yyyy-MM-dd')=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar)
+),
+
+b as --main data table 
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview,time,td_url td_url_pageview,td_referrer td_referrer_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%car_rental%' and td_path not like '%/articles/%'
+),
+ 
+known_users as --Known users
+(
+  with a as
+    (
+    select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date ,td_client_id,td_path,useremail_e 
+    from "web_sgcm_bronze_db".web_sgcm_pageviews 
+   where td_path like '%car_rental%' and td_path not like '%/articles/%' and useremail_e is not null and time>1702512000
+    ),
+    b as 
+    (
+      select _date,td_client_id,td_path,useremail_e 
+      from a 
+      where _date=cast(CURRENT_DATE as VARCHAR) || ' 00:00:00' or _date=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00'
+    )
+  select _date date_known,count(DISTINCT td_client_id) day_wise_known_users,
+  (select count(distinct td_client_id) from a) as total_known_users
+  from b
+  group by 1
+),
+
+index_page as 
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview,td_url td_url_pageview,td_referrer td_referrer_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%car_rental/index%' and td_path not like '%/articles/%' 
+),
+
+info_page as  
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview,td_url td_url_pageview,td_referrer td_referrer_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%/car_rental/info.php%' and td_path not like '%/articles/%' and td_referrer like '%car_rental/index%'
+),
+
+
+cumulative as --new cars section cumulative figures 
+(
+
+    with a as
+  (
+    select cast(CURRENT_DATE as varchar)|| ' 00:00:00' _date,
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=cast(CURRENT_DATE as varchar)) as total_users_cumulative,
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= cast(CURRENT_DATE as varchar)) as total_events_cumulative
+
+    union
+
+    select DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00',
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d')),
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d'))
+
+    union
+
+    select DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00',
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d')),
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d'))
+
+  )
+  select date_ date_new,total_users_cumulative,total_events_cumulative,new_users from 
+    (select _date as date_,
+    total_users_cumulative, 
+    total_events_cumulative,
+    -- lag(count(distinct td_client_id_pageview)) over(order by _date) as lag_dist,
+    total_users_cumulative-lag(total_users_cumulative) over(order by _date) as new_users 
+    from a )
+  where date_= cast(CURRENT_DATE as varchar)|| ' 00:00:00' or date_=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00'
+),
+
+normal as 
+(
+  select view_time_pageview,count(distinct td_client_id_pageview) total_users_daywise,count(*) total_events_daywise from b group by 1
+),
+
+
+cumulative_index as --new cars section cumulative figures 
+(
+
+  with newa as
+  (select view_time_pageview as date_new,td_client_id_pageview from index_page ),
+  newb as 
+  (
+  select date_new,dte,td_client_id_pageview from 
+  (select distinct date_new from newa ) tbl1
+  left join 
+  (select date_new as dte,td_client_id_pageview from newa) on dte<=date_new
+  )
+  select date_new as date_new_index,
+  count(distinct td_client_id_pageview) as total_users_cumulative_index, 
+  count(*) as total_events_cumulative_index,
+  -- lag(count(distinct td_client_id_pageview)) over(order by date_new) as lag_dist,
+  count(distinct td_client_id_pageview)-lag(count(distinct td_client_id_pageview)) over(order by date_new) as new_users_index
+  from newb group by 1
+
+),
+
+normal_index as 
+(
+  select view_time_pageview as view_time_pageview_index,count(distinct td_client_id_pageview) total_users_daywise_index,count(*) total_events_daywise_index from index_page group by 1
+),
+
+
+cumulative_info as --new cars section cumulative figures 
+(
+  with newa as
+  (select view_time_pageview as date_new,td_client_id_pageview from info_page),
+  newb as 
+  (
+  select date_new,dte,td_client_id_pageview from 
+  (select distinct date_new from newa ) tbl1
+  left join 
+  (select date_new as dte,td_client_id_pageview from newa) on dte<=date_new
+  )
+  select date_new as date_new_info,
+  count(distinct td_client_id_pageview) as total_users_cumulative_info, 
+  count(*) as total_events_cumulative_info,
+  -- lag(count(distinct td_client_id_pageview)) over(order by date_new) as lag_dist,
+  count(distinct td_client_id_pageview)-lag(count(distinct td_client_id_pageview)) over(order by date_new) as new_users_info
+  from newb group by 1
+),
+
+normal_info as 
+(
+  select view_time_pageview as view_time_pageview_info,count(distinct td_client_id_pageview) total_users_daywise_info,count(*) total_events_daywise_info from info_page group by 1
+)
+
+
+select _date date_rentcars,
+COALESCE(total_users_cumulative, 0) AS total_users_cumulative,
+COALESCE(total_events_cumulative, 0) AS total_events_cumulative,
+COALESCE(new_users, 0) AS new_users,
+COALESCE(total_users_daywise, 0) AS total_users_daywise,
+COALESCE(total_events_daywise, 0) AS total_events_daywise,
+COALESCE(total_users_cumulative_index, 0) AS total_users_cumulative_index,
+COALESCE(total_events_cumulative_index, 0) AS total_events_cumulative_index,
+COALESCE(new_users_index, 0) AS new_users_index,
+COALESCE(total_users_daywise_index, 0) AS total_users_daywise_index,
+COALESCE(total_events_daywise_index, 0) AS total_events_daywise_index,
+COALESCE(total_users_cumulative_info, 0) AS total_users_cumulative_info,
+COALESCE(total_events_cumulative_info, 0) AS total_events_cumulative_info,
+COALESCE(new_users_info, 0) AS new_users_info,
+COALESCE(total_users_daywise_info, 0) AS total_users_daywise_info,
+COALESCE(total_events_daywise_info, 0) AS total_events_daywise_info,
+COALESCE(day_wise_known_users, 0) AS day_wise_known_users,
+COALESCE(total_known_users, 0) AS total_known_users
+
+from a
+left join cumulative on _date=date_new
+left join normal on _date=view_time_pageview
+left join cumulative_index on _date=date_new_index
+left join normal_index on _date=view_time_pageview_index
+left join cumulative_info on _date=date_new_info
+left join normal_info on _date=view_time_pageview_info
+left join known_users on _date=date_known
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+-- drop TABLE if EXISTS "web_dashboard_db".rentcars_analytical_table;
+-- create table "web_dashboard_db".rentcars_analytical_table
+-- as 
+--  with a as --main date table 
+-- (
+--   select distinct CONCAT(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date from "web_sgcm_bronze_db".web_sgcm_pageviews
+-- ),
+
+-- b as --main data table 
+-- (
+--   select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview,td_url td_url_pageview,td_referrer td_referrer_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%car_rental%' and td_path not like '%/articles/%'
+-- ),
+ 
+-- known_users as --Known users
+-- (
+--   with a as
+--     (
+--     select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date ,td_client_id,td_path,useremail_e 
+--     from "web_sgcm_bronze_db".web_sgcm_pageviews 
+--    where td_path like '%car_rental%' and td_path not like '%/articles/%' and useremail_e is not null and time>1702512000
+--     ),
+--     b as 
+--     (
+--       select _date,td_client_id,td_path,useremail_e 
+--       from a 
+--       where _date=cast(CURRENT_DATE as VARCHAR) || ' 00:00:00' or _date=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00'
+--     )
+--   select _date date_known,count(DISTINCT td_client_id) day_wise_known_users,
+--   (select count(distinct td_client_id) from a) as total_known_users
+--   from a
+--   group by 1
+-- ),
+
+-- index_page as 
+-- (
+--   select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview,td_url td_url_pageview,td_referrer td_referrer_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%car_rental/index%' and td_path not like '%/articles/%' 
+-- ),
+
+-- info_page as  
+-- (
+--   select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview,td_url td_url_pageview,td_referrer td_referrer_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%/car_rental/info.php%' and td_path not like '%/articles/%' and td_referrer like '%car_rental/index%'
+-- ),
+
+
+-- cumulative as --new cars section cumulative figures 
+-- (
+
+--   with newa as
+--   (select view_time_pageview as date_new,td_client_id_pageview from b ),
+--   newb as 
+--   (
+--   select date_new,dte,td_client_id_pageview from 
+--   (select distinct date_new from newa ) tbl1
+--   left join 
+--   (select date_new as dte,td_client_id_pageview from newa) on dte<=date_new
+--   )
+--   select date_new,
+--   count(distinct td_client_id_pageview) as total_users_cumulative, 
+--   count(*) as total_events_cumulative,
+--   -- lag(count(distinct td_client_id_pageview)) over(order by date_new) as lag_dist,
+--   count(distinct td_client_id_pageview)-lag(count(distinct td_client_id_pageview)) over(order by date_new) as new_users 
+--   from newb group by 1
+
+-- ),
+
+-- normal as 
+-- (
+--   select view_time_pageview,count(distinct td_client_id_pageview) total_users_daywise,count(*) total_events_daywise from b group by 1
+-- ),
+
+
+-- cumulative_index as --new cars section cumulative figures 
+-- (
+
+--   with newa as
+--   (select view_time_pageview as date_new,td_client_id_pageview from index_page ),
+--   newb as 
+--   (
+--   select date_new,dte,td_client_id_pageview from 
+--   (select distinct date_new from newa ) tbl1
+--   left join 
+--   (select date_new as dte,td_client_id_pageview from newa) on dte<=date_new
+--   )
+--   select date_new as date_new_index,
+--   count(distinct td_client_id_pageview) as total_users_cumulative_index, 
+--   count(*) as total_events_cumulative_index,
+--   -- lag(count(distinct td_client_id_pageview)) over(order by date_new) as lag_dist,
+--   count(distinct td_client_id_pageview)-lag(count(distinct td_client_id_pageview)) over(order by date_new) as new_users_index
+--   from newb group by 1
+
+-- ),
+
+-- normal_index as 
+-- (
+--   select view_time_pageview as view_time_pageview_index,count(distinct td_client_id_pageview) total_users_daywise_index,count(*) total_events_daywise_index from index_page group by 1
+-- ),
+
+
+-- cumulative_info as --new cars section cumulative figures 
+-- (
+--   with newa as
+--   (select view_time_pageview as date_new,td_client_id_pageview from info_page),
+--   newb as 
+--   (
+--   select date_new,dte,td_client_id_pageview from 
+--   (select distinct date_new from newa ) tbl1
+--   left join 
+--   (select date_new as dte,td_client_id_pageview from newa) on dte<=date_new
+--   )
+--   select date_new as date_new_info,
+--   count(distinct td_client_id_pageview) as total_users_cumulative_info, 
+--   count(*) as total_events_cumulative_info,
+--   -- lag(count(distinct td_client_id_pageview)) over(order by date_new) as lag_dist,
+--   count(distinct td_client_id_pageview)-lag(count(distinct td_client_id_pageview)) over(order by date_new) as new_users_info
+--   from newb group by 1
+-- ),
+
+-- normal_info as 
+-- (
+--   select view_time_pageview as view_time_pageview_info,count(distinct td_client_id_pageview) total_users_daywise_info,count(*) total_events_daywise_info from info_page group by 1
+-- )
+
+
+-- select _date date_rentcars,
+-- COALESCE(total_users_cumulative, 0) AS total_users_cumulative,
+-- COALESCE(total_events_cumulative, 0) AS total_events_cumulative,
+-- COALESCE(new_users, 0) AS new_users,
+-- COALESCE(total_users_daywise, 0) AS total_users_daywise,
+-- COALESCE(total_events_daywise, 0) AS total_events_daywise,
+-- COALESCE(total_users_cumulative_index, 0) AS total_users_cumulative_index,
+-- COALESCE(total_events_cumulative_index, 0) AS total_events_cumulative_index,
+-- COALESCE(new_users_index, 0) AS new_users_index,
+-- COALESCE(total_users_daywise_index, 0) AS total_users_daywise_index,
+-- COALESCE(total_events_daywise_index, 0) AS total_events_daywise_index,
+-- COALESCE(total_users_cumulative_info, 0) AS total_users_cumulative_info,
+-- COALESCE(total_events_cumulative_info, 0) AS total_events_cumulative_info,
+-- COALESCE(new_users_info, 0) AS new_users_info,
+-- COALESCE(total_users_daywise_info, 0) AS total_users_daywise_info,
+-- COALESCE(total_events_daywise_info, 0) AS total_events_daywise_info,
+-- COALESCE(day_wise_known_users, 0) AS day_wise_known_users,
+-- COALESCE(total_known_users, 0) AS total_known_users
+
+-- from a
+-- left join cumulative on _date=date_new
+-- left join normal on _date=view_time_pageview
+-- left join cumulative_index on _date=date_new_index
+-- left join normal_index on _date=view_time_pageview_index
+-- left join cumulative_info on _date=date_new_info
+-- left join normal_info on _date=view_time_pageview_info
+-- left join known_users on _date=date_known
+
+
+-- order by 1
+

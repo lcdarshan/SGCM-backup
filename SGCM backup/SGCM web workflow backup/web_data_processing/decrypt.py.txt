@@ -1,0 +1,79 @@
+import os
+import sys
+import re  # Import the 're' module for regular expressions
+
+os.system(f"{sys.executable} -m pip install pytd")
+os.system(f"{sys.executable} -m pip install pandas")
+os.system(f"{sys.executable} -m pip install pycryptodome")
+
+import pytd
+import pandas as pd
+from base64 import b64decode
+from Crypto.Util.Padding import unpad
+from Crypto.Cipher import AES
+from binascii import unhexlify
+from urllib.parse import unquote
+
+os.environ["TD_API_KEY"] = '12404/c389641542964cdc042eac58638d7ad035e532a1'
+os.environ["TD_API_SERVER"] = 'https://api.treasuredata.com'
+
+def decrypt_username_useremail(encrypted_data):
+    # Regular expression to separate the IV and the encrypted data
+    matches = re.match(r'(\w{32})(.*)', encrypted_data)
+    if not matches:
+        return None
+
+    iv, encrypted = matches.groups()
+    encrypted = b64decode(unquote(encrypted))  # URL-decode then base64-decode
+    key = unhexlify('2a5f7c89b354d3e67a90123456789abcdeffedcba9876543210fedcba9876543')
+    cipher = AES.new(key, AES.MODE_CBC, unhexlify(iv))
+    decrypted = cipher.decrypt(encrypted)
+
+    # Remove PKCS7 padding
+    pad = decrypted[-1]
+    decrypted = decrypted[:-pad]
+
+    # Attempt to decode the decrypted data as UTF-8
+    try:
+        return decrypted.decode('utf-8')
+    except UnicodeDecodeError:
+        # If decoding as UTF-8 fails, return the raw decrypted data
+        return decrypted
+
+def func():
+    td_api_key = os.environ["TD_API_KEY"]
+    td_api_endpoint = os.environ["TD_API_SERVER"] 
+
+    client = pytd.Client(apikey=td_api_key, database='web_sgcm_bronze_db', default_engine='presto')
+    print('Connection successful')
+
+
+    # Example: Retrieve data into a Pandas DataFrame
+    query_result = client.query("select td_client_id,useremail_e,time from web_sgcm_pageviews where time>(select max(time) from adhoc_sgcm_db.useremail_decrypt) and useremail_e is not null and time<(select max(time)-1 from web_sgcm_pageviews)")
+    # query_result = client.query("select td_client_id,useremail_e,time from web_sgcm_pageviews where useremail_e is not null ")
+    # print(query_result)
+    # print('Query result printed successfully')
+
+    data = query_result['data']
+    # print(data)
+
+    # Convert query result to Pandas DataFrame
+    df = pd.DataFrame(data, columns=['td_client_id','useremail_e','time'])
+    print(df)
+
+    # df['username']=df['username_e'].apply(decrypt_username_useremail)
+    df['email']=df['useremail_e'].apply(decrypt_username_useremail)
+    # df = df.dropna(subset=['username'])
+
+    df=df[['email','td_client_id','time']]
+    df_grouped = df.groupby(['email', 'td_client_id'])['time'].max().reset_index()
+
+    print(df_grouped)
+
+    destination_database = 'adhoc_sgcm_db'
+    destination_table = 'useremail_decrypt'
+   
+    # Specify the fully qualified destination table, including the database name
+    fully_qualified_table = f'{destination_database}.{destination_table}'
+    client.load_table_from_dataframe(df_grouped, fully_qualified_table, if_exists='append')  
+    print(f'DataFrame has been appended into the table: {fully_qualified_table}')

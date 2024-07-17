@@ -1,0 +1,18 @@
+delete from "web_dashboard_db".user_event where _date = cast(CURRENT_DATE as varchar) || ' 00:00:00' or _date =TD_TIME_FORMAT(CAST((TO_UNIXTIME(CURRENT_DATE) - 86400) AS BIGINT),'yyyy-MM-dd') || ' 00:00:00';
+
+insert into "web_dashboard_db".user_event
+with a as
+(
+  select view_date as date_,view_time_pageview,td_client_id_pageview as td_client_id from "web_sgcm_silver_db".web_sgcm_pageviews
+)
+select cast(CURRENT_DATE as varchar)||' 00:00:00' _date, count(distinct td_client_id) users,count(*) events from a where date_<=cast(CURRENT_DATE as varchar)|| ' 00:00:00'
+union
+ select TD_TIME_FORMAT(cast((TO_UNIXTIME(CURRENT_DATE) - 86400) as BIGINT),'yyyy-MM-dd')||' 00:00:00',count(distinct td_client_id),count(*) from a where date_<=TD_TIME_FORMAT(cast ((TO_UNIXTIME(CURRENT_DATE) - 86400) as BIGINT),'yyyy-MM-dd')|| ' 00:00:00'
+
+
+
+
+
+
+
+

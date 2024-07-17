@@ -1,0 +1,133 @@
+DROP TABLE IF EXISTS "web_sgcm_staging_db".web_sellbybid_form_step2;
+CREATE TABLE "web_sgcm_staging_db".web_sellbybid_form_step2
+(
+td_global_id_sellbybid_f2,
+td_version_sellbybid_f2,
+td_client_id_sellbybid_f2,
+td_charset_sellbybid_f2,
+td_language_sellbybid_f2,
+td_color_sellbybid_f2,
+td_screen_sellbybid_f2,
+td_viewport_sellbybid_f2,
+td_title_sellbybid_f2,
+td_description_sellbybid_f2,
+td_url_sellbybid_f2,
+td_user_agent_sellbybid_f2,
+td_platform_sellbybid_f2,
+td_host_sellbybid_f2,
+td_path_sellbybid_f2,
+td_referrer_sellbybid_f2,
+td_ip_sellbybid_f2,
+td_browser_sellbybid_f2,
+td_browser_version_sellbybid_f2,
+td_os_sellbybid_f2,
+td_os_version_sellbybid_f2,
+name_sellbybid_f2,
+carplate_sellbybid_f2,
+email_sellbybid_f2,
+prefered_date_time_sellbybid_f2,
+remarks_sellbybid_f2,
+username_sellbybid_f2,
+time_sellbybid_f2
+)
+as
+select
+
+case when trim(td_global_id) ='' then null else
+trim(td_global_id) end as td_global_id_cleaned,
+
+case when trim(td_version) ='' then null else
+trim(td_version) end as td_version_cleaned,
+
+case when trim(td_client_id) ='' then null else
+trim(td_client_id) end as td_client_id_cleaned,
+
+case when trim(td_charset) ='' then null else
+trim(td_charset) end as td_charset_cleaned,
+
+case when trim(td_language) ='' then null else
+trim(td_language) end as td_language_cleaned,
+
+case when trim(td_color) ='' then null else
+trim(td_color) end as td_color_cleaned,
+
+case when trim(td_screen) ='' then null else
+trim(td_screen) end as td_screen_cleaned,
+
+case when trim(td_viewport) ='' then null else
+trim(td_viewport) end as td_viewport_cleaned,
+
+case when trim(td_title) ='' then null else
+trim(td_title) end as td_global_id_cleaned,
+
+case when trim(td_description) ='' then null else
+trim(td_description) end as td_description_cleaned,
+
+case when trim(td_url) ='' then null else
+trim(td_url) end as td_url_cleaned,
+
+case when trim(td_user_agent) ='' then null else
+trim(td_user_agent) end as td_user_agent_cleaned,
+
+case when trim(td_platform) ='' then null else
+trim(td_platform) end as td_platform_cleaned,
+
+case when trim(td_host) ='' then null else
+trim(td_host) end as td_host_cleaned,
+
+case when trim(td_path) ='' then null else
+trim(td_path) end as td_path_cleaned,
+
+case when trim(td_referrer) ='' then null else
+trim(td_referrer) end as td_referrer_cleaned,
+
+case when trim(td_ip) ='' then null else
+trim(td_ip) end as td_ip_cleaned,
+
+case when trim(td_browser) ='' then null else
+trim(td_browser) end as td_browser_cleaned,
+
+case when trim(td_browser_version) ='' then null else
+trim(td_browser_version) end as td_browser_version_cleaned,
+
+case when trim(td_os) ='' then null else
+trim(td_os) end as td_os_cleaned,
+
+case when trim(td_os_version) ='' then null else
+trim(td_os_version) end as td_os_version_cleaned,
+
+case when trim(name)='' or name='NaN' then Null
+else trim(name)
+end
+as name,
+
+case when trim(carplate)='' then null
+else trim(upper(carplate)) end as carplate,
+
+case
+when email = '' or email = ' ' then Null
+when
+element_at(split(lower(trim(email)),'@'),2) = 'gmail.com' and length(element_at(split(lower(trim(email)),'@'),1)) < 3 then null
+when length(trim(email)) < 4 then null
+when email not like '%@%' then null
+when REGEXP_LIKE(lower(email), '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$') = True
+then lower(trim(email))
+else null
+END AS email_contacts_cleaned,
+
+case when trim(prefered_date_time)='' or prefered_date_time='NaN' then Null
+else trim(prefered_date_time)
+end
+as prefered_date_time,
+
+case when trim(remarks)='' or remarks='NaN' then Null
+else trim(remarks)
+end
+as remarks,
+
+case when trim(username)='' then null
+else trim(username) end as username,
+
+time AS sell_form_time
+
+from "web_sgcm_bronze_db".web_sellbybid_form_step2 where td_title != 'gtm-msr'

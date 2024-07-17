@@ -1,0 +1,69 @@
+drop table if exists "web_dashboard_db".users_by_date_filter_analytical_table;
+create table "web_dashboard_db".users_by_date_filter_analytical_table
+as
+select * from 
+(
+select 'Articles' section_,concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00') as view_time, td_client_id_pageview 
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview like '%/articles%'
+
+union
+
+select 'Insurance',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'), td_client_id_pageview
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview = '/directory/insurance.php' or td_path_pageview like '/car-insurance'
+
+union
+
+select 'Sell car',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview like '%sell-car%' or 
+td_path_pageview like '%/quotz/%' or 
+td_path_pageview like '%/consignment.php%'
+
+union 
+
+select 'Used cars',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview 
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_path_pageview like '%/used_cars/%'
+
+union
+
+select 'New cars', concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview 
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_path_pageview like '%new_cars%'
+
+union
+
+select 'Car loan',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview 
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_path_pageview like '%/car_loan/%' and td_url_pageview like 'https%'
+
+union
+select 'Resources',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview like '%/tools_tips%'
+
+
+union
+
+select 'Directory',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_path_pageview like '%/directory/%' or td_path_pageview like '%/products/%' and (td_path_pageview not like '%carplate_index%' and td_path_pageview not like '%carplate_eurospeed%' and td_path_pageview not like '%carplate_dealer%' and td_path_pageview not like '%insurance%' and td_path_pageview not like '%vehicle_evaluation%' and td_path_pageview not like '%vehicle_inspection%') and td_url_pageview like 'https://www.%'
+
+union
+
+select 'E-shop',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview like '%/shop%'
+
+union
+
+select 'Rent cars',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'),td_client_id_pageview 
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_path_pageview like '%car_rental%' and td_path_pageview not like '%/articles/%'
+
+union
+
+select 'Forum',concat(TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd'),' 00:00:00'), td_client_id_pageview
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_path_pageview like '%/forum' or td_path_pageview like '%/forum/%')
+
+where view_time>=cast((date_trunc('day', CURRENT_DATE) - INTERVAL '119' DAY)as VARCHAR) || ' 00:00:00'
+
+
+-- select cast((date_trunc('day', CURRENT_DATE) - INTERVAL '60' DAY)as VARCHAR) || ' 00:00:00'

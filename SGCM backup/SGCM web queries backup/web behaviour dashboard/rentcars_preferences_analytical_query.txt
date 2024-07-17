@@ -1,0 +1,6 @@
+drop table if exists "web_dashboard_db".rentcars_preferences_analytical_table;
+create table "web_dashboard_db".rentcars_preferences_analytical_table
+as
+select click_text,count(distinct td_client_id) as total_users from 
+(select td_client_id,click_text from "web_sgcm_bronze_db".web_sgcm_linkclicks where td_url like 'https://www.sgcarmart.com/car_rental/index.php' and click_text in ('Drive to Malaysia','Private Hire Rental','For New Drivers','MPV Rental','Van Rental','Wedding Car Rental'))
+group by 1

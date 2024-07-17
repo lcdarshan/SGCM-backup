@@ -1,0 +1,202 @@
+delete from "web_dashboard_db".newcars_analytical_table where date_newcars = cast(CURRENT_DATE as varchar)|| ' 00:00:00' or date_newcars=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00';
+insert into "web_dashboard_db".newcars_analytical_table
+
+with a as --main date table 
+(
+  select distinct CONCAT(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date from "web_sgcm_bronze_db".web_sgcm_pageviews where TD_TIME_FORMAT(time,'yyyy-MM-dd') = cast(CURRENT_DATE as varchar) or TD_TIME_FORMAT(time,'yyyy-MM-dd')=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar)
+),
+
+b as --main data table 
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview ,td_client_id td_client_id_pageview, time, td_url td_url_pageview,td_path td_path_pageview from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%new_cars%'
+),
+
+
+cumulative as --new cars section cumulative figures 
+(
+  with a as
+  (
+    select cast(CURRENT_DATE as varchar)|| ' 00:00:00' _date,
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=cast(CURRENT_DATE as varchar)) as total_users_cumulative,
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= cast(CURRENT_DATE as varchar)) as total_events_cumulative
+
+    union
+
+    select DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00',
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d')),
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d'))
+
+    union
+
+    select DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00',
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d')),
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d'))
+
+  )
+  select date_ date_new,total_users_cumulative,total_events_cumulative,new_users from 
+    (select _date as date_,
+    total_users_cumulative, 
+    total_events_cumulative,
+    -- lag(count(distinct td_client_id_pageview)) over(order by _date) as lag_dist,
+    total_users_cumulative-lag(total_users_cumulative) over(order by _date) as new_users 
+    from a )
+  where date_= cast(CURRENT_DATE as varchar)|| ' 00:00:00' or date_=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00'
+),
+
+normal as 
+(
+  select view_time_pageview,count(distinct td_client_id_pageview) total_users_daywise,count(*) total_events_daywise from b group by 1
+  order by 1
+),
+
+indexpage as
+(
+  select view_time_pageview as date_index,
+  count(distinct td_client_id_pageview) total_users_daywise_index,
+  count(*) as total_events_daywise_index
+  from b
+  where td_path_pageview like '%/new_cars/index.php%'
+  group by 1
+),
+
+indexpagetotal as
+(
+  select count(distinct td_client_id_pageview) as total_users_index
+  from b
+  where td_path_pageview like '%/new_cars/index.php%'
+),
+
+carlisting_normal as
+(
+  select view_time_pageview as date_carlisting,
+  count(distinct td_client_id_pageview) total_users_daywise_carlisting,
+  count(*) as total_events_daywise_carlisting 
+  from b
+  where td_path_pageview like '%/new_cars/newcars_listing.php%'
+  group by 1
+),
+
+carlistingtotal as
+(
+  select count(distinct td_client_id_pageview) as total_users_carlisting
+  from b
+  where td_path_pageview like '%/new_cars/newcars_listing.php%'
+),
+
+caroverview_normal as
+(
+  select view_time_pageview as date_caroverview,
+  count(distinct td_client_id_pageview) total_users_daywise_caroverview,
+  count(*) as total_events_daywise_caroverview
+  from b
+  where td_path_pageview like '%/new_cars/newcars_overview.php%'
+  group by 1
+),
+
+caroverviewtotal as
+(
+  select count(distinct td_client_id_pageview) as total_users_caroverview
+  from b
+  where td_path_pageview like '%/new_cars/newcars_overview.php%'
+),
+
+searchusers as
+(
+  select count(distinct td_client_id_pageview) as total_search_users
+  from b
+  where td_url_pageview like '%/new_cars/newcars_listing.php?MOD=%'
+),
+
+known_users as --main pageview data table 
+(
+  with a as
+    (
+    select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date ,td_client_id,td_path,useremail_e 
+    from "web_sgcm_bronze_db".web_sgcm_pageviews 
+    where td_path like '%new_cars%' and useremail_e is not null and time>1702512000
+    ),
+    b as 
+    (
+      select _date,td_client_id,td_path,useremail_e 
+      from a 
+      where _date=cast(CURRENT_DATE as VARCHAR) || ' 00:00:00' or _date=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00'
+    )
+  select _date date_known,count(DISTINCT td_client_id) day_wise_known_users,
+  (select count(distinct td_client_id) from a) as total_known_users
+  from a
+  group by 1
+),
+
+featured_resources as
+(
+    WITH a AS (
+      SELECT 
+          td_client_id,
+          td_path,
+          click_text 
+      FROM 
+          "web_sgcm_bronze_db".web_sgcm_linkclicks 
+      WHERE 
+          td_path LIKE '%/new_cars/%' 
+          AND click_text IN (
+              'Sell by Bidding',
+              'New Car Pricelist',
+              'COE Results',
+              'New Car Instalment Calculator',
+              'Parallel Import Car Dealers',
+              'New Car Showcase',
+              'Best Selling Car Models'
+          )
+  )
+  SELECT 
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Sell by Bidding') AS fr_sell_by_bid,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'New Car Pricelist') AS fr_new_car_pricelist,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'COE Results') AS fr_coe_results,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'New Car Instalment Calculator') AS fr_installment_cal,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Parallel Import Car Dealers') AS fr_parallel_import,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'New Car Showcase') AS fr_newcar_showcase,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Best Selling Car Models') AS fr_best_selling_models
+)
+
+-- select * from featured_resources
+
+select _date as date_newcars,
+COALESCE(total_users_cumulative, 0) AS total_users_cumulative,
+COALESCE(total_events_cumulative, 0) AS total_events_cumulative,
+COALESCE(new_users, 0) AS new_users,
+COALESCE(total_users_daywise, 0) AS total_users_daywise,
+COALESCE(total_events_daywise, 0) AS total_events_daywise,
+COALESCE(total_users_daywise_index, 0) AS total_users_daywise_index,
+COALESCE(total_events_daywise_index, 0) AS total_events_daywise_index,
+COALESCE(total_users_daywise_carlisting, 0) AS total_users_daywise_carlisting,
+COALESCE(total_events_daywise_carlisting, 0) AS total_events_daywise_carlisting,
+COALESCE(total_users_daywise_caroverview, 0) AS total_users_daywise_caroverview,
+COALESCE(total_events_daywise_caroverview, 0) AS total_events_daywise_caroverview,
+COALESCE(total_users_index, 0) AS total_users_index,
+COALESCE(total_users_carlisting, 0) AS total_users_carlisting,
+COALESCE(total_users_caroverview, 0) AS total_users_caroverview,
+COALESCE(total_search_users, 0) AS total_search_users,
+COALESCE(day_wise_known_users, 0) AS day_wise_known_users,
+COALESCE(total_known_users, 0) AS total_known_users,
+COALESCE(fr_sell_by_bid, 0) AS fr_sell_by_bid,
+COALESCE(fr_new_car_pricelist, 0) AS fr_new_car_pricelist,
+COALESCE(fr_coe_results, 0) AS fr_coe_results,
+COALESCE(fr_installment_cal, 0) AS fr_installment_cal,
+COALESCE(fr_parallel_import, 0) AS fr_parallel_import,
+COALESCE(fr_newcar_showcase, 0) AS fr_newcar_showcase,
+COALESCE(fr_best_selling_models, 0) AS fr_best_selling_models
+from a
+left join cumulative on date_new=_date
+left join normal on view_time_pageview=_date
+left join indexpage on date_index=_date
+left join carlisting_normal on date_carlisting=_date
+left join caroverview_normal on date_caroverview=_date
+left join known_users on _date=date_known
+CROSS JOIN indexpagetotal
+cross join carlistingtotal
+cross join caroverviewtotal
+cross JOIN searchusers
+cross join featured_resources
+-- order by date_newcars
+
+

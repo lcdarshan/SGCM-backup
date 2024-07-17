@@ -1,0 +1,58 @@
+
+timezone: UTC
+ 
+schedule:
+  cron>: "*/60 * * * *"
+
+_error:
+  mail>: body.txt
+  subject: "[💀URGENT🆘] web_data_processing Workflow has failed!"
+  to: [darshan.lc@ada-asia.com,bharath.raju@ada-asia.com]
+
++main:
+  _parallel: false
+  +_decrypt_staging:
+    _parallel: true
+    +decrypt:
+      _parallel: false
+      +decryption:
+        py>: decrypt.func
+        docker:
+          image: "digdag/digdag-python:3.9"
+        
+      +distinct_email_td_id_pair_web_behaviour:
+        _export:
+          td:
+            database: adhoc_sgcm_db
+            engine: presto
+        +id_email_mapping_query:
+          td_run>: id_email_mapping
+
+    +staging:
+      +staging:
+        call>: web_staging_workflow.dig
+
+  +silver_gold:
+    _parallel: false
+    +silver:
+        call>: web_silver_workflow.dig
+    +gold_web_behaviour_wp_attributes:
+      _parallel: true
+      +gold_workflow:
+        call>: web_gold_workflow.dig
+
+
+  +masterSegment_web:
+    _parallel: true
+    +masterSegment:
+      call>: mastersegment.dig
+
+
+# +error_handling:
+#   call>: error_handling.dig
+      
+  
+
+
+
+

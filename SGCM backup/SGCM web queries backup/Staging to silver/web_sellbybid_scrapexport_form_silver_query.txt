@@ -1,0 +1,75 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_sellbybid_scrapexport_form;
+insert into "web_sgcm_silver_db".web_sellbybid_scrapexport_form
+-- create table "web_sgcm_silver_db".web_sellbybid_scrapexport_form
+(
+td_global_id_screxp,
+td_version_screxp,
+td_client_id_screxp,
+td_charset_screxp,
+td_language_screxp,
+td_color_screxp,
+td_screen_screxp,
+td_viewport_screxp,
+td_title_screxp,
+td_description_screxp,
+td_url_screxp,
+td_user_agent_screxp,
+td_platform_screxp,
+td_host_screxp,
+td_path_screxp,
+td_referrer_screxp,
+td_ip_screxp,
+td_browser_screxp,
+td_browser_version_screxp,
+td_os_screxp,
+td_os_version_screxp,
+name_screxp,
+contact_screxp,
+carplate_screxp,
+email_screxp,
+remarks_screxp,
+username_screxp,
+time_screxp,
+email 
+)
+-- as
+select
+td_global_id_screxp,
+td_version_screxp,
+td_client_id_screxp,
+td_charset_screxp,
+td_language_screxp,
+td_color_screxp,
+td_screen_screxp,
+td_viewport_screxp,
+td_title_screxp,
+td_description_screxp,
+td_url_screxp,
+td_user_agent_screxp,
+td_platform_screxp,
+td_host_screxp,
+td_path_screxp,
+td_referrer_screxp,
+td_ip_screxp,
+td_browser_screxp,
+td_browser_version_screxp,
+td_os_screxp,
+td_os_version_screxp,
+name_screxp,
+contact_screxp,
+carplate_screxp,
+email_screxp,
+remarks_screxp,
+username_screxp,
+time_screxp,
+tbl2.email
+from
+(select * from (
+select *,row_number()over(partition by td_client_id_screxp,carplate_screxp order by time_screxp desc ) as rnk from "web_sgcm_staging_db".web_sellbybid_scrapexport_form)
+where rnk=1)
+left join (select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 
+on td_client_id_screxp=tbl2.td_id
+where 
+time_screxp<=(select max(time_screxp)-1 from "web_sgcm_staging_db".web_sellbybid_scrapexport_form) 
+and 
+time_screxp>(select max(time_screxp) from "web_sgcm_silver_db".web_sellbybid_scrapexport_form)

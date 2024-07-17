@@ -1,0 +1,197 @@
+delete from "web_dashboard_db".usedcars_analytical_table where date_used_cars = cast(CURRENT_DATE as varchar)|| ' 00:00:00' or date_used_cars=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00';
+insert into "web_dashboard_db".usedcars_analytical_table
+with a as --main date table 
+(
+  select distinct CONCAT(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date from "web_sgcm_bronze_db".web_sgcm_pageviews where TD_TIME_FORMAT(time,'yyyy-MM-dd') = cast(CURRENT_DATE as varchar) or TD_TIME_FORMAT(time,'yyyy-MM-dd')=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar)
+),
+
+b as --main data table 
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_time_pageview , time, td_client_id td_client_id_pageview,td_url td_url_pageview,td_path td_path_pageview,td_referrer from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%/used_cars/%'
+),
+
+cumulative as
+(
+  with a as
+  (
+    select cast(CURRENT_DATE as varchar)|| ' 00:00:00' _date,
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=cast(CURRENT_DATE as varchar)) as total_users_cumulative,
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= cast(CURRENT_DATE as varchar)) as total_events_cumulative
+
+    union
+
+    select DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00',
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d')),
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d'))
+
+    union
+
+    select DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00',
+    (select count(distinct td_client_id_pageview) from b where TD_TIME_FORMAT(time,'yyyy-MM-dd')<=DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d')),
+    (SELECT count(*) FROM b WHERE TD_TIME_FORMAT(time, 'yyyy-MM-dd') <= DATE_FORMAT(DATE_ADD('day', -2, CURRENT_DATE), '%Y-%m-%d'))
+
+  )
+  select date_,total_users_cumulative,total_events_cumulative,new_users from 
+    (select _date as date_,
+    total_users_cumulative, 
+    total_events_cumulative,
+    -- lag(count(distinct td_client_id_pageview)) over(order by _date) as lag_dist,
+    total_users_cumulative-lag(total_users_cumulative) over(order by _date) as new_users 
+    from a )
+  where date_= cast(CURRENT_DATE as varchar)|| ' 00:00:00' or date_=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d') || ' 00:00:00'
+  -- where date_ != '2024-03-07 00:00:00'
+),
+
+normal as 
+(
+  select view_time_pageview,count(distinct td_client_id_pageview) total_users_daywise,count(*) total_events_daywise from b group by 1
+  order by 1
+),
+
+indexpage_day_wise as
+(
+  select view_time_pageview as date_index,
+  count(distinct td_client_id_pageview) total_users_daywise_index,
+  count(*) as total_events_daywise_index
+  from b
+  where td_path_pageview like '%used_cars/index.php%'
+  group by 1
+),
+
+indexpagetotal_users as
+(
+  select count(distinct td_client_id_pageview) as total_users_index
+  from b
+  where td_path_pageview like '%used_cars/index.php%'
+),
+
+carlisting_daywise as
+(
+  select view_time_pageview as date_carlisting,
+  count(distinct td_client_id_pageview) total_users_daywise_carlisting,
+  count(*) as total_events_daywise_carlisting 
+  from b
+  where td_path_pageview like '%/used_cars/listing.php%' --and td_referrer like '%used_cars/index.php%'
+  group by 1
+),
+
+carlistingtotal_users as
+(
+  select count(distinct td_client_id_pageview) as total_users_carlisting
+  from b
+  where td_path_pageview like '%/used_cars/listing.php%' --and td_referrer like '%used_cars/index.php%'
+),
+
+carinfo_daywise as
+(
+  select view_time_pageview as date_carinfo,
+  count(distinct td_client_id_pageview) total_users_daywise_carinfo,
+  count(*) as total_events_daywise_carinfo
+  from b
+  where td_path_pageview like '%/used_cars/info.php%' and td_referrer like '%used_cars/listing.php%'
+  group by 1
+),
+
+carinfototal_users as
+(
+  select count(distinct td_client_id_pageview) as total_users_carinfo
+  from b
+  where td_path_pageview like '%/used_cars/info.php%' and td_referrer like '%used_cars/listing.php%'
+),
+
+searchusers as
+(
+  select count(distinct td_client_id_pageview) as total_search_users
+  from b
+  where (td_url_pageview like '%MOD=%' or td_url_pageview like '%MIL=%' or td_url_pageview like '%MMO=%' or td_url_pageview like '%RPG=%' or td_url_pageview like '%VEH=%' or td_url_pageview like '%ENG=%' or td_url_pageview like '%RGD=%' or td_url_pageview like '%PRC=%' or td_url_pageview like '%VEH=1%' or td_url_pageview like '%AVL=%') and td_url_pageview like '%https://www.sgcarmart.com/used_cars/listing.php%'
+),
+
+featured_resources as
+(
+    WITH a AS (
+      SELECT 
+          td_client_id,
+          td_path,
+          click_text 
+      FROM 
+          "web_sgcm_bronze_db".web_sgcm_linkclicks 
+      WHERE 
+          td_path LIKE '%/used_cars/%' 
+          AND click_text IN (
+              'Bidded car plate number for sale',
+              'Paperwork for direct buyer & seller',
+              'Buy pre-owned cars online',
+              'Affordability Calculator',
+              'Sgcarmart Used Car Warranty',
+              'Free Car Valuation',
+              'COE renewal loan'
+          )
+  )
+  SELECT 
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Bidded car plate number for sale') AS fr_bidded_car_plate,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Paperwork for direct buyer & seller') AS fr_paperwork,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Buy pre-owned cars online') AS fr_pre_owned_cars,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Affordability Calculator') AS fr_affordability_calculator,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Sgcarmart Used Car Warranty') AS fr_used_car_warranty,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'Free Car Valuation') AS fr_car_valuation,
+      (SELECT COUNT(*) FROM a WHERE click_text = 'COE renewal loan') AS fr_COE_renewal
+),
+
+known_users as
+(
+  with a as (select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as date_known_users,td_client_id,td_path,useremail_e
+  from "web_sgcm_bronze_db".web_sgcm_pageviews where td_path like '%used_cars%' and useremail_e is not null and time>1702512000)
+  select date_known_users,count(distinct td_client_id) as known_users_daywise,(select count(distinct td_client_id) from a) as known_users_total from a
+  group by 1
+)
+
+-- select * from cumulative
+
+select * from (select _date as date_used_cars,
+COALESCE(total_users_cumulative, 0) as total_users_cumulative,
+COALESCE(total_events_cumulative, 0) as total_events_cumulative,
+COALESCE(new_users, 0) as new_users,
+COALESCE(total_users_daywise, 0) as total_users_daywise,
+COALESCE(total_events_daywise, 0) as total_events_daywise,
+COALESCE(total_users_daywise_index, 0) as total_users_daywise_index,
+COALESCE(total_events_daywise_index, 0) as total_events_daywise_index,
+COALESCE(total_users_index, 0) as total_users_index,
+COALESCE(total_users_daywise_carlisting, 0) as total_users_daywise_carlisting,
+COALESCE(total_events_daywise_carlisting, 0) as total_events_daywise_carlisting,
+COALESCE(total_users_carlisting, 0) as total_users_carlisting,
+COALESCE(total_users_daywise_carinfo, 0) as total_users_daywise_carinfo,
+COALESCE(total_events_daywise_carinfo, 0) as total_events_daywise_carinfo,
+COALESCE(total_users_carinfo, 0) as total_users_carinfo,
+COALESCE(total_search_users, 0) as total_search_users,
+COALESCE(fr_bidded_car_plate, 0) as fr_bidded_car_plate,
+COALESCE(fr_paperwork, 0) as fr_paperwork,
+COALESCE(fr_pre_owned_cars, 0) as fr_pre_owned_cars,
+COALESCE(fr_affordability_calculator, 0) as fr_affordability_calculator,
+COALESCE(fr_used_car_warranty, 0) as fr_used_car_warranty,
+COALESCE(fr_car_valuation, 0) as fr_car_valuation,
+COALESCE(fr_COE_renewal, 0) as fr_COE_renewal,
+COALESCE(known_users_daywise, 0) as known_users_daywise,
+COALESCE(known_users_total, 0) as known_users_total
+
+
+from a
+left join cumulative on date_=_date
+left join normal on _date=view_time_pageview
+left join indexpage_day_wise on date_index=_date
+left join carlisting_daywise on date_carlisting=_date
+left join carinfo_daywise on date_carinfo=_date
+left join known_users on _date=date_known_users
+
+cross join indexpagetotal_users
+cross join carlistingtotal_users
+CROSS join carinfototal_users
+cross join searchusers
+cross join featured_resources)
+
+ 
+
+
+
+
+
+

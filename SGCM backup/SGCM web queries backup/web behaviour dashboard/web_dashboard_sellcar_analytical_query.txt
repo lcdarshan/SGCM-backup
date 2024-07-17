@@ -1,0 +1,359 @@
+drop table if exists "web_dashboard_db".sellcar_analytical_table;
+create table "web_dashboard_db".sellcar_analytical_table
+as 
+with a as --main date table 
+(
+  select distinct CONCAT(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date from "web_sgcm_bronze_db".web_sgcm_pageviews 
+  -- where TD_TIME_FORMAT(time,'yyyy-MM-dd') = cast(CURRENT_DATE as varchar) or TD_TIME_FORMAT(time,'yyyy-MM-dd')=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar)
+),
+sell_car as --main data table 
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as view_date_pageview ,td_client_id ,td_url ,td_path, time
+  from "web_sgcm_bronze_db".web_sgcm_pageviews 
+  where td_path like '%sell-car%' or 
+  td_path like '%/quotz/%' or 
+  td_path like '%/consignment.php%'
+),
+
+cumulative_sell_car as 
+(
+  with a as(select date1,count(distinct td_client_id) as cumulative_users,count(td_client_id) cumulative_events from 
+  (select distinct view_date_pageview as date1 from sell_car) tbl1
+  left join 
+  (select view_date_pageview as date2,td_client_id from sell_car) tbl2
+  on date2<=date1
+  group by 1)
+  select date1 as date_cumulative,cumulative_users,cumulative_events,cumulative_users-lag(cumulative_users) over(order by date1) as new_users from a
+),
+
+daywise_sellcar as
+(
+  select view_date_pageview,
+  count(distinct td_client_id) as day_wise_users,
+  count(*) as day_wise_events
+  from sell_car group by 1
+),
+
+sell_car_known_users as
+(
+with a as
+    (
+    select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date ,td_client_id,td_path,useremail_e 
+    from "web_sgcm_bronze_db".web_sgcm_pageviews 
+    where (td_path like '%sell-car%' or td_path like '%/quotz/%' or td_path like '%/consignment.php%') and useremail_e is not null and time>1702512000
+    ),
+    b as 
+    (
+      select _date,td_client_id,td_path,useremail_e 
+      from a 
+      where _date=cast(CURRENT_DATE as VARCHAR) || ' 00:00:00' or _date=cast(DATE_ADD('day',-1,CURRENT_DATE) as varchar) || ' 00:00:00'
+    )
+  select _date date_known,count(DISTINCT td_client_id) day_wise_known_users,
+  (select count(distinct td_client_id) from a) as total_known_users
+  from a
+  group by 1
+),
+
+click_on_quotz_button as
+(
+  with a as (select 
+  concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as click_date_auction_button,
+  td_client_id,td_url,td_path,click_text
+  from "web_sgcm_bronze_db".web_sgcm_linkclicks where click_text like '%Auction via Sgcarmart Quotz%' and td_path like '%/sell-car%')
+  select click_date_auction_button,
+  count(distinct td_client_id) as daywise_users_clicked_on_auction_via_button,
+  count(*) as total_clicks_on_auction_via_button,
+  (select count(distinct td_client_id) from a ) as total_users_clicked_on_auction_via_button
+  from a
+  group by 1
+),
+
+click_on_advertiser_login as
+(
+  with a as (select 
+  concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as click_date_adv_login,
+  td_client_id,td_url,td_path,click_text
+  from "web_sgcm_bronze_db".web_sgcm_linkclicks where click_text like '%Advertiser''s Login%' and td_path like '%/sell-car%')
+  select click_date_adv_login,
+  count(distinct td_client_id) as daywise_users_clicked_on_advlogin_button,
+  count(*) as total_clicks_on_advlogin_button,
+  (select count(DISTINCT td_client_id) from a) as total_users_clicked_on_advlogin_button
+  from a
+  group by 1
+),
+
+freequote_form_submissions as
+(
+   SELECT 
+   date_freequote_form_submissions,
+   day_wise_freequote_form_submissions,
+   sum(day_wise_freequote_form_submissions) over() as total_freequote_form_submissions
+  FROM
+      (SELECT 
+      concat(TD_TIME_FORMAT(time_freequote,'yyyy-MM-dd'),' 00:00:00') as date_freequote_form_submissions,
+      count(td_client_id_freequote) day_wise_freequote_form_submissions
+      FROM "web_sgcm_silver_db".web_sellcar_freequote_form GROUP BY 1) 
+)
+,
+
+-- known_users_freequote_form_submissions as
+-- (
+--     select count(td_client_id_freequote) total_known_forms from "web_sgcm_silver_db".web_sellcar_freequote_form where email is not null
+-- ),
+
+
+cumulative_sell_by_bid as 
+(
+  with a as(select date1,count(distinct td_client_id) as cumulative_users_sell_by_bid,count(td_client_id) cumulative_events_sell_by_bid from 
+  (select distinct view_date_pageview as date1 from sell_car where td_path like '%/quotz/sell_by_bid.php%') tbl1
+  left join 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/quotz/sell_by_bid.php%') tbl2
+  on date2<=date1
+  group by 1)
+  select date1 as date_sell_by_bid_cumulative, cumulative_users_sell_by_bid, cumulative_events_sell_by_bid,cumulative_users_sell_by_bid-lag(cumulative_users_sell_by_bid) over(order by date1) as new_users_sell_by_bid from a
+),
+
+daywise_sellbybid as
+(
+  select date2 as daywise_date_sellbybid,count(distinct td_client_id) as daywise_sellbybid_users, count(*) as daywise_sellbybid_events from 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/quotz/sell_by_bid.php%')
+  group by 1
+),
+
+sellbybid_form_submissions as
+(
+   SELECT 
+   date_sellbybid_form_submissions,
+   day_wise_sellbybid_form_submissions,
+   sum(day_wise_sellbybid_form_submissions) over() as total_sellbybid_form_submissions
+  FROM
+      (SELECT 
+      concat(TD_TIME_FORMAT(time_sellbybid,'yyyy-MM-dd'),' 00:00:00') as date_sellbybid_form_submissions,
+      count(td_client_id_sellbybid) day_wise_sellbybid_form_submissions
+      FROM "web_sgcm_silver_db".web_sellbybid_form GROUP BY 1) 
+),
+
+
+
+
+cumulative_freeval as 
+(
+  with a as(select date1,count(distinct td_client_id) as cumulative_users_freeval,count(td_client_id) cumulative_events_freeval from 
+  (select distinct view_date_pageview as date1 from sell_car where td_path like '%/quotz/free_valuation.php%') tbl1
+  left join 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/quotz/free_valuation.php%') tbl2
+  on date2<=date1
+  group by 1)
+  select date1 as date_freeval_cumulative, cumulative_users_freeval, cumulative_events_freeval,cumulative_users_freeval-lag(cumulative_users_freeval) over(order by date1) as new_users_freeval from a
+),
+
+daywise_freeval as
+(
+  select date2 as daywise_date_freeval,count(distinct td_client_id) as daywise_freeval_users, count(*) as daywise_freeval_events from 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/quotz/free_valuation.php%')
+  group by 1
+),
+
+freeval_form_submissions as
+(
+   SELECT 
+   date_freeval_form_submissions,
+   day_wise_freeval_form_submissions,
+   sum(day_wise_freeval_form_submissions) over() as total_freeval_form_submissions
+  FROM
+      (SELECT 
+      concat(TD_TIME_FORMAT(time_freeval,'yyyy-MM-dd'),' 00:00:00') as date_freeval_form_submissions,
+      count(td_client_id_freeval) day_wise_freeval_form_submissions
+      FROM "web_sgcm_silver_db".web_sellbybid_freeval_form GROUP BY 1) 
+),
+
+
+cumulative_screxp as 
+(
+  with a as(select date1,count(distinct td_client_id) as cumulative_users_screxp,count(td_client_id) cumulative_events_screxp from 
+  (select distinct view_date_pageview as date1 from sell_car where td_path like '%/quotz/scrap_export.php%') tbl1
+  left join 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/quotz/scrap_export.php%') tbl2
+  on date2<=date1
+  group by 1)
+  select date1 as date_screxp_cumulative, cumulative_users_screxp, cumulative_events_screxp,cumulative_users_screxp-lag(cumulative_users_screxp) over(order by date1) as new_users_screxp from a
+),
+
+daywise_screxp as
+(
+  select date2 as daywise_date_screxp,count(distinct td_client_id) as daywise_screxp_users, count(*) as daywise_screxp_events from 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/quotz/scrap_export.php%')
+  group by 1
+),
+
+screxp_form_submissions as
+(
+   SELECT 
+   date_screxp_form_submissions,
+   day_wise_screxp_form_submissions,
+   sum(day_wise_screxp_form_submissions) over() as total_screxp_form_submissions
+  FROM
+      (SELECT 
+      concat(TD_TIME_FORMAT(time_screxp,'yyyy-MM-dd'),' 00:00:00') as date_screxp_form_submissions,
+      count(td_client_id_screxp) day_wise_screxp_form_submissions
+      FROM "web_sgcm_silver_db".web_sellbybid_scrapexport_form GROUP BY 1) 
+),
+
+
+cumulative_paa as 
+(
+  with a as(select date1,count(distinct td_client_id) as cumulative_users_paa,count(td_client_id) cumulative_events_paa from 
+  (select distinct view_date_pageview as date1 from sell_car where td_path like '%/sell-car/post-an-ad%') tbl1
+  left join 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/sell-car/post-an-ad%') tbl2
+  on date2<=date1
+  group by 1)
+  select date1 as date_paa_cumulative, cumulative_users_paa, cumulative_events_paa,cumulative_users_paa-lag(cumulative_users_paa) over(order by date1) as new_users_paa from a
+),
+
+daywise_paa as
+(
+  select date2 as daywise_date_paa,count(distinct td_client_id) as daywise_paa_users, count(*) as daywise_paa_events from 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/sell-car/post-an-ad%')
+  group by 1
+),
+
+paa_form_submissions as
+(
+   SELECT 
+   date_paa_form_submissions,
+   day_wise_paa_form_submissions,
+   sum(day_wise_paa_form_submissions) over() as total_paa_form_submissions
+  FROM
+      (SELECT 
+      concat(TD_TIME_FORMAT(time_addpost,'yyyy-MM-dd'),' 00:00:00') as date_paa_form_submissions,
+      count(td_client_id_addpost) day_wise_paa_form_submissions
+      FROM "web_sgcm_silver_db".web_addpost_step1 GROUP BY 1) 
+),
+
+
+cumulative_consign as 
+(
+  with a as(select date1,count(distinct td_client_id) as cumulative_users_consign,count(td_client_id) cumulative_events_consign from 
+  (select distinct view_date_pageview as date1 from sell_car where td_path like '%/consignment.php%') tbl1
+  left join 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/consignment.php%') tbl2
+  on date2<=date1
+  group by 1)
+  select date1 as date_consign_cumulative, cumulative_users_consign, cumulative_events_consign,cumulative_users_consign-lag(cumulative_users_consign) over(order by date1) as new_users_consign from a
+),
+
+daywise_consign as
+(
+  select date2 as daywise_date_consign,count(distinct td_client_id) as daywise_consign_users, count(*) as daywise_consign_events from 
+  (select view_date_pageview as date2,td_client_id from sell_car where td_path like '%/consignment.php%')
+  group by 1
+),
+
+consign_form_submissions as
+(
+   SELECT 
+   date_consign_form_submissions,
+   day_wise_consign_form_submissions,
+   sum(day_wise_consign_form_submissions) over() as total_consign_form_submissions
+  FROM
+      (SELECT 
+      concat(TD_TIME_FORMAT(time_consign,'yyyy-MM-dd'),' 00:00:00') as date_consign_form_submissions,
+      count(td_client_id_consign) day_wise_consign_form_submissions
+      FROM "web_sgcm_silver_db".web_consign_form GROUP BY 1) 
+)
+
+-- select * from known_users_freequote_form_submissions
+
+select _date as date_sellcar,
+COALESCE(cumulative_users, 0) AS cumulative_users,
+COALESCE(cumulative_events, 0) AS cumulative_events,
+COALESCE(new_users, 0) AS new_users,
+COALESCE(day_wise_users, 0) AS day_wise_users,
+COALESCE(day_wise_events, 0) AS day_wise_events,
+COALESCE(day_wise_known_users, 0) AS day_wise_known_users,
+COALESCE(total_known_users, 0) AS total_known_users,
+COALESCE(daywise_users_clicked_on_auction_via_button, 0) AS daywise_users_clicked_on_auction_via_button,
+COALESCE(total_clicks_on_auction_via_button, 0) AS total_clicks_on_auction_via_button,
+COALESCE(total_users_clicked_on_auction_via_button, 0) AS total_users_clicked_on_auction_via_button,
+COALESCE(daywise_users_clicked_on_advlogin_button, 0) AS daywise_users_clicked_on_advlogin_button,
+COALESCE(total_clicks_on_advlogin_button, 0) AS total_clicks_on_advlogin_button,
+COALESCE(total_users_clicked_on_advlogin_button, 0) AS total_users_clicked_on_advlogin_button,
+COALESCE(day_wise_freequote_form_submissions, 0) AS day_wise_freequote_form_submissions,
+COALESCE(total_freequote_form_submissions, 0) AS total_freequote_form_submissions,
+
+
+COALESCE(cumulative_users_sell_by_bid, 0) AS cumulative_users_sell_by_bid,
+COALESCE(cumulative_events_sell_by_bid, 0) AS cumulative_events_sell_by_bid,
+COALESCE(new_users_sell_by_bid, 0) AS new_users_sell_by_bid,
+COALESCE(daywise_sellbybid_users, 0) AS daywise_sellbybid_users,
+COALESCE(daywise_sellbybid_events, 0) AS daywise_sellbybid_events,
+COALESCE(day_wise_sellbybid_form_submissions, 0) AS day_wise_sellbybid_form_submissions,
+COALESCE(total_sellbybid_form_submissions, 0) AS total_sellbybid_form_submissions,
+
+
+COALESCE(cumulative_users_freeval, 0) AS cumulative_users_freeval,
+COALESCE(cumulative_events_freeval, 0) AS cumulative_events_freeval,
+COALESCE(new_users_freeval, 0) AS new_users_freeval,
+COALESCE(daywise_freeval_users, 0) AS daywise_freeval_users,
+COALESCE(daywise_freeval_events, 0) AS daywise_freeval_events,
+COALESCE(day_wise_freeval_form_submissions, 0) AS day_wise_freeval_form_submissions,
+COALESCE(total_freeval_form_submissions, 0) AS total_freeval_form_submissions,
+
+COALESCE(cumulative_users_screxp, 0) AS cumulative_users_screxp,
+COALESCE(cumulative_events_screxp, 0) AS cumulative_events_screxp,
+COALESCE(new_users_screxp, 0) AS new_users_screxp,
+COALESCE(daywise_screxp_users, 0) AS daywise_screxp_users,
+COALESCE(daywise_screxp_events, 0) AS daywise_screxp_events,
+COALESCE(day_wise_screxp_form_submissions, 0) AS day_wise_screxp_form_submissions,
+COALESCE(total_screxp_form_submissions, 0) AS total_screxp_form_submissions,
+
+COALESCE(cumulative_users_paa, 0) AS cumulative_users_paa,
+COALESCE(cumulative_events_paa, 0) AS cumulative_events_paa,
+COALESCE(new_users_paa, 0) AS new_users_paa,
+COALESCE(daywise_paa_users, 0) AS daywise_paa_users,
+COALESCE(daywise_paa_events, 0) AS daywise_paa_events,
+COALESCE(day_wise_paa_form_submissions, 0) AS day_wise_paa_form_submissions,
+COALESCE(total_paa_form_submissions, 0) AS total_paa_form_submissions,
+
+COALESCE(cumulative_users_consign, 0) AS cumulative_users_consign,
+COALESCE(cumulative_events_consign, 0) AS cumulative_events_consign,
+COALESCE(new_users_consign, 0) AS new_users_consign,
+COALESCE(daywise_consign_users, 0) AS daywise_consign_users,
+COALESCE(daywise_consign_events, 0) AS daywise_consign_events,
+COALESCE(day_wise_consign_form_submissions, 0) AS day_wise_consign_form_submissions,
+COALESCE(total_consign_form_submissions, 0) AS total_consign_form_submissions
+
+
+from a
+
+left join cumulative_sell_car on _date=date_cumulative
+left join daywise_sellcar on _date=view_date_pageview
+left join sell_car_known_users on _date=date_known
+left join click_on_quotz_button on _date=click_date_auction_button
+left join click_on_advertiser_login on _date=click_date_adv_login
+left join freequote_form_submissions on _date=date_freequote_form_submissions
+
+left join cumulative_sell_by_bid on _date=date_sell_by_bid_cumulative
+left join daywise_sellbybid on _date=daywise_date_sellbybid
+left join sellbybid_form_submissions on _date=date_sellbybid_form_submissions
+
+left join cumulative_freeval on _date=date_freeval_cumulative
+left join daywise_freeval on _date=daywise_date_freeval
+left join freeval_form_submissions on _date=date_freeval_form_submissions
+
+left join cumulative_screxp on _date=date_screxp_cumulative
+left join daywise_screxp on _date=daywise_date_screxp
+left join screxp_form_submissions on _date=date_screxp_form_submissions
+
+left join cumulative_paa on _date=date_paa_cumulative
+left join daywise_paa on _date=daywise_date_paa
+left join paa_form_submissions on _date=date_paa_form_submissions
+
+left join cumulative_consign on _date=date_consign_cumulative
+left join daywise_consign on _date=daywise_date_consign
+left join consign_form_submissions on _date=date_consign_form_submissions
+
+order by 1
+
+

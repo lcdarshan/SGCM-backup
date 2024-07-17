@@ -1,0 +1,97 @@
+Drop table if EXISTS "web_dashboard_db".sellcars_weeklevel_analytical_table;
+create table "web_dashboard_db".sellcars_weeklevel_analytical_table AS
+with main_week as 
+(
+  select distinct (DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview))) as week from "web_sgcm_silver_db".web_sgcm_pageviews 
+)
+-------------------------------------------main data cte's
+,unknown_users as
+(select DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview)) week,td_client_id_pageview,td_url_pageview,td_path_pageview, email
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+ where (td_path_pageview like '%sell-car%' or td_path_pageview like '%/quotz/%' or td_path_pageview like '%/consignment.php%') and email is null),
+
+known_users as
+(select DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview)) week,FROM_UNIXTIME(view_time_pageview) date_time,td_client_id_pageview,td_url_pageview,td_path_pageview, email
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where (td_path_pageview like '%sell-car%' or td_path_pageview like '%/quotz/%' or td_path_pageview like '%/consignment.php%') and email is not null)
+
+-----------------------------------------freequote form 
+,freequote_form_submissions_unknownusers as
+(
+   SELECT 
+   week,
+   week_wise_freequote_form_submissions_unknown,
+   sum(week_wise_freequote_form_submissions_unknown) over() as total_freequote_form_submissions_unknown
+  FROM
+      (SELECT 
+      DATE_TRUNC('week', FROM_UNIXTIME(time_freequote)) week,
+      count(td_client_id_freequote) week_wise_freequote_form_submissions_unknown
+      FROM "web_sgcm_silver_db".web_sellcar_freequote_form where email is null GROUP BY 1) 
+)
+
+,freequote_form_submissions_knownusers as
+(
+   SELECT 
+   week,
+   week_wise_freequote_form_submissions_known,
+   sum(week_wise_freequote_form_submissions_known) over() as total_freequote_form_submissions_known
+  FROM
+      (SELECT 
+      DATE_TRUNC('week', FROM_UNIXTIME(time_freequote)) week,
+      count(td_client_id_freequote) week_wise_freequote_form_submissions_known
+      FROM "web_sgcm_silver_db".web_sellcar_freequote_form where email is not null GROUP BY 1) 
+)
+
+-------------------------------------------------------overall section
+
+,unknown_users_total as
+(
+  select count(distinct td_client_id_pageview) as unknownusers_total from unknown_users
+)
+
+,unknown_users_weekwise as
+(
+  select week,count(distinct td_client_id_pageview) as unknownusers_weekwise from unknown_users group by 1
+)
+
+,known_users_total as
+(
+  select count(distinct td_client_id_pageview) as knownusers_total from known_users
+)
+
+,known_users_weekwise as
+(
+  select week,count(distinct td_client_id_pageview) as knownusers_weekwise from known_users group by 1
+)
+
+,new_known_users_weekwise as
+(
+  select week,count(td_client_id_pageview) as new_known_users from 
+    (select td_client_id_pageview,week,ROW_NUMBER() over(partition by td_client_id_pageview order by week) as rnk from 
+      (select distinct td_client_id_pageview,week from known_users)
+    order by 1,3)
+  where rnk=1 group by 1 order by week 
+)
+
+select cast(main_week.week as VARCHAR) week,
+COALESCE(unknownusers_total, 0) AS unknownusers_total,
+COALESCE(unknownusers_weekwise, 0) AS unknownusers_weekwise,
+COALESCE(knownusers_total, 0) AS knownusers_total,
+COALESCE(knownusers_weekwise, 0) AS knownusers_weekwise,
+COALESCE(new_known_users,0) as new_known_users,
+COALESCE(total_freequote_form_submissions_unknown,0) as total_freequote_form_submissions_unknown,
+COALESCE(week_wise_freequote_form_submissions_unknown,0) as week_wise_freequote_form_submissions_unknown,
+COALESCE(total_freequote_form_submissions_known,0) as total_freequote_form_submissions_known,
+COALESCE(week_wise_freequote_form_submissions_known,0) as week_wise_freequote_form_submissions_known
+
+from main_week
+
+
+left join unknown_users_weekwise on main_week.week=unknown_users_weekwise.week
+left join known_users_weekwise on main_week.week=known_users_weekwise.week
+left JOIN new_known_users_weekwise on main_week.week=new_known_users_weekwise.week
+left join freequote_form_submissions_unknownusers on main_week.week=freequote_form_submissions_unknownusers.week
+left join freequote_form_submissions_knownusers on main_week.week=freequote_form_submissions_knownusers.week
+
+CROSS join unknown_users_total
+CROSS JOIN known_users_total

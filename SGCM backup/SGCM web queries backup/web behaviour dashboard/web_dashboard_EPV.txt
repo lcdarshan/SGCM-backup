@@ -1,0 +1,55 @@
+drop table if EXISTS "web_dashboard_db".epv;
+create table "web_dashboard_db".epv
+as 
+with a as
+(
+  select distinct CONCAT(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date from "web_sgcm_bronze_db".web_sgcm_pageviews 
+)
+select _date,
+--newcars
+"web_dashboard_db".newcars_analytical_table.total_users_daywise as newcars_users_daywise,"web_dashboard_db".newcars_analytical_table.total_events_daywise as newcars_events_daywise,"web_dashboard_db".newcars_analytical_table.new_users as newcars_newusers,"web_dashboard_db".newcars_analytical_table.total_users_cumulative as newcars_users_cumulative,
+
+--usedcars
+"web_dashboard_db".usedcars_analytical_table.total_users_daywise as usedcars_users_daywise,"web_dashboard_db".usedcars_analytical_table.total_events_daywise as usedcars_events_daywise,"web_dashboard_db".usedcars_analytical_table.new_users as usedcars_newusers,"web_dashboard_db".usedcars_analytical_table.total_users_cumulative as usedcars_users_cumulative,
+
+--insurance
+"web_dashboard_db".insurance_analytical_table.total_users_daywise as insurance_users_daywise,"web_dashboard_db".insurance_analytical_table.total_events_daywise as insurance_events_daywise,"web_dashboard_db".insurance_analytical_table.new_users as insurance_newusers,"web_dashboard_db".insurance_analytical_table.total_users_cumulative as insurance_users_cumulative,
+
+--articles
+"web_dashboard_db".articles_analytical_table.total_users_daywise as articles_users_daywise,"web_dashboard_db".articles_analytical_table.total_events_daywise as articles_events_daywise,"web_dashboard_db".articles_analytical_table.new_users as articles_newusers,"web_dashboard_db".articles_analytical_table.total_users_cumulative as articles_users_cumulative,
+
+--carloan
+"web_dashboard_db".carloan_analytical_table.total_users_daywise as carloan_users_daywise,"web_dashboard_db".carloan_analytical_table.total_events_daywise as carloan_events_daywise,"web_dashboard_db".carloan_analytical_table.new_users as carloan_newusers,"web_dashboard_db".carloan_analytical_table.total_users_cumulative as carloan_users_cumulative,
+
+--directory
+"web_dashboard_db".directory_analytical_table.total_users_daywise as directory_users_daywise,"web_dashboard_db".directory_analytical_table.total_events_daywise as directory_events_daywise,"web_dashboard_db".directory_analytical_table.new_users as directory_newusers,"web_dashboard_db".directory_analytical_table.total_users_cumulative as directory_users_cumulative,
+
+--eshop
+"web_dashboard_db".eshop_analytical_table.total_users_daywise as eshop_users_daywise,"web_dashboard_db".eshop_analytical_table.total_events_daywise as eshop_events_daywise,"web_dashboard_db".eshop_analytical_table.new_users as eshop_newusers,"web_dashboard_db".eshop_analytical_table.total_users_cumulative as eshop_users_cumulative,
+
+--forum
+"web_dashboard_db".forum_analytical_table.total_users_daywise as forum_users_daywise,"web_dashboard_db".forum_analytical_table.total_events_daywise as forum_events_daywise,"web_dashboard_db".forum_analytical_table.new_users as forum_newusers,"web_dashboard_db".forum_analytical_table.total_users_cumulative as forum_users_cumulative,
+
+--resources
+"web_dashboard_db".resources_analytical_table.total_users_daywise as resources_users_daywise,"web_dashboard_db".resources_analytical_table.total_events_daywise as resources_events_daywise,"web_dashboard_db".resources_analytical_table.new_users as resources_newusers,"web_dashboard_db".resources_analytical_table.total_users_cumulative as resources_users_cumulative,
+
+--rentcars
+"web_dashboard_db".rentcars_analytical_table.total_users_daywise as rentcars_users_daywise,"web_dashboard_db".rentcars_analytical_table.total_events_daywise as rentcars_events_daywise,"web_dashboard_db".rentcars_analytical_table.new_users as rentcars_newusers,"web_dashboard_db".rentcars_analytical_table.total_users_cumulative as rentcars_users_cumulative,
+
+--sellcars
+"web_dashboard_db".sellcar_analytical_table.day_wise_users as sellcar_users_daywise,"web_dashboard_db".sellcar_analytical_table.day_wise_events as sellcar_events_daywise,"web_dashboard_db".sellcar_analytical_table.new_users as sellcar_newusers,"web_dashboard_db".sellcar_analytical_table.cumulative_users as sellcar_users_cumulative
+
+from a 
+left join "web_dashboard_db".newcars_analytical_table on _date=date_newcars
+left join "web_dashboard_db".usedcars_analytical_table on _date=date_used_cars
+left join "web_dashboard_db".insurance_analytical_table on _date=date_insurance
+left join "web_dashboard_db".articles_analytical_table on _date=date_articles
+left join "web_dashboard_db".carloan_analytical_table on _date=date_carloan
+left join "web_dashboard_db".directory_analytical_table on _date=date_directory
+left join "web_dashboard_db".eshop_analytical_table on _date=date_eshop
+left join "web_dashboard_db".forum_analytical_table on _date=date_forum
+left join "web_dashboard_db".resources_analytical_table on _date=date_resources
+left join "web_dashboard_db".rentcars_analytical_table on _date=date_rentcars
+left join "web_dashboard_db".sellcar_analytical_table on _date=date_sellcar
+
+-- order by 1

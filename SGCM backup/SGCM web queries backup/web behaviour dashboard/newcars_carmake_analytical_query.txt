@@ -1,0 +1,10 @@
+
+
+drop table if EXISTS "web_dashboard_db".newcars_carmake_analytical_table;
+create table "web_dashboard_db".newcars_carmake_analytical_table
+as 
+select carmake,count(distinct td_client_id) total_users from 
+(select td_client_id,td_url,td_referrer,REGEXP_EXTRACT(td_url, 'MOD=([^&]+)', 1) AS carmake 
+from "web_sgcm_bronze_db".web_sgcm_pageviews 
+where td_url like 'https://www.sgcarmart.com/new_cars/newcars_listing.php?MOD=%' and td_referrer like 'https://www.sgcarmart.com/new_cars/index.php%' and td_url not like '%&%' and td_url not like '%\%%' ESCAPE '\')
+group by 1

@@ -1,0 +1,47 @@
+-- select date_,count(td_client_id)as newusers from (
+-- select 
+-- td_client_id,date_,
+-- RANK() over(partition by td_client_id order by date_ ) as rnk
+-- from 
+-- (
+-- select distinct td_client_id,TD_TIME_FORMAT(time,'yyyy-MM-dd') as date_
+-- from "web_sgcm_bronze_db".web_sgcm_pageviews
+-- )
+-- )where rnk=1 group by 1 order by 1 
+
+drop table if exists "web_dashboard_db".sectionwise_newusers_analytical_table;
+create table "web_dashboard_db".sectionwise_newusers_analytical_table
+as
+with a as (select 
+ distinct TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd') as date_,
+td_client_id_pageview,
+case 
+when td_path_pageview like '%used_cars%' then 'used cars'
+when td_path_pageview like '%sell-car%' or td_path_pageview like '%owner/addpost_step1%' or td_path_pageview like '%owner/addpost_step2%' or td_path_pageview like '%/owner/addpost_confirm%' or td_path_pageview like '%/quotz/sell_by_bid.php%' or td_path_pageview like '%tools_tips/consignment.php%' then 'sell car'
+when td_path_pageview like '%/new_cars/%' then 'new cars'
+when td_path_pageview like '%car_loan%' then 'car loan'
+when td_path_pageview like '%articles%' then 'article'
+when td_path_pageview like '%car_rental%' then 'car rental'
+when td_path_pageview like '%forum%' then 'forum'
+when td_path_pageview like '%tools_tips%' then 'resources'
+
+when td_path_pageview like '%/directory/insurance.php%' or td_path_pageview like '%car-insurance%' then 'insurance'
+
+when td_path_pageview like '%directory%' or td_path_pageview like '%products%' then 'directory'
+
+when td_path_pageview like '%shop%' then 'e-shop'
+
+when td_path_pageview like '%sell-car%' or td_path_pageview like '%owner/addpost_step1%' or td_path_pageview like '%owner/addpost_step2%' or td_path_pageview like '%/owner/addpost_confirm%' or td_path_pageview like '%/quotz/sell_by_bid.php%' or td_path_pageview like '%tools_tips/consignment.php%' then 'sell car'
+
+when td_path_pageview = '/' or td_path_pageview like '%/main/index.php%' then 'main'
+else 'other'
+end as sections
+from "web_sgcm_silver_db".web_sgcm_pageviews)
+, b as(select 
+date_,
+td_client_id_pageview,
+RANK() over(partition by td_client_id_pageview order by date_ ) as rnk,
+sections
+from a)
+select date_ || ' 00:00:00' as date_,sections,count(distinct td_client_id_pageview) as new_users from b where rnk=1 group by 1,2 order by 1,2
+

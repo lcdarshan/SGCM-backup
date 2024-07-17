@@ -1,0 +1,9 @@
+drop table if exists "web_dashboard_db".day_wise_distinct_users;
+create table "web_dashboard_db".day_wise_distinct_users
+as
+select view_date,
+count(distinct td_client_id_pageview) as distinct_users,
+count(*) as total_events
+from "web_sgcm_silver_db".web_sgcm_pageviews
+group by 1
+

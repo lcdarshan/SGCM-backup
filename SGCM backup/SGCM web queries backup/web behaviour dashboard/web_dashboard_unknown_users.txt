@@ -1,0 +1,24 @@
+drop table if exists "web_dashboard_db".unknown_users;
+create table "web_dashboard_db".unknown_users
+as
+with total as 
+(select count(distinct td_client_id_pageview) as total_unknown_users from "web_sgcm_silver_db".web_sgcm_pageviews where email is null),
+a as
+(select TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd')|| ' 00:00:00' as _date,td_client_id_pageview,email,sgcm_session_id 
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where
+email is null),
+b as (
+select _date,count(distinct td_client_id_pageview) daywise_unknown_users,count(td_client_id_pageview) daywise_events,count(distinct sgcm_session_id) total_sessions from a group by 1
+)
+
+select 
+_date,
+(SELECT total_unknown_users FROM total) AS unknown_users_total,
+daywise_unknown_users,
+daywise_events,
+ROUND(daywise_events/(daywise_unknown_users/1.0),2) as events_per_user,
+total_sessions,
+ROUND(total_sessions/(daywise_unknown_users/1.0),2) as sessions_per_user,
+case when total_sessions=0 then 0 else ROUND(daywise_events/(total_sessions/1.0),2) end as events_per_session
+from b order by 1

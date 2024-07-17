@@ -1,0 +1,71 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_consign_form;
+insert into "web_sgcm_silver_db".web_consign_form
+-- create table "web_sgcm_silver_db".web_consign_form
+(
+td_global_id_consign,
+td_version_consign,
+td_client_id_consign,
+td_charset_consign,
+td_language_consign,
+td_color_consign,
+td_screen_consign,
+td_viewport_consign,
+td_title_consign,
+td_description_consign,
+td_url_consign,
+td_user_agent_consign,
+td_platform_consign,
+td_host_consign,
+td_path_consign,
+td_referrer_consign,
+td_ip_consign,
+td_browser_consign,
+td_browser_version_consign,
+td_os_consign,
+td_os_version_consign,
+name_consign,
+contact_consign,
+carplate_consign,
+username_consign,
+time_consign,
+email 
+)
+-- as 
+select
+td_global_id_consign,
+td_version_consign,
+td_client_id_consign,
+td_charset_consign,
+td_language_consign,
+td_color_consign,
+td_screen_consign,
+td_viewport_consign,
+td_title_consign,
+td_description_consign,
+td_url_consign,
+td_user_agent_consign,
+td_platform_consign,
+td_host_consign,
+td_path_consign,
+td_referrer_consign,
+td_ip_consign,
+td_browser_consign,
+td_browser_version_consign,
+td_os_consign,
+td_os_version_consign,
+name_consign,
+contact_consign,
+carplate_consign,
+username_consign,
+time_consign,
+
+tbl2.email 
+from
+(select * from (
+select *,row_number()over(partition by td_client_id_consign,carplate_consign order by time_consign desc ) as rnk from "web_sgcm_staging_db".web_consign_form)
+where rnk=1)
+left join (select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 
+on td_client_id_consign=tbl2.td_id
+where 
+time_consign <=(SELECT max(time_consign)-1 from "web_sgcm_staging_db".web_consign_form) and
+time_consign > (SELECT max(time_consign) from "web_sgcm_silver_db".web_consign_form)

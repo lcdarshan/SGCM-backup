@@ -1,0 +1,117 @@
+timezone: Asia/Kolkata
+ 
+schedule:
+  cron>: "30 23 * * *"
+
+_export:
+  td:
+    database: web_dashboard_db
+    engine: presto
+
+_error:
+  mail>: body.txt
+  subject: "[💀URGENT🆘] web_behaviour_dashboard Workflow failed!"
+  to: [darshan.lc@ada-asia.com,bharath.raju@ada-asia.com]
+
++main:
+  _parallel: false
+  +task1:
+    _parallel: true
+
+    +main_:
+      _parallel: false
+      +day_wise_distinct_users_events:
+        td_run>: web_dashboard_day_wise_distinct_users_events
+
+      +session:
+        td_run>: web_dashboard_session
+
+      +known_unknown_users:
+        _parallel: true
+        +known_users:
+          td_run>: web_dashboard_known_users
+        +unknown_users:
+          td_run>: web_dashboard_unknown_users
+
+      +total_users_events:
+        _parallel: false
+        +user_events:
+          td_run>: web_dashboard_user_events
+        +new_users:
+          td_run>: web_dashboard_total_users_numbers
+      +overall_session_knownusers:
+        td_run>: main_overall_session_knownusers_analytical_query
+    
+    +threemonths_daywise_users:
+      td_run>: web_dashboard_number_of_distinct_users_analytical_query
+
+    +newcars:
+      td_run>: web_dashboard_newcars_analytical_query
+
+    +newcar_carmakes:
+      td_run>: newcars_carmake_analytical_query
+    
+    +hour_wise_users:
+      td_run>: web_dashboard_hour_wise_users
+
+    +insurance:
+      td_run>: web_dashboard_insurance_analytical_query
+
+    +usedcars:
+      td_run>: web_dashboard_usedcars_analytical_query
+    
+    +usedcars_vehicletype:
+      td_run>: web_dashboard_usedcar_vehicletype_analytical_query
+
+    +usedcars_vehiclecat:
+      td_run>: web_dashboard_usedcar_categories_analytical_query
+
+    +articles:
+      td_run>: web_dashboard_articles_analytical_query
+    
+    +eshop:
+      td_run>: web_dashboard_eshop_analytical_query
+
+    +carloan:
+      td_run>: web_dashboard_carloans_analytical_query
+
+    +directory:
+      td_run>: web_dashboard_directory_analytical_query
+
+    +forum:
+      td_run>: web_dashboard_forum_analytical_query
+
+    +resources:
+      td_run>: web_dashboard_resources_analytical_query
+
+    +rentcars:
+      td_run>: web_dashboard_rentcars_analytical_query
+
+    +rentcars_preferences:
+      td_run>: rentcars_preferences_analytical_query
+    
+    +sellcars:
+      td_run>: web_dashboard_sellcar_analytical_query
+    
+    +sectionwise_newusers:
+      td_run>: section_wise_newusers_analytical_query
+
+    +four_months_data:
+      td_run>: fourmonths_data_for_web_dashboard
+    
+    +four_months_data_with_email:
+      td_run>: fourmonthsdata_email
+
+    +Previous_section_of_the_known_users:
+      td_run>: known_users_previous_section
+
+    +web_loggedin_audience_query:
+      td_run>: web_loggedin_audience_size_analytical_query
+
+  +task2:
+    _parallel: true
+    +EPV:
+      td_run>: web_dashboard_EPV
+
+  +dashboard_refresh:
+    call>: dashboard_refresh.dig

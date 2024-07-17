@@ -1,0 +1,12 @@
+drop table if EXISTS "web_dashboard_db".used_cars_vehiclecategories_analytical_table;
+create table "web_dashboard_db".used_cars_vehiclecategories_analytical_table
+as 
+WITH a AS
+(
+  SELECT distinct TD_TIME_FORMAT(time,'yyyy-MM-dd') || ' 00:00:00' as date_vehcat,td_client_id, click_text as veh_cat
+  FROM "web_sgcm_bronze_db".web_sgcm_linkclicks 
+  WHERE td_path LIKE '%/used_cars/index%' 
+  AND TRIM(click_text) IN ('BuySafe Cars','Sgcarmart Warranty Cars','PARF Cars','COE Cars','OPC Cars','Direct Owner Consignment','Direct Owner Sale','STA Evaluated Cars','Rare & Exotic Cars','Auction Vehicles','Almost New Cars','Low Mileage Cars')
+)
+
+select * from a

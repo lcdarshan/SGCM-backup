@@ -1,0 +1,22 @@
+-- DROP TABLE IF EXISTS "web_gold_db".web_master;
+INSERT INTO "web_gold_db".web_master (td_client_id)
+WITH a AS (
+  SELECT DISTINCT td_client_id_addpost as td_client FROM "web_sgcm_silver_db".web_addpost_step1 
+  UNION
+  SELECT DISTINCT td_client_id_consign FROM "web_sgcm_silver_db".web_consign_form
+  UNION
+  SELECT DISTINCT td_client_id_sellbybid FROM "web_sgcm_silver_db".web_sellbybid_form
+  UNION
+  SELECT DISTINCT td_client_id_freeval FROM "web_sgcm_silver_db".web_sellbybid_freeval_form
+  UNION
+  SELECT DISTINCT td_client_id_screxp FROM "web_sgcm_silver_db".web_sellbybid_scrapexport_form
+  UNION
+  SELECT DISTINCT td_client_id_freequote FROM "web_sgcm_silver_db".web_sellcar_freequote_form
+  UNION
+  SELECT DISTINCT td_client_id_linkclick FROM "web_sgcm_silver_db".web_sgcm_linkclicks
+  UNION
+  SELECT DISTINCT td_client_id_pageview FROM "web_sgcm_silver_db".web_sgcm_pageviews
+  UNION
+  SELECT DISTINCT td_client_id_insurance FROM "web_sgcm_silver_db".web_insurance_form
+)
+SELECT * FROM a WHERE td_client NOT IN (SELECT td_client_id FROM "web_gold_db".web_master);

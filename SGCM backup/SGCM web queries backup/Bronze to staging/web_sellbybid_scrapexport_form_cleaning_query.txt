@@ -1,0 +1,134 @@
+DROP TABLE IF EXISTS "web_sgcm_staging_db".web_sellbybid_scrapexport_form;
+CREATE TABLE "web_sgcm_staging_db".web_sellbybid_scrapexport_form
+(
+td_global_id_screxp,
+td_version_screxp,
+td_client_id_screxp,
+td_charset_screxp,
+td_language_screxp,
+td_color_screxp,
+td_screen_screxp,
+td_viewport_screxp,
+td_title_screxp,
+td_description_screxp,
+td_url_screxp,
+td_user_agent_screxp,
+td_platform_screxp,
+td_host_screxp,
+td_path_screxp,
+td_referrer_screxp,
+td_ip_screxp,
+td_browser_screxp,
+td_browser_version_screxp,
+td_os_screxp,
+td_os_version_screxp,
+name_screxp,
+contact_screxp,
+carplate_screxp,
+email_screxp,
+remarks_screxp,
+username_screxp,
+time_screxp
+)
+as
+select
+
+case when trim(td_global_id) ='' then null else
+trim(td_global_id) end as td_global_id_cleaned,
+
+case when trim(td_version) ='' then null else
+trim(td_version) end as td_version_cleaned,
+
+case when trim(td_client_id) ='' then null else
+trim(td_client_id) end as td_client_id_cleaned,
+
+case when trim(td_charset) ='' then null else
+trim(td_charset) end as td_charset_cleaned,
+
+case when trim(td_language) ='' then null else
+trim(td_language) end as td_language_cleaned,
+
+case when trim(td_color) ='' then null else
+trim(td_color) end as td_color_cleaned,
+
+case when trim(td_screen) ='' then null else
+trim(td_screen) end as td_screen_cleaned,
+
+case when trim(td_viewport) ='' then null else
+trim(td_viewport) end as td_viewport_cleaned,
+
+case when trim(td_title) ='' then null else
+trim(td_title) end as td_global_id_cleaned,
+
+case when trim(td_description) ='' then null else
+trim(td_description) end as td_description_cleaned,
+
+case when trim(td_url) ='' then null else
+trim(td_url) end as td_url_cleaned,
+
+case when trim(td_user_agent) ='' then null else
+trim(td_user_agent) end as td_user_agent_cleaned,
+
+case when trim(td_platform) ='' then null else
+trim(td_platform) end as td_platform_cleaned,
+
+case when trim(td_host) ='' then null else
+trim(td_host) end as td_host_cleaned,
+
+case when trim(td_path) ='' then null else
+trim(td_path) end as td_path_cleaned,
+
+case when trim(td_referrer) ='' then null else
+trim(td_referrer) end as td_referrer_cleaned,
+
+case when trim(td_ip) ='' then null else
+trim(td_ip) end as td_ip_cleaned,
+
+case when trim(td_browser) ='' then null else
+trim(td_browser) end as td_browser_cleaned,
+
+case when trim(td_browser_version) ='' then null else
+trim(td_browser_version) end as td_browser_version_cleaned,
+
+case when trim(td_os) ='' then null else
+trim(td_os) end as td_os_cleaned,
+
+case when trim(td_os_version) ='' then null else
+trim(td_os_version) end as td_os_version_cleaned,
+
+case when trim(name)='' or name='NaN' or name='null' then Null
+else trim(name)
+end
+as name,
+
+case when trim(contact)='' then null 
+else trim(contact) end as contact,
+
+case when trim(carplate)='' then null
+else UPPER(trim(carplate)) end as carplate,
+
+case
+when email = '' or email = ' ' then Null
+when
+element_at(split(lower(trim(email)),'@'),2) = 'gmail.com' and length(element_at(split(lower(trim(email)),'@'),1)) < 3 then null
+when length(trim(email)) < 4 then null
+when email not like '%@%' then null
+when REGEXP_LIKE(lower(email), '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$') = True
+then lower(trim(email))
+else null
+END AS email_contacts_cleaned,
+
+case when trim(remarks)='' then null
+else trim(remarks) end as remarks,
+
+case when trim(username)='' then null
+else trim(username) end as username,
+
+time AS sell_form_time
+
+from "web_sgcm_bronze_db".web_sellbybid_scrapexport_form where td_title != 'gtm-msr';
+
+
+
+
+

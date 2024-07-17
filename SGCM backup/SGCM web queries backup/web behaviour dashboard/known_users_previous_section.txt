@@ -1,0 +1,65 @@
+drop table if EXISTS "web_dashboard_db".loggedin_users_previous_section;
+create table "web_dashboard_db".loggedin_users_previous_section as
+with before_dec as
+(
+  select distinct td_client_id_pageview from "web_sgcm_silver_db".web_sgcm_pageviews where view_time_pageview<1702541124
+),
+
+after_dec as
+(
+  select view_time_pageview,td_client_id_pageview,td_url_pageview,td_path_pageview,useremail_e from "web_sgcm_silver_db".web_sgcm_pageviews where view_time_pageview>=1702541124 and td_client_id_pageview not in (select td_client_id_pageview from before_dec)
+)
+
+,after_dec_email as
+(
+  select * from after_dec where td_client_id_pageview in (select td_client_id_pageview from after_dec group by 1 having count(distinct useremail_e)>0)
+)
+
+,d as (
+select view_time_pageview,td_client_id_pageview,td_url_pageview,td_path_pageview,useremail_e,
+ROW_NUMBER() over(partition by td_client_id_pageview order by view_time_pageview desc) as rnk 
+from after_dec_email 
+where useremail_e is null and 
+(td_path_pageview like '%/used_cars/%' 
+or (td_path_pageview ='/' and td_url_pageview not like '%=success%') 
+or td_path_pageview like '%/articles%' 
+or td_path_pageview like '%new_cars%'
+or (td_path_pageview like '%/directory/%' or td_path_pageview like '%/products/%' and (td_path_pageview not like '%carplate_index%' and td_path_pageview not like '%carplate_eurospeed%' and td_path_pageview not like '%carplate_dealer%' and td_path_pageview not like '%insurance%' and td_path_pageview not like '%vehicle_evaluation%' and td_path_pageview not like '%vehicle_inspection%'))
+or (td_path_pageview = '/directory/insurance.php' or td_path_pageview like '/car-insurance')
+or (td_path_pageview like '%sell-car%' or td_path_pageview like '%/quotz/%' or td_path_pageview like '%/consignment.php%')
+or (td_path_pageview like '%/car_loan/%' and td_url_pageview like 'https%')
+or (td_path_pageview like '%/tools_tips%' or td_path_pageview like '%/resources/%')
+or td_path_pageview like '%/shop%'
+or (td_path_pageview like '%car_rental%' and td_path_pageview not like '%/articles/%')
+or (td_path_pageview like '%/forum' or td_path_pageview like '%/forum/%'))
+-- and td_path_pageview <> '/member/login' AND td_url_pageview NOT LIKE '%login=success%' AND td_url_pageview NOT LIKE '%register=success%' AND td_path_pageview <> '/member/registration' AND td_url_pageview LIKE '%https://www.%' and td_url_pageview NOT LIKE '%/member/registration/complete%' and td_url_pageview NOT LIKE '%/member/forgot-password%'
+)
+,e as
+(
+  select TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd') date_,td_client_id_pageview,td_url_pageview,td_path_pageview,useremail_e,rnk,
+  case 
+  when td_path_pageview like '%/used_cars/%' then 'Used cars'
+  when td_path_pageview ='/' then 'Main'
+  when td_path_pageview like '%/articles%' then 'Articles'
+  when td_path_pageview like '%new_cars%' then 'New cars'
+  when td_path_pageview like '%/directory/%' or td_path_pageview like '%/products/%' and (td_path_pageview not like '%carplate_index%' and td_path_pageview not like '%carplate_eurospeed%' and td_path_pageview not like '%carplate_dealer%' and td_path_pageview not like '%insurance%' and td_path_pageview not like '%vehicle_evaluation%' and td_path_pageview not like '%vehicle_inspection%') then 'Directory'
+  when td_path_pageview = '/directory/insurance.php' or td_path_pageview like '/car-insurance' then 'Insurance'
+  when td_path_pageview like '%sell-car%' or td_path_pageview like '%/quotz/%' or td_path_pageview like '%/consignment.php%' then 'Sell cars'
+  when td_path_pageview like '%/car_loan/%' and td_url_pageview like 'https%' then 'Car loan'
+  when td_path_pageview like '%/tools_tips%' or td_path_pageview like '%/resources/%' then 'Resources'
+  when td_path_pageview like '%/shop%' then 'E-shop'
+  when td_path_pageview like '%car_rental%' and td_path_pageview not like '%/articles/%' then 'Rent cars'
+  when td_path_pageview like '%/forum' or td_path_pageview like '%/forum/%' then 'Forum'
+  when td_path_pageview like '%/member/login%' or td_path_pageview like '%/member/registration%' then 'Login-Registration'
+  else 'Other'
+end as section_ 
+  from d where rnk=1
+)
+select * --date_,td_client_id_pageview,section_ 
+from e 
+-- where date_>=cast((date_trunc('day', CURRENT_DATE) - INTERVAL '119' DAY)as VARCHAR)
+where date_>=cast((date_trunc('month', CURRENT_DATE) - INTERVAL '3' MONTH)as VARCHAR)
+
+-- select * from d
+
+

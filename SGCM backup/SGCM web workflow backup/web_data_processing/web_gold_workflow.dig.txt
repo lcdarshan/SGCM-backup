@@ -1,0 +1,17 @@
+ 
+_export:
+  td:
+    database: web_gold_db
+    engine: presto
+ 
+ 
++gold:
+  _parallel: false
+  
+  +web_master:
+    td_run>: web_master_query
+
+  +web_attribute:
+    td_run>: web_attribute_query_1
+
+  

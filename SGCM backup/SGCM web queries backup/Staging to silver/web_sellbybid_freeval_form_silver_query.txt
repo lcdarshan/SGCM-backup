@@ -1,0 +1,76 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_sellbybid_freeval_form;
+-- CREATE TABLE "web_sgcm_silver_db".web_sellbybid_freeval_form
+insert into "web_sgcm_silver_db".web_sellbybid_freeval_form
+(
+td_global_id_freeval,
+td_version_freeval,
+td_client_id_freeval,
+td_charset_freeval,
+td_language_freeval,
+td_color_freeval,
+td_screen_freeval,
+td_viewport_freeval,
+td_title_freeval,
+td_description_freeval,
+td_url_freeval,
+td_user_agent_freeval,
+td_platform_freeval,
+td_host_freeval,
+td_path_freeval,
+td_referrer_freeval,
+td_ip_freeval,
+td_browser_freeval,
+td_browser_version_freeval,
+td_os_freeval,
+td_os_version_freeval,
+name_freeval,
+contact_freeval,
+carplate_freeval,
+email_freeval,
+username_freeval,
+time_freeval,
+email
+)
+-- AS
+select
+
+td_global_id_freeval,
+td_version_freeval,
+td_client_id_freeval,
+td_charset_freeval,
+td_language_freeval,
+td_color_freeval,
+td_screen_freeval,
+td_viewport_freeval,
+td_title_freeval,
+td_description_freeval,
+td_url_freeval,
+td_user_agent_freeval,
+td_platform_freeval,
+td_host_freeval,
+td_path_freeval,
+td_referrer_freeval,
+td_ip_freeval,
+td_browser_freeval,
+td_browser_version_freeval,
+td_os_freeval,
+td_os_version_freeval,
+name_freeval,
+contact_freeval,
+carplate_freeval,
+email_freeval,
+username_freeval,
+cast(to_unixtime(cast(time_freeval  as timestamp)) as bigint) as  time_freeval,
+tbl2.email
+from
+(select * from (
+select *,row_number()over(partition by td_client_id_freeval,carplate_freeval order by time_freeval desc ) as rnk from "web_sgcm_staging_db".web_sellbybid_freeval_form)tbl1
+left join "gold_db".id_email_mapping tbl2
+on tbl1.td_client_id_freeval=tbl2.td_client_id
+where rnk=1)
+left join (select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 
+on td_client_id_freeval=tbl2.td_id
+where 
+time_freeval<(select max(time_freeval) from "web_sgcm_staging_db".web_sellbybid_freeval_form) 
+and 
+time_freeval> (select MAX(SUBSTRING(cast(FROM_UNIXTIME(time_freeval)as varchar),1,19)) from "web_sgcm_silver_db".web_sellbybid_freeval_form)

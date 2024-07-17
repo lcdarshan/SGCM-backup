@@ -1,0 +1,8 @@
+
+
++initialize_master_segment:
+  http>: "https://api-cdp.treasuredata.com/audiences/509190/run"
+  method: POST
+  headers:
+    - authorization: "TD1 12404/c389641542964cdc042eac58638d7ad035e532a1"
+  retry: true

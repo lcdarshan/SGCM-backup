@@ -1,0 +1,397 @@
+DROP TABLE IF EXISTS "web_gold_db".web_attributes;
+CREATE TABLE "web_gold_db".web_attributes 
+(
+td_client_id,
+email,
+intent_to_sell_car,
+intent_to_renew_insurance,
+intent_to_get_car_loan,
+insurance_form_abandonment,
+not_registered,
+not_loggedin,
+-- page_view_usecase_2,
+warranty_usecase,
+new_car_visits,
+used_cars_visits,
+car_loan_visits,
+post_add_visits,
+sell_by_bid_visits,
+consignment_visits,
+directory_visits,
+insurance_visits,
+resources_visits,
+free_valuation_visits,
+scrapexport_visits,
+coe_renewal_visits,
+car_warrenty_visits,
+no_car_sellbybid,
+no_car_addpost,
+no_car_consign,
+no_car_freequote,
+no_car_screxp,
+no_car_freeval,
+no_car_insurance
+)
+as
+select 
+td_client_id,
+email_map as email,
+COALESCE(intent_to_sell_car, 0) AS intent_to_sell_car,
+COALESCE(intent_to_renew_insurance, 0) AS intent_to_renew_insurance,
+COALESCE(intent_to_get_car_loan, 0) AS intent_to_get_car_loan,
+COALESCE(wp_usecase_2, 0) AS wp_usecase_2,
+COALESCE(not_registered, 0) AS not_registered,
+COALESCE(not_loggedin, 0) AS not_loggedin,
+-- COALESCE(page_view_usecase_2, 0) AS page_view_usecase_2,
+COALESCE(warranty_usecase, 0) AS warranty_usecase,                                                        
+COALESCE(new_car_visits, 0) AS new_car_visits,
+COALESCE(used_cars_visits, 0) AS used_cars_visits,
+COALESCE(car_loan_visits, 0) AS car_loan_visits,
+COALESCE(post_add_visits, 0) AS post_add_visits,
+COALESCE(sell_by_bid_visits, 0) AS sell_by_bid_visits,
+COALESCE(consignment_visits, 0) AS consignment_visits,
+COALESCE(directory_visits, 0) AS directory_visits,
+COALESCE(insurance_visits, 0) AS insurance_visits,
+COALESCE(resources_visits, 0) AS resources_visits,
+COALESCE(free_valuation_visits, 0) AS free_valuation_visits,
+COALESCE(scrapexport_visits, 0) AS scrapexport_visits,
+COALESCE(coe_renewal_visits, 0) AS coe_renewal_visits,
+COALESCE(car_warrenty_visits, 0) AS car_warrenty_visits,
+COALESCE(no_car_sellbybid, 0) AS no_car_sellbybid,
+COALESCE(no_car_addpost, 0) AS no_car_addpost,
+COALESCE(no_car_consign, 0) AS no_car_consign,
+COALESCE(no_car_freequote, 0) AS no_car_freequote,
+COALESCE(no_car_screxp, 0) AS no_car_screxp,
+COALESCE(no_car_freeval, 0) AS no_car_freeval,
+COALESCE(no_car_insurance, 0) AS no_car_insurance
+from 
+"web_gold_db".web_master
+left join
+----------------------------------------------email
+(select td_client_id as td_map,email as email_map from "gold_db".id_email_mapping ) on td_client_id=td_map
+LEFT JOIN
+----------------------------------------------intent_to_sell_car
+
+(select td_client_id_pageview,count(td_url_pageview) as intent_to_sell_car from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview='https://www.sgcarmart.com/sell-car' or td_url_pageview='https://www.sgcarmart.com/articles/listing/advice/car-selling' group by 1) t1
+on td_client_id= t1.td_client_id_pageview
+left JOIN
+-------------------------------------------- intent_to_renew_insurance
+
+(select td_client_id_pageview,count(td_url_pageview) as intent_to_renew_insurance from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview='https://www.sgcarmart.com/directory/insurance.php' OR td_url_pageview like 'https://www.sgcarmart.com/car-insurance%'
+group by td_client_id_pageview
+) t2
+on td_client_id= t2.td_client_id_pageview
+left join 
+
+------------------------------------------------intent to get car loan
+(select td_client_id_pageview,count(td_url_pageview) as intent_to_get_car_loan from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview='https://www.sgcarmart.com/car_loan/index.php'
+group by td_client_id_pageview
+) t22
+on td_client_id= t22.td_client_id_pageview
+left join  
+------------------------------------------------insurance_form_abandonment
+
+(with a as
+(select td_client_id_pageview,count(td_url_pageview) as page_visit_counts from "web_sgcm_silver_db".web_sgcm_pageviews
+ where td_url_pageview like 'https://www.sgcarmart.com/used_cars/info_insurance.php%' or 
+td_url_pageview in 
+('https://www.sgcarmart.com/articles/advice/essential-items-to-bring-with-you-on-your-very-first-road-trip-31036',
+'https://www.sgcarmart.com/articles/advice/what-should-you-do-if-someone-steals-your-car-overseas-31030',
+'https://www.sgcarmart.com/articles/advice/great-eastern-car-insurance-authorised-repair-claims-workshops-in-singapore-31003',
+'https://www.sgcarmart.com/articles/features/busy-drivers-this-car-insurance-plan-is-made-for-you-33483',
+'https://www.sgcarmart.com/articles/news/purchasing-car-insurance-now-made-easier-with-sgcarmart-and-eazy-29707',
+'https://www.sgcarmart.com/articles/features/just-upgraded-your-car-heres-why-singlife-car-insurance-is-the-right-coverage-for-you-1947') 
+group by 1 having count(*) >=1),
+b as(
+select tbl1.td_client_id_pageview,tbl2.td_client_id_insurance from 
+(select distinct td_client_id_pageview from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview in ('https://www.sgcarmart.com/directory/insurance.php','https://www.sgcarmart.com/directory/insurance.php#ins_form_main'))tbl1
+left join
+(select td_client_id_insurance from "web_sgcm_silver_db".web_insurance_form) tbl2
+on tbl1.td_client_id_pageview=tbl2.td_client_id_insurance
+where tbl2.td_client_id_insurance is null
+),
+c as(select td_client_id_pageview as td_client_id,1 as wp_usecase_2  from b
+union
+select td_client_id_pageview,1 from a)
+select td_client_id as td_client_id_insurance,wp_usecase_2 from c) usecase_2
+on td_client_id=usecase_2.td_client_id_insurance
+left join
+------------------------------------------------not registered
+ (   with a as(SELECT
+      tbl1.td_client_id_pageview,
+      tbl1.reg_pv,
+      tbl2.success_pages
+    FROM
+      (
+        SELECT 
+          td_client_id_pageview,
+          td_url_pageview AS reg_pv
+        FROM
+        (select td_client_id_pageview,td_url_pageview,row_number()over(partition by td_client_id_pageview order by td_url_pageview) as rnk from 
+          "web_sgcm_silver_db".web_sgcm_pageviews
+        WHERE
+          td_url_pageview = 'https://www.sgcarmart.com/member/registration' or td_url_pageview='https://www.sgcarmart.com/member/registration?key=vehicle_dashboard'
+        )t1
+        where rnk=1
+      ) tbl1
+    LEFT JOIN
+      (
+        SELECT 
+          td_client_id_pageview,
+          td_url_pageview AS success_pages
+        FROM
+        ( select td_client_id_pageview,td_url_pageview, ROW_NUMBER()over(partition by td_client_id_pageview order by td_url_pageview )      as rnk from 
+          "web_sgcm_silver_db".web_sgcm_pageviews
+        WHERE
+          td_url_pageview IN (
+            'https://www.sgcarmart.com/main/index.php?register=success',
+            'https://www.sgcarmart.com/member/dashboard/vehicle_dashboard.php?register=success'
+          )
+        ) where rnk=1
+      ) tbl2
+    ON tbl1.td_client_id_pageview = tbl2.td_client_id_pageview)
+   SELECT
+  td_client_id_pageview,
+  CASE WHEN success_pages IS NULL THEN 1 ELSE 0 END AS not_registered
+FROM a) reg_tbl
+on td_client_id=reg_tbl.td_client_id_pageview
+left join
+------------------------------------------------not logged in
+
+(with b as 
+(select tbl1.td_client_id_pageview,tbl1.td_url_pageview,tbl2.success_pages from
+(select td_client_id_pageview , td_url_pageview from 
+(select td_client_id_pageview,td_url_pageview,row_number() over(PARTITION by td_client_id_pageview order by td_url_pageview ) as rnk from  "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview ='https://www.sgcarmart.com/member/login' or td_url_pageview='https://www.sgcarmart.com/member/login?key=vehicle_dashboard' )t1
+ WHERE rnk=1 ) tbl1
+left join 
+(select td_client_id_pageview,td_url_pageview as success_pages  from
+(select td_client_id_pageview,td_url_pageview, ROW_NUMBER() over(PARTITION by td_client_id_pageview order by td_url_pageview ) as rnk from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview in ('https://www.sgcarmart.com/main/index.php?login=success','https://www.sgcarmart.com/member/dashboard/vehicle_dashboard.php?login=success') ) where rnk=1 ) tbl2
+on tbl1.td_client_id_pageview=tbl2.td_client_id_pageview)
+select td_client_id_pageview,case when success_pages is null then 1 else 0 end as not_loggedin from b) log_tbl
+on td_client_id=log_tbl.td_client_id_pageview
+left join
+
+------------------------------------------------usecase_2
+-- (
+-- WITH a as 
+-- (select td_client_id_pageview,row_number() over(partition by td_client_id_pageview order by view_time_pageview desc ) as rnk
+-- from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview='https://www.sgcarmart.com/main/index.php?register=success' or td_url_pageview='https://www.sgcarmart.com/main/index.php?login=success' )
+-- select td_client_id_pageview,rnk as page_view_usecase_2 from a where rnk=1
+-- ) t3
+-- on td_client_id= t3.td_client_id_pageview
+-- left join
+---------------------------------------------------- warranty usecase
+(with a as
+(select distinct td_client_id_pageview from "web_sgcm_silver_db".web_sgcm_pageviews where (trim(td_url_pageview) like '%https://www.sgcarmart.com/used_cars%'
+  or trim(td_url_pageview) like '%https://www.sgcarmart.com/directory%' or trim(td_url_pageview) like '%https://www.sgcarmart.com/directory/insurance.php%' or trim(td_url_pageview) like '%https://www.sgcarmart.com/car-insurance%' or trim(td_url_pageview) like '%https://www.sgcarmart.com/shop%' or 
+  trim(td_url_pageview) like '%https://www.sgcarmart.com/car-insurance%' or trim(td_url_pageview) like '%https://www.sgcarmart.com/articles%' or
+  trim(td_url_pageview) like '%https://www.sgcarmart.com/tools_tips%' or trim(td_url_pageview) like '%https://www.sgcarmart.com/resources%') and 
+  DATE_PARSE(view_date, '%Y-%m-%d %H:%i:%s') >= CURRENT_TIMESTAMP - INTERVAL '3' MONTH)
+  select *, 1 as warranty_usecase from a
+) warranty
+on td_client_id= warranty.td_client_id_pageview
+left join 
+
+---------------------------------------------------- visited new cars
+(
+WITH a as 
+(select td_client_id_pageview, count(td_url_pageview) as new_car_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/new_cars/%'
+group by 1)
+select td_client_id_pageview,new_car_visits from a
+) t4
+on td_client_id= t4.td_client_id_pageview
+left join
+-------------------------------------------------------- visited used cars
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as used_cars_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/used_cars/%' 
+group by 1
+)
+select td_client_id_pageview,used_cars_visits from a
+) t5
+on td_client_id= t5.td_client_id_pageview
+left join
+------------------------------------------------------------ visited car loan
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as car_loan_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/car_loan/%' 
+group by 1
+)
+select td_client_id_pageview,car_loan_visits from a 
+)t6
+on td_client_id= t6.td_client_id_pageview
+left join
+-------------------------------------------------------------- visited post_add
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as post_add_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/sell-car/post-an-ad%'
+group by 1
+)
+select td_client_id_pageview,post_add_visits from a
+)t7
+on td_client_id= t7.td_client_id_pageview
+left join
+
+--------------------------------------------------------------- visited sell by bid
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as sell_by_bid_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/quotz/sell_by_bid.php?type=sbbid%' 
+group by 1
+)
+select td_client_id_pageview,sell_by_bid_visits from a
+) t8
+on td_client_id= t8.td_client_id_pageview
+left join
+
+---------------------------------------------------------------- visited consignment
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as consignment_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/tools_tips/consignment.php%'
+group by 1
+)
+select td_client_id_pageview,consignment_visits from a
+)t9
+on td_client_id= t9.td_client_id_pageview
+left join
+
+------------------------------------------------------------------ visited directory 
+
+(WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as directory_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/directory/%' 
+group by 1
+)
+select td_client_id_pageview,directory_visits from a) t10
+on td_client_id= t10.td_client_id_pageview
+left join
+
+-------------------------------------------------------------------- visited insurance
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as insurance_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/directory/insurance.php%' OR td_url_pageview like 'https://www.sgcarmart.com/car-insurance%'
+group by 1
+)
+select td_client_id_pageview,insurance_visits from a
+) t11
+on td_client_id= t11.td_client_id_pageview
+left join
+--------------------------------------------------------------------- visited resources 
+(
+WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as resources_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/tools_tips/index.php%'
+group by 1
+)
+select td_client_id_pageview,resources_visits from a
+)t12
+on td_client_id= t12.td_client_id_pageview
+left join
+---------------------------------------------------------------------- visited free valuation 
+
+(WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as free_valuation_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/quotz/free_valuation.php?type=fv%'
+group by 1
+)
+select td_client_id_pageview,free_valuation_visits from a
+)t13
+on td_client_id= t13.td_client_id_pageview
+left join
+
+---------------------------------------------------------------------- visited scrap_export 
+
+(WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as scrapexport_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/quotz/scrap_export.php?type=se%'
+group by 1
+)
+select td_client_id_pageview,scrapexport_visits from a
+)t14
+on td_client_id= t14.td_client_id_pageview
+left join
+------------------------------------------------------------------------- visited coe_renewal_loan
+
+(WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as coe_renewal_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://connect.sgcarmart.com/coe-renewal.php%'
+group by 1
+)
+select td_client_id_pageview,coe_renewal_visits from a
+)t15
+on td_client_id= t15.td_client_id_pageview
+left join
+--------------------------------------------------------------------------- visited car_warranty 
+
+(WITH a as 
+(select td_client_id_pageview,count(td_url_pageview) as car_warrenty_visits
+from "web_sgcm_silver_db".web_sgcm_pageviews where td_url_pageview like 'https://www.sgcarmart.com/warranty/index.php%'
+group by 1
+)
+select td_client_id_pageview,car_warrenty_visits from a
+)t16
+on td_client_id= t16.td_client_id_pageview
+
+---------------------------------------------------------------------------------------car_count
+LEFT JOIN 
+(
+    SELECT td_client_id_sellbybid, COUNT(carplate_sellbybid) AS no_car_sellbybid
+    FROM "web_sgcm_silver_db".web_sellbybid_form
+    GROUP BY 1
+) sellbybid_count
+ON td_client_id = sellbybid_count.td_client_id_sellbybid
+
+LEFT JOIN 
+(
+    SELECT td_client_id_addpost, COUNT(carplate_addpost) AS no_car_addpost
+    FROM "web_sgcm_silver_db".web_addpost_step1
+    GROUP BY td_client_id_addpost
+) addpost_count
+ON td_client_id = addpost_count.td_client_id_addpost
+
+LEFT JOIN 
+(
+    SELECT td_client_id_consign, COUNT(carplate_consign) AS no_car_consign
+    FROM "web_sgcm_silver_db".web_consign_form
+    GROUP BY td_client_id_consign
+) consign_count
+ON td_client_id = consign_count.td_client_id_consign
+
+LEFT JOIN 
+(
+    SELECT td_client_id_freequote, COUNT(carplate_freequote) AS no_car_freequote
+    FROM "web_sgcm_silver_db".web_sellcar_freequote_form
+    GROUP BY 1
+) freequote_count
+ON td_client_id = freequote_count.td_client_id_freequote
+
+LEFT JOIN 
+(
+    SELECT td_client_id_screxp, COUNT(carplate_screxp) AS no_car_screxp
+    FROM "web_sgcm_silver_db".web_sellbybid_scrapexport_form
+    GROUP BY td_client_id_screxp
+) screxp_count
+ON td_client_id = screxp_count.td_client_id_screxp
+
+LEFT JOIN 
+(
+    SELECT td_client_id_freeval, COUNT(carplate_freeval) AS no_car_freeval
+    FROM "web_sgcm_silver_db".web_sellbybid_freeval_form
+    GROUP BY td_client_id_freeval
+) freeval_count
+ON td_client_id = freeval_count.td_client_id_freeval
+
+LEFT JOIN 
+(
+    SELECT td_client_id_insurance, COUNT(carplate_insurance) AS no_car_insurance
+    FROM "web_sgcm_silver_db".web_insurance_form
+    GROUP BY 1
+) insurance_count
+ON td_client_id = insurance_count.td_client_id_insurance;
+

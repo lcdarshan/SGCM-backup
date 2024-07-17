@@ -1,0 +1,169 @@
+DROP TABLE IF EXISTS "web_sgcm_staging_db".web_addpost_step1;
+CREATE TABLE "web_sgcm_staging_db".web_addpost_step1
+(
+td_global_id_addpost,
+td_version_addpost,
+td_client_id_addpost,
+td_charset_addpost,
+td_language_addpost,
+td_color_addpost,
+td_screen_addpost,
+td_viewport_addpost,
+td_title_addpost,
+td_description_addpost,
+td_url_addpost,
+td_user_agent_addpost,
+td_platform_addpost,
+td_host_addpost,
+td_path_addpost,
+td_referrer_addpost,
+td_ip_addpost,
+td_browser_addpost,
+td_browser_version_addpost,
+td_os_addpost,
+td_os_version_addpost,
+name_addpost,
+contact_addpost,
+email_addpost,
+carplate_addpost,
+price_addpost,
+milage_addpost,
+pref_area_addpost,
+features_addpost,
+accessories_addpost,
+description_addpost,
+title_addpost,
+description_2_addpost,
+username_addpost,
+emai_chk_addpost,
+date_of_insertion_addpost,
+concierge_check_addpost,
+time_addpost
+)
+as
+select
+
+case when trim(td_global_id) ='' then null else
+trim(td_global_id) end as td_global_id_cleaned,
+
+case when trim(td_version) ='' then null else
+trim(td_version) end as td_version_cleaned,
+
+case when trim(td_client_id) ='' then null else
+trim(td_client_id) end as td_client_id_cleaned,
+
+case when trim(td_charset) ='' then null else
+trim(td_charset) end as td_charset_cleaned,
+
+case when trim(td_language) ='' then null else
+trim(td_language) end as td_language_cleaned,
+
+case when trim(td_color) ='' then null else
+trim(td_color) end as td_color_cleaned,
+
+case when trim(td_screen) ='' then null else
+trim(td_screen) end as td_screen_cleaned,
+
+case when trim(td_viewport) ='' then null else
+trim(td_viewport) end as td_viewport_cleaned,
+
+case when trim(td_title) ='' then null else
+trim(td_title) end as td_global_id_cleaned,
+
+case when trim(td_description) ='' then null else
+trim(td_description) end as td_description_cleaned,
+
+case when trim(td_url) ='' then null else
+trim(td_url) end as td_url_cleaned,
+
+case when trim(td_user_agent) ='' then null else
+trim(td_user_agent) end as td_user_agent_cleaned,
+
+case when trim(td_platform) ='' then null else
+trim(td_platform) end as td_platform_cleaned,
+
+case when trim(td_host) ='' then null else
+trim(td_host) end as td_host_cleaned,
+
+case when trim(td_path) ='' then null else
+trim(td_path) end as td_path_cleaned,
+
+case when trim(td_referrer) ='' then null else
+trim(td_referrer) end as td_referrer_cleaned,
+
+case when trim(td_ip) ='' then null else
+trim(td_ip) end as td_ip_cleaned,
+
+case when trim(td_browser) ='' then null else
+trim(td_browser) end as td_browser_cleaned,
+
+case when trim(td_browser_version) ='' then null else
+trim(td_browser_version) end as td_browser_version_cleaned,
+
+case when trim(td_os) ='' then null else
+trim(td_os) end as td_os_cleaned,
+
+case when trim(td_os_version) ='' then null else
+trim(td_os_version) end as td_os_version_cleaned,
+
+case when trim(name)='' or name='NaN' or name='null' then Null
+else trim(name)
+end
+as name,
+
+case when trim(contact)='' then null 
+else trim(contact) end as contact,
+
+case
+when email = '' or email = ' ' then Null
+when
+element_at(split(lower(trim(email)),'@'),2) = 'gmail.com' and length(element_at(split(lower(trim(email)),'@'),1)) < 3 then null
+when length(trim(email)) < 4 then null
+when email not like '%@%' then null
+when REGEXP_LIKE(lower(email), '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$') = True
+then lower(trim(email))
+else null
+END AS email_contacts_cleaned,
+
+case when trim(carplate)='' then null
+else UPPER(trim(carplate)) end as carplate,
+
+case when trim(price)='' then null 
+else trim(price) end as price,
+
+case when trim(milage)='' then null 
+else trim(milage) end as milage,
+
+case when trim(pref_area)='' then null 
+else trim(pref_area) end as pref_area,
+
+case when trim(features)='' then null 
+else trim(features) end as features,
+
+case when trim(accessories)='' then null 
+else trim(accessories) end as accessories,
+
+case when trim(description)='' then null 
+else trim(description) end as description,
+
+case when trim(title)='' or trim(title) ='Enter important information here, such as year reg, model name, price.' then null 
+else trim(title) end as title,
+
+case when trim(description_2)='' or trim(description_2) ='Enter your vehicle selling points here.' then null 
+else trim(description_2) end as description_2,
+
+case when trim(username)='' then null
+else trim(username) end as username,
+
+case when trim(emai_chk)='' then null
+else trim(emai_chk) end as emai_chk,
+
+case when trim(date_of_insertion)='' then null
+else trim(date_of_insertion) end as date_of_insertion,
+
+case when trim(concierge_check)='' then null
+else trim(concierge_check) end as concierge_check,
+
+time as time_
+
+from "web_sgcm_bronze_db".web_addpost_step1  where td_title != 'gtm-msr';

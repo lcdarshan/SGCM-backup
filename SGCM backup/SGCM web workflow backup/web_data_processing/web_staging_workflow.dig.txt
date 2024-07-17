@@ -1,0 +1,39 @@
+# timezone: Asia/Singapore
+ 
+# schedule:
+  # daily>: 10:30:00
+ 
+_export:
+  td:
+    database: web_sgcm_staging_db
+    engine: presto
+ 
+ 
++staging:
+  _parallel: true
+  +adpost:
+    td_run>: web_addpost_step1_cleaning_query
+
+  +consign:
+    td_run>: web_consign_form_cleaning_query
+
+  +sbbf1:
+    td_run>: web_sellbybid_form_step1_cleaning_query
+
+  +sbbf2:
+    td_run>: web_sellbybid_form_step2_cleaning_query
+
+  +freeval:
+    td_run>: web_sellbybid_freeval_form_cleaning_query
+
+  +scrape:
+    td_run>: web_sellbybid_scrapexport_form_cleaning_query
+
+  +freef1:
+    td_run>: web_sellcar_freequoteform_step1_cleaning_query
+
+  +freef2:
+    td_run>: web_sellcar_freequoteform_step2_cleaning_query
+
+  +insurance:
+    td_run>: web_insurance_form_cleaning_query

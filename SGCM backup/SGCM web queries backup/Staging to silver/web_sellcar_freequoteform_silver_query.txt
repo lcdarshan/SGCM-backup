@@ -1,0 +1,74 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_sellcar_freequote_form;
+insert into "web_sgcm_silver_db".web_sellcar_freequote_form
+-- create table "web_sgcm_silver_db".web_sellcar_freequote_form
+(
+td_global_id_freequote,
+td_version_freequote,
+td_client_id_freequote,
+td_charset_freequote,
+td_language_freequote,
+td_color_freequote,
+td_screen_freequote,
+td_viewport_freequote,
+td_title_freequote,
+td_description_freequote,
+td_url_freequote,
+td_user_agent_freequote,
+td_platform_freequote,
+td_host_freequote,
+td_path_freequote,
+td_referrer_freequote,
+td_ip_freequote,
+td_browser_freequote,
+td_browser_version_freequote,
+td_os_freequote,
+td_os_version_freequote,
+carplate_freequote,
+contact_freequote,
+email_freequote,
+time_freequote,
+email
+)
+-- as 
+select 
+td_global_id_freequote1,
+td_version_freequote1,
+td_client_id_freequote1,
+td_charset_freequote1,
+td_language_freequote1,
+td_color_freequote1,
+td_screen_freequote1,
+td_viewport_freequote1,
+td_title_freequote1,
+td_description_freequote1,
+td_url_freequote1,
+td_user_agent_freequote1,
+td_platform_freequote_freequote11,
+td_host_freequote1,
+td_path_freequote1,
+td_referrer_freequote1,
+td_ip_freequote1,
+td_browser_freequote1,
+td_browser_version_freequote1,
+td_os_freequote1,
+td_os_version_freequote1,
+carplate_freequote1,
+contact_freequote1,
+email_freequote2,
+time_freequote1 as time_freequote1,
+tbl2.email
+from
+(select * from (select *,ROW_NUMBER() over(PARTITION by td_client_id_freequote1,carplate_freequote1  order by time_freequote1 desc) as rn
+from "web_sgcm_staging_db".web_sellcar_freequoteform_step1) where rn=1) tbl1
+left join
+(
+select * from (select *,ROW_NUMBER() over(PARTITION by td_client_id_freequote2,email_freequote2 order by time_freequote2 desc) as rnk from "web_sgcm_staging_db".web_sellcar_freequoteform_step2 where email_freequote2 is not null )where rnk=1
+) on td_client_id_freequote1=td_client_id_freequote2
+left join 
+(select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 
+on td_client_id_freequote1=tbl2.td_id
+where 
+time_freequote1<=(select max(time_freequote1)-1 from "web_sgcm_staging_db".web_sellcar_freequoteform_step1) 
+and 
+time_freequote1>(select max(time_freequote) from "web_sgcm_silver_db".web_sellcar_freequote_form)
+

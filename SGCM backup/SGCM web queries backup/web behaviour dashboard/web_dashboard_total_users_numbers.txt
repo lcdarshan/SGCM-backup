@@ -1,0 +1,12 @@
+
+drop table if EXISTS "web_dashboard_db".total_users_numbers;
+create table "web_dashboard_db".total_users_numbers
+as 
+select _date,users total_users,events total_events,
+lag(users) over(order by _date) as lag_dist,
+users-lag(users) over(order by _date) new_users
+from "web_dashboard_db".user_event
+
+
+
+

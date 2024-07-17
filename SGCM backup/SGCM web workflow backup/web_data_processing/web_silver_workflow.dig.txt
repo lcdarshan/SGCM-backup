@@ -1,0 +1,36 @@
+ 
+_export:
+  td:
+    database: web_sgcm_silver_db
+    engine: hive
+ 
+ 
++silver:
+  _parallel: true
+  +link:
+    td_run>: webdata_linkclick_silver_query
+
+  +page:
+    td_run>: webdata_pageviews_silver_query
+
+  +adpost:
+    td_run>: web_addpost_step1_silver_query
+
+  +consign:
+    td_run>: web_consign_form_silver_query
+
+  +sellbybid:
+    td_run>: web_sellbybid_form_silver_query
+
+  +freeval:
+    td_run>: web_sellbybid_freeval_form_silver_query
+
+  +scrape:
+    td_run>: web_sellbybid_scrapexport_form_silver_query
+
+  +freequote:
+    td_run>: web_sellcar_freequoteform_silver_query
+
+  +insurance:
+    td_run>: web_insurance_form_silver_query
+

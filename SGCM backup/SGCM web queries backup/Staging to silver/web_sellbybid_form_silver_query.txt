@@ -1,0 +1,77 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_sellbybid_form;
+insert into "web_sgcm_silver_db".web_sellbybid_form
+-- create table "web_sgcm_silver_db".web_sellbybid_form
+(
+td_global_id_sellbybid,
+td_version_sellbybid,
+td_client_id_sellbybid,
+td_charset_sellbybid,
+td_language_sellbybid,
+td_color_sellbybid,
+td_screen_sellbybid,
+td_viewport_sellbybid,
+td_title_sellbybid,
+td_description_sellbybid,
+td_url_sellbybid,
+td_user_agent_sellbybid,
+td_platform_sellbybid,
+td_host_sellbybid,
+td_path_sellbybid,
+td_referrer_sellbybid,
+td_ip_sellbybid,
+td_browser_sellbybid,
+td_browser_version_sellbybid,
+td_os_sellbybid,
+td_os_version_sellbybid,
+name_sellbybid,
+contact_sellbybid,
+prefered_location_sellbybid,
+carplate_sellbybid,
+email_sellbybid,
+remarks_sellbybid,
+prefered_date_time_sellbybid,
+time_sellbybid,
+email 
+)
+-- as
+select 
+td_global_id_sellbybid_f1,
+td_version_sellbybid_f1,
+td_client_id_sellbybid_f1,
+td_charset_sellbybid_f1,
+td_language_sellbybid_f1,
+td_color_sellbybid_f1,
+td_screen_sellbybid_f1,
+td_viewport_sellbybid_f1,
+td_title_sellbybid_f1,
+td_description_sellbybid_f1,
+td_url_sellbybid_f1,
+td_user_agent_sellbybid_f1,
+td_platform_sellbybid_f1,
+td_host_sellbybid_f1,
+td_path_sellbybid_f1,
+td_referrer_sellbybid_f1,
+td_ip_sellbybid_f1,
+td_browser_sellbybid_f1,
+td_browser_version_sellbybid_f1,
+td_os_sellbybid_f1,
+td_os_version_sellbybid_f1,
+name_sellbybid_f1,
+contact_sellbybid_f1,
+prefered_location_sellbybid_f1,
+carplate_sellbybid_f1,
+email_sellbybid_f2,
+remarks_sellbybid_f2,
+cast(to_unixtime(cast(prefered_date_time_sellbybid_f2  as timestamp)) as bigint) as prefered_date_time_sellbybid_f2,
+time_sellbybid_f1 as time_sellbybid_f1,
+tbl.email 
+from (select *,ROW_NUMBER() over(partition by td_client_id_sellbybid_f1,carplate_sellbybid_f1 order by time_sellbybid_f1 desc) as rnk from "web_sgcm_staging_db".web_sellbybid_form_step1 where carplate_sellbybid_f1 is not null ) frm1
+left join (select * from (select *,ROW_NUMBER() over(partition by td_client_id_sellbybid_f2,carplate_sellbybid_f2 order by time_sellbybid_f2) as rn from "web_sgcm_staging_db".web_sellbybid_form_step2) where rn=1) frm2 
+on carplate_sellbybid_f1=carplate_sellbybid_f2 and td_client_id_sellbybid_f1=td_client_id_sellbybid_f2
+left join (select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl
+on td_client_id_sellbybid_f1=tbl.td_id
+where rnk=1 
+and
+time_sellbybid_f1<(select max(time_sellbybid_f1)-1 from "web_sgcm_staging_db".web_sellbybid_form_step1) 
+and 
+time_sellbybid_f1>(select max(time_sellbybid) from "web_sgcm_silver_db".web_sellbybid_form)

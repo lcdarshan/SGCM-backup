@@ -1,0 +1,161 @@
+drop TABLE if EXISTS "web_dashboard_db".carloan_weeklevel;
+create table "web_dashboard_db".carloan_weeklevel
+as
+with unknown_users as
+(select DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview)) week, td_client_id_pageview,td_url_pageview,td_path_pageview, email
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview like '%/car_loan/%' and td_url_pageview like 'https%' and email is null),
+
+known_users as
+(select DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview)) week, td_client_id_pageview,td_url_pageview,td_path_pageview, email
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where td_path_pageview like '%/car_loan/%' and td_url_pageview like 'https%' and email is not null)
+
+,
+clicks as
+(
+select DATE_TRUNC('week', FROM_UNIXTIME(click_time_linkclick)) week, td_client_id_linkclick, td_path_linkclick, click_text_linkclick, email
+from "web_sgcm_silver_db".web_sgcm_linkclicks 
+where click_text_linkclick in ('Calculator','Calculate Savings','Apply Loan','Get Advice') and td_path_linkclick like '/car_loan/%' and td_url_linkclick like 'https%'
+)
+
+------------------------ unknown users clicks and total
+,unknown_users_clicked_on_calaulatesavings_weekly as
+(
+  select week,count(distinct td_client_id_linkclick) as unknown_users_clicked_on_calaulatesavings_weekwise from clicks where email is null and click_text_linkclick in ('Calculator','Calculate Savings') group by 1
+)
+,unknown_users_clicked_on_calaulatesavings_total as
+(
+  select count(distinct td_client_id_linkclick) as unknown_users_clicked_on_calaulatesavings_total from clicks where email is null and click_text_linkclick in ('Calculator','Calculate Savings')
+)
+
+,unknown_users_clicked_on_applyloan_weekly as
+(
+  select week,count(distinct td_client_id_linkclick) as unknown_users_clicked_on_applyloan_weekwise from clicks where email is null and click_text_linkclick in ('Apply Loan') group by 1
+)
+,unknown_users_clicked_on_applyloan_total as
+(
+  select count(distinct td_client_id_linkclick) as unknown_users_clicked_on_applyloan_total from clicks where email is null and click_text_linkclick in ('Apply Loan')
+)
+
+,unknown_users_clicked_on_getadvice_weekly as
+(
+  select week,count(distinct td_client_id_linkclick) as unknown_users_clicked_on_getadvice_weekwise from clicks where email is null and click_text_linkclick in ('Get Advice') group by 1
+)
+,unknown_users_clicked_on_getadvice_total as
+(
+  select count(distinct td_client_id_linkclick) as unknown_users_clicked_on_getadvice_total from clicks where email is null and click_text_linkclick in ('Get Advice')
+)
+------------------------ known users clicks and total
+,known_users_clicked_on_calaulatesavings_weekly as
+(
+  select week,count(distinct td_client_id_linkclick) as known_users_clicked_on_calaulatesavings_weekwise from clicks where email is not null and click_text_linkclick in ('Calculator','Calculate Savings') group by 1
+)
+,known_users_clicked_on_calaulatesavings_total as
+(
+  select count(distinct td_client_id_linkclick) as known_users_clicked_on_calaulatesavings_total from clicks where email is not null and click_text_linkclick in ('Calculator','Calculate Savings')
+)
+
+,known_users_clicked_on_applyloan_weekly as
+(
+  select week,count(distinct td_client_id_linkclick) as known_users_clicked_on_applyloan_weekwise from clicks where email is not null and click_text_linkclick in ('Apply Loan') group by 1
+)
+,known_users_clicked_on_applyloan_total as
+(
+  select count(distinct td_client_id_linkclick) as known_users_clicked_on_applyloan_total from clicks where email is not null and click_text_linkclick in ('Apply Loan')
+)
+
+,known_users_clicked_on_getadvice_weekly as
+(
+  select week,count(distinct td_client_id_linkclick) as known_users_clicked_on_getadvice_weekwise from clicks where email is not null and click_text_linkclick in ('Get Advice') group by 1
+)
+,known_users_clicked_on_getadvice_total as
+(
+  select count(distinct td_client_id_linkclick) as known_users_clicked_on_getadvice_total from clicks where email is not null and click_text_linkclick in ('Get Advice')
+)
+------------------ unknown and known users overall
+,unknown_users_weekwise as
+(
+  select week,count(distinct td_client_id_pageview) as unknownusers_weekwise from unknown_users group by 1
+)
+
+,unknown_users_total as
+(
+  select count(distinct td_client_id_pageview) as unknownusers_total from unknown_users
+)
+
+,known_users_weekwise as
+(
+  select week,count(distinct td_client_id_pageview) as knownusers_weekwise from known_users group by 1
+)
+
+,known_users_total as
+(
+  select count(distinct td_client_id_pageview) as knownusers_total from known_users
+)
+
+,new_known_users_weekwise as
+(
+  select week,count(td_client_id_pageview) as new_known_users from 
+    (select td_client_id_pageview,week,ROW_NUMBER() over(partition by td_client_id_pageview order by week) as rnk from 
+      (select distinct td_client_id_pageview,week from known_users)
+    order by 1,3)
+  where rnk=1 group by 1
+)
+
+
+select 
+cast(unknown_users_weekwise.week as varchar) week,
+unknownusers_weekwise,knownusers_weekwise,unknownusers_weekwise+knownusers_weekwise total_users_weekwise,
+unknownusers_total,knownusers_total,unknownusers_total+knownusers_total total_users,
+
+new_known_users,
+
+unknown_users_clicked_on_calaulatesavings_weekwise,known_users_clicked_on_calaulatesavings_weekwise,unknown_users_clicked_on_calaulatesavings_weekwise+known_users_clicked_on_calaulatesavings_weekwise as total_users_clicked_on_calaulatesavings_weekwise,
+
+unknown_users_clicked_on_calaulatesavings_total,known_users_clicked_on_calaulatesavings_total,unknown_users_clicked_on_calaulatesavings_total+known_users_clicked_on_calaulatesavings_total as total_users_clicked_on_calaulatesavings,
+
+unknown_users_clicked_on_applyloan_weekwise,known_users_clicked_on_applyloan_weekwise,unknown_users_clicked_on_applyloan_weekwise+known_users_clicked_on_applyloan_weekwise as total_users_clicked_on_applyloan_weekwise,
+
+unknown_users_clicked_on_applyloan_total,known_users_clicked_on_applyloan_total,unknown_users_clicked_on_applyloan_total+known_users_clicked_on_applyloan_total as total_users_clicked_on_applyloan,
+
+COALESCE(unknown_users_clicked_on_getadvice_weekwise,0) unknown_users_clicked_on_getadvice_weekwise,
+COALESCE(known_users_clicked_on_getadvice_weekwise,0) known_users_clicked_on_getadvice_weekwise,
+COALESCE(unknown_users_clicked_on_getadvice_weekwise,0)+COALESCE(known_users_clicked_on_getadvice_weekwise,0) as total_users_clicked_on_getadvice_weekwise,
+
+
+unknown_users_clicked_on_getadvice_total,known_users_clicked_on_getadvice_total,unknown_users_clicked_on_getadvice_total+known_users_clicked_on_getadvice_total as total_users_clicked_on_getadvice
+
+from unknown_users_weekwise
+
+left join known_users_weekwise on unknown_users_weekwise.week=known_users_weekwise.week
+left join unknown_users_clicked_on_calaulatesavings_weekly on unknown_users_weekwise.week=unknown_users_clicked_on_calaulatesavings_weekly.week
+left join known_users_clicked_on_calaulatesavings_weekly on unknown_users_weekwise.week=known_users_clicked_on_calaulatesavings_weekly.week
+left join unknown_users_clicked_on_applyloan_weekly on unknown_users_weekwise.week=unknown_users_clicked_on_applyloan_weekly.week
+left join known_users_clicked_on_applyloan_weekly on unknown_users_weekwise.week=known_users_clicked_on_applyloan_weekly.week
+left join unknown_users_clicked_on_getadvice_weekly on unknown_users_weekwise.week=unknown_users_clicked_on_getadvice_weekly.week
+left join known_users_clicked_on_getadvice_weekly on unknown_users_weekwise.week=known_users_clicked_on_getadvice_weekly.week
+left join new_known_users_weekwise on unknown_users_weekwise.week=new_known_users_weekwise.week
+
+cross join unknown_users_total
+cross join known_users_total
+cross join unknown_users_clicked_on_calaulatesavings_total
+cross join known_users_clicked_on_calaulatesavings_total
+cross join unknown_users_clicked_on_applyloan_total
+cross join known_users_clicked_on_applyloan_total
+cross join unknown_users_clicked_on_getadvice_total
+cross join known_users_clicked_on_getadvice_total
+
+-- order by 1
+
+
+
+
+
+
+
+
+
+
+
+

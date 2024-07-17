@@ -1,0 +1,7 @@
+Drop table if EXISTS "web_dashboard_db".fourmonthsdata_email;
+create table "web_dashboard_db".fourmonthsdata_email as
+select distinct view_date,td_client_id_pageview,ud.email
+from "web_sgcm_silver_db".web_sgcm_pageviews wp 
+left join "adhoc_sgcm_db".useremail_decrypt ud on ud.td_client_id=wp.td_client_id_pageview
+where view_date>=cast((date_trunc('month', CURRENT_DATE) - INTERVAL '3' MONTH)as VARCHAR)
+and ud.email is not null 

@@ -1,0 +1,233 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_sgcm_pageviews;
+-- CREATE TABLE "web_sgcm_silver_db".web_sgcm_pageviews
+-- (
+-- td_global_id_pageview,
+-- td_version_pageview,
+-- td_client_id_pageview,
+-- td_charset_pageview,
+-- td_language_pageview,
+-- td_color_pageview,
+-- td_screen_pageview,
+-- td_viewport_pageview,
+-- td_title_pageview,
+-- td_description_pageview,
+-- td_url_pageview,
+-- td_user_agent_pageview,
+-- td_platform_pageview,
+-- td_host_pageview,
+-- td_path_pageview,
+-- td_referrer_pageview,
+-- td_ip_pageview,
+-- td_browser_pageview,
+-- td_browser_version_pageview,
+-- td_os_pageview,
+-- td_os_version_pageview,
+-- username_pageview,
+-- view_time_pageview,
+-- email,
+-- useremail_e,
+-- sgcm_session_id,
+-- view_date
+
+-- )
+-- as
+-- select
+
+-- case when trim(td_global_id)='' then null
+-- else td_global_id end as td_global_id_cleaned,
+
+-- case when trim(td_version)='' then null
+-- else td_version end as td_version_cleaned,
+
+-- case when trim(td_client_id)='' then null
+-- else td_client_id end as td_client_id_cleaned,
+
+-- case when trim(td_charset)='' then null
+-- else td_charset end as td_charset_cleaned,
+
+-- case when trim(td_language)='' then null
+-- else td_language end as td_language_cleaned,
+
+-- case when trim(td_color)='' then null
+-- else td_color end as td_color_cleaned,
+
+-- case when trim(td_screen)='' then null
+-- else td_screen end as td_screen_cleaned,
+
+-- case when trim(td_viewport)='' then null
+-- else td_viewport end as td_viewport_cleaned,
+
+-- case when trim(td_title)='' then null
+-- else td_title end as td_title_cleaned,
+
+-- case when trim(td_description)='' then null
+-- else td_description end as td_description_cleaned,
+
+-- case when trim(td_url)='' then null
+-- else td_url end as td_url_cleaned,
+
+-- case when trim(td_user_agent)='' then null
+-- else td_user_agent end as td_user_agent_cleaned,
+
+-- case when trim(td_platform)='' then null
+-- else td_platform end as td_platform_cleaned,
+
+-- case when trim(td_host)='' then null
+-- else td_host end as td_host_cleaned,
+
+-- case when trim(td_path)='' then null
+-- else td_path end as td_path_cleaned,
+
+-- case when trim(td_referrer)='' then null
+-- else td_referrer end as td_referrer_cleaned,
+
+-- case when trim(td_ip)='' then null
+-- else td_ip end as td_ip_cleaned,
+
+-- case when trim(td_browser)='' then null
+-- else td_browser end as td_browser_cleaned,
+
+-- case when trim(td_browser_version)='' then null
+-- else td_browser_version end as td_browser_version_cleaned,
+
+-- case when trim(td_os)='' then null
+-- else td_os end as td_os_cleaned,
+
+-- case when trim(td_os_version)='' then null
+-- else td_os_version end as td_os_version_cleaned,
+
+-- case when trim(username)='' then null
+-- else username end as username_cleaned,
+
+-- time as view_time,
+
+-- tbl2.email as email,
+
+-- useremail_e,
+-- sgcm_session_id,
+
+-- TD_TIME_FORMAT(time,'yyyy-MM-dd')|| ' 00:00:00' as view_date
+
+-- from "web_sgcm_bronze_db".web_sgcm_pageviews 
+
+-- left join (select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 on td_client_id=tbl2.td_id
+
+-- where td_title != 'gtm-msr' and time<=(select max(time)-1 from "web_sgcm_bronze_db".web_sgcm_pageviews) ;
+
+
+-----------------------------------------------------------------------------------------------------------
+insert into "web_sgcm_silver_db".web_sgcm_pageviews
+(
+td_global_id_pageview,
+td_version_pageview,
+td_client_id_pageview,
+td_charset_pageview,
+td_language_pageview,
+td_color_pageview,
+td_screen_pageview,
+td_viewport_pageview,
+td_title_pageview,
+td_description_pageview,
+td_url_pageview,
+td_user_agent_pageview,
+td_platform_pageview,
+td_host_pageview,
+td_path_pageview,
+td_referrer_pageview,
+td_ip_pageview,
+td_browser_pageview,
+td_browser_version_pageview,
+td_os_pageview,
+td_os_version_pageview,
+username_pageview,
+view_time_pageview,
+email,
+useremail_e,
+sgcm_session_id,
+view_date
+)
+select
+
+case when trim(td_global_id)='' then null
+else td_global_id end as td_global_id_cleaned,
+
+case when trim(td_version)='' then null
+else td_version end as td_version_cleaned,
+
+case when trim(td_client_id)='' then null
+else td_client_id end as td_client_id_cleaned,
+
+case when trim(td_charset)='' then null
+else td_charset end as td_charset_cleaned,
+
+case when trim(td_language)='' then null
+else td_language end as td_language_cleaned,
+
+case when trim(td_color)='' then null
+else td_color end as td_color_cleaned,
+
+case when trim(td_screen)='' then null
+else td_screen end as td_screen_cleaned,
+
+case when trim(td_viewport)='' then null
+else td_viewport end as td_viewport_cleaned,
+
+case when trim(td_title)='' then null
+else td_title end as td_title_cleaned,
+
+case when trim(td_description)='' then null
+else td_description end as td_description_cleaned,
+
+case when trim(td_url)='' then null
+else td_url end as td_url_cleaned,
+
+case when trim(td_user_agent)='' then null
+else td_user_agent end as td_user_agent_cleaned,
+
+case when trim(td_platform)='' then null
+else td_platform end as td_platform_cleaned,
+
+case when trim(td_host)='' then null
+else td_host end as td_host_cleaned,
+
+case when trim(td_path)='' then null
+else td_path end as td_path_cleaned,
+
+case when trim(td_referrer)='' then null
+else td_referrer end as td_referrer_cleaned,
+
+case when trim(td_ip)='' then null
+else td_ip end as td_ip_cleaned,
+
+case when trim(td_browser)='' then null
+else td_browser end as td_browser_cleaned,
+
+case when trim(td_browser_version)='' then null
+else td_browser_version end as td_browser_version_cleaned,
+
+case when trim(td_os)='' then null
+else td_os end as td_os_cleaned,
+
+case when trim(td_os_version)='' then null
+else td_os_version end as td_os_version_cleaned,
+
+case when trim(username)='' then null
+else username end as username_cleaned,
+
+
+cast(time as bigint) as view_time_pageview,
+tbl2.email as email,
+
+useremail_e,
+
+sgcm_session_id,
+
+TD_TIME_FORMAT(time,'yyyy-MM-dd')|| ' 00:00:00' as view_date
+
+from "web_sgcm_bronze_db".web_sgcm_pageviews
+
+left join (select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 
+on td_client_id=tbl2.td_id
+
+where time > (select max(view_time_pageview) from "web_sgcm_silver_db".web_sgcm_pageviews) and time<=(select max(time)-1 from "web_sgcm_bronze_db".web_sgcm_pageviews) and td_title != 'gtm-msr';
+

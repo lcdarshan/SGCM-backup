@@ -1,0 +1,104 @@
+drop TABLE if EXISTS "web_dashboard_db".insurance_weeklevel_analytical_table;
+create table "web_dashboard_db".insurance_weeklevel_analytical_table
+as
+
+with main_week as 
+(
+  select distinct (DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview))) as week from "web_sgcm_silver_db".web_sgcm_pageviews 
+)
+-------------------------------------------main data cte's
+,unknown_users as
+(select DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview)) week,FROM_UNIXTIME(view_time_pageview) date_time,td_client_id_pageview,td_url_pageview,td_path_pageview, email
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where (td_path_pageview = '/directory/insurance.php' or td_path_pageview like '/car-insurance') and email is null),
+
+known_users as
+(select DATE_TRUNC('week', FROM_UNIXTIME(view_time_pageview)) week,FROM_UNIXTIME(view_time_pageview) date_time,td_client_id_pageview,td_url_pageview,td_path_pageview, email
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where (td_path_pageview = '/directory/insurance.php' or td_path_pageview like '/car-insurance') and email is not null)
+
+,
+clicks as
+(
+select DATE_TRUNC('week', FROM_UNIXTIME(click_time_linkclick)) week, td_client_id_linkclick, td_path_linkclick, click_text_linkclick, email
+from "web_sgcm_silver_db".web_sgcm_linkclicks 
+where click_text_linkclick in ('Get Quote Now!','Get Quotes Now','Fill in my details now!') and (td_path_linkclick = '/directory/insurance.php' or td_path_linkclick like '/car-insurance')
+)
+
+-------------------------------------------------------overall section
+
+,unknown_users_total as
+(
+  select count(distinct td_client_id_pageview) as unknownusers_total from unknown_users
+)
+
+,unknown_users_weekwise as
+(
+  select week,count(distinct td_client_id_pageview) as unknownusers_weekwise from unknown_users group by 1
+)
+
+,known_users_total as
+(
+  select count(distinct td_client_id_pageview) as knownusers_total from known_users
+)
+
+,known_users_weekwise as
+(
+  select week,count(distinct td_client_id_pageview) as knownusers_weekwise from known_users group by 1
+)
+
+,new_known_users_weekwise as
+(
+  select week,count(td_client_id_pageview) as new_known_users from 
+    (select td_client_id_pageview,week,ROW_NUMBER() over(partition by td_client_id_pageview order by week) as rnk from 
+      (select distinct td_client_id_pageview,week from known_users)
+    order by 1,3)
+  where rnk=1 group by 1
+)
+
+---------------------------------------------------------get quots now 
+
+,unknown_users_clicked_on_getquote_weekwise as
+(
+  select week,count(distinct td_client_id_linkclick) as unknown_users_clicked_on_getquote_weekwise from clicks where email is null group by 1
+)
+
+,unknown_users_clicked_on_getquote_total as
+(
+  select count(distinct td_client_id_linkclick) as unknown_users_clicked_on_getquote_total from clicks where email is null
+)
+
+,known_users_clicked_on_getquote_weekwise as
+(
+  select week,count(distinct td_client_id_linkclick) as known_users_clicked_on_getquote_weekwise from clicks where email is not null group by 1
+)
+
+,known_users_clicked_on_getquote_total as
+(
+  select count(distinct td_client_id_linkclick) as known_users_clicked_on_getquote_total from clicks where email is not null
+)
+
+select cast(main_week.week as VARCHAR) week,
+COALESCE(unknownusers_total, 0) AS unknownusers_total,
+COALESCE(unknownusers_weekwise, 0) AS unknownusers_weekwise,
+COALESCE(knownusers_total, 0) AS knownusers_total,
+COALESCE(knownusers_weekwise, 0) AS knownusers_weekwise,
+COALESCE(new_known_users,0) as new_known_users,
+COALESCE(unknown_users_clicked_on_getquote_total, 0) AS unknown_users_clicked_on_getquote_total,
+COALESCE(unknown_users_clicked_on_getquote_weekwise, 0) AS unknown_users_clicked_on_getquote_weekwise,
+COALESCE(known_users_clicked_on_getquote_total, 0) AS known_users_clicked_on_getquote_total,
+COALESCE(known_users_clicked_on_getquote_weekwise, 0) AS known_users_clicked_on_getquote_weekwise
+from main_week
+
+left join unknown_users_weekwise on main_week.week=unknown_users_weekwise.week
+left join known_users_weekwise on main_week.week=known_users_weekwise.week
+left join unknown_users_clicked_on_getquote_weekwise on main_week.week=unknown_users_clicked_on_getquote_weekwise.week
+left join known_users_clicked_on_getquote_weekwise on main_week.week=known_users_clicked_on_getquote_weekwise.week
+left JOIN new_known_users_weekwise on main_week.week=new_known_users_weekwise.week
+
+CROSS join unknown_users_total
+CROSS JOIN known_users_total
+CROSS JOIN unknown_users_clicked_on_getquote_total
+CROSS JOIN known_users_clicked_on_getquote_total
+
+

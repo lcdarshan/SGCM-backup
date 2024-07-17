@@ -1,0 +1,41 @@
+-- Drop table if exists "gold_db".id_email_mapping;
+-- create table "gold_db".id_email_mapping
+-- as
+-- select td_client_id,email from
+-- (select td_client_id,email,
+-- ROW_NUMBER() over(partition by td_client_id order by time desc) as rnk 
+-- from "adhoc_sgcm_db".useremail_decrypt)
+-- where rnk=1
+
+
+insert into "gold_db".id_email_mapping
+(
+  email,
+  td_client_id,
+  latest_visit_time,
+  first_visit_time,
+  first_login_date,
+  latest_login_date
+) 
+with a as 
+(select email,td_client_id,max_time,first_visit,first_login_date,latest_login_date from 
+(select email,td_client_id,max_time from(select email,td_client_id,
+SUBSTRING(cast(FROM_UNIXTIME(time)as varchar),1,19) as max_time,
+ROW_NUMBER() over(partition by td_client_id order by time desc) as rnk from "adhoc_sgcm_db".useremail_decrypt) where rnk=1)
+left join 
+(select td_client_id as td_id1,min(SUBSTRING(cast(FROM_UNIXTIME(time)as varchar),1,19)) as first_visit
+from "web_sgcm_bronze_db".web_sgcm_pageviews
+group by 1) on td_client_id=td_id1
+left join
+(select td_client_id as td_id,min(SUBSTRING(cast(FROM_UNIXTIME(time)as varchar),1,19)) as first_login_date,
+max(SUBSTRING(cast(FROM_UNIXTIME(time)as varchar),1,19)) as latest_login_date
+from "web_sgcm_bronze_db".web_sgcm_pageviews where useremail_e is not null 
+group by 1)on td_client_id=td_id
+
+where td_client_id not in (select td_client_id from "gold_db".id_email_mapping where td_client_id is not null)
+)
+select email,td_client_id,max_time,first_visit,first_login_date,latest_login_date from a 
+
+
+
+

@@ -1,0 +1,30 @@
+
+-- delete from "web_dashboard_db".known_users where _date= DATE_FORMAT(DATE_ADD('day', 0, CURRENT_DATE), '%Y-%m-%d')|| ' 00:00:00' or _date=DATE_FORMAT(DATE_ADD('day', -1, CURRENT_DATE), '%Y-%m-%d')|| ' 00:00:00';
+-- insert into "web_dashboard_db".known_users
+
+drop table if exists "web_dashboard_db".known_users;
+create table "web_dashboard_db".known_users
+as
+with total as 
+(select count(distinct td_client_id_pageview) as total_known_users from "web_sgcm_silver_db".web_sgcm_pageviews where email is not null),
+a as
+(select TD_TIME_FORMAT(view_time_pageview,'yyyy-MM-dd')|| ' 00:00:00' as _date,td_client_id_pageview,email,sgcm_session_id 
+from "web_sgcm_silver_db".web_sgcm_pageviews 
+where
+email is not null),
+b as (
+select _date,count(distinct td_client_id_pageview) daywise_known_users,count(td_client_id_pageview) daywise_events,count(distinct sgcm_session_id) total_sessions from a group by 1
+)
+
+select 
+_date,
+(SELECT total_known_users FROM total) AS known_users_total,
+daywise_known_users,
+daywise_events,
+ROUND(daywise_events/(daywise_known_users/1.0),2) as events_per_user,
+total_sessions,
+ROUND(total_sessions/(daywise_known_users/1.0),2) as sessions_per_user,
+case when total_sessions=0 then 0 else ROUND(daywise_events/(total_sessions/1.0),2) end as events_per_session
+from b order by 1
+
+

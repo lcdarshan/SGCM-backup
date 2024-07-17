@@ -1,0 +1,102 @@
+-- DROP TABLE IF EXISTS "web_sgcm_silver_db".web_addpost_step1;
+INSERT INTO "web_sgcm_silver_db".web_addpost_step1
+-- create table "web_sgcm_silver_db".web_addpost_step1
+(
+td_global_id_addpost,
+td_version_addpost,
+td_client_id_addpost,
+td_charset_addpost,
+td_language_addpost,
+td_color_addpost,
+td_screen_addpost,
+td_viewport_addpost,
+td_title_addpost,
+td_description_addpost,
+td_url_addpost,
+td_user_agent_addpost,
+td_platform_addpost,
+td_host_addpost,
+td_path_addpost,
+td_referrer_addpost,
+td_ip_addpost,
+td_browser_addpost,
+td_browser_version_addpost,
+td_os_addpost,
+td_os_version_addpost,
+name_addpost,
+contact_addpost,
+email_addpost,
+carplate_addpost,
+price_addpost,
+milage_addpost,
+pref_area_addpost,
+features_addpost,
+accessories_addpost,
+description_addpost,
+title_addpost,
+description_2_addpost,
+username_addpost,
+emai_chk_addpost,
+date_of_insertion_addpost,
+concierge_check_addpost,
+time_addpost,
+email
+)
+-- as
+select
+td_global_id_addpost,
+td_version_addpost,
+td_client_id_addpost,
+td_charset_addpost,
+td_language_addpost,
+td_color_addpost,
+td_screen_addpost,
+td_viewport_addpost,
+td_title_addpost,
+td_description_addpost,
+td_url_addpost,
+td_user_agent_addpost,
+td_platform_addpost,
+td_host_addpost,
+td_path_addpost,
+td_referrer_addpost,
+td_ip_addpost,
+td_browser_addpost,
+td_browser_version_addpost,
+td_os_addpost,
+td_os_version_addpost,
+name_addpost,
+contact_addpost,
+email_addpost,
+carplate_addpost,
+price_addpost,
+milage_addpost,
+pref_area_addpost,
+features_addpost,
+accessories_addpost,
+description_addpost,
+title_addpost,
+description_2_addpost,
+username_addpost,
+emai_chk_addpost,
+
+case 
+when REGEXP_LIKE(date_of_insertion_addpost, '^\d{2}/\d{2}/\d{2}$') then  
+cast(to_unixtime(cast( FORMAT_DATETIME(PARSE_DATETIME(date_of_insertion_addpost, 'dd/MM/yy'), 'yyyy-MM-dd HH:mm:ss') as timestamp)) as bigint)
+else null
+end as date_of_insertion_addpost,
+
+concierge_check_addpost,
+time_addpost ,
+tbl2.email
+from
+(select * from (
+select*,row_number()over(partition by td_client_id_addpost,carplate_addpost order by time_addpost desc ) as rnk from "web_sgcm_staging_db".web_addpost_step1) where rnk =1) tbl1
+left join 
+(select email,td_client_id as td_id from "gold_db".id_email_mapping) tbl2 
+on td_client_id_addpost=tbl2.td_id
+where 
+time_addpost<=(select max(time_addpost)-1 from "web_sgcm_staging_db".web_addpost_step1) and 
+time_addpost>(select max(time_addpost) from "web_sgcm_silver_db".web_addpost_step1)
+
+

@@ -1,0 +1,32 @@
+Drop table if EXISTS "web_dashboard_db".fourmonthsdata;
+create table "web_dashboard_db".fourmonthsdata as
+with main as (select view_date,td_client_id_pageview,td_url_pageview,td_path_pageview,email,
+case
+  when email is null then 'U'
+  when email is not null then 'K'
+end as identity_,
+case 
+  when td_path_pageview like '%/used_cars/%' then 'Used cars'
+  when td_path_pageview ='/' then 'Main'
+  when td_path_pageview like '%/articles%' then 'Articles'
+  when td_path_pageview like '%new_cars%' then 'New cars'
+  when td_path_pageview like '%/directory/%' or td_path_pageview like '%/products/%' and (td_path_pageview not like '%carplate_index%' and td_path_pageview not like '%carplate_eurospeed%' and td_path_pageview not like '%carplate_dealer%' and td_path_pageview not like '%insurance%' and td_path_pageview not like '%vehicle_evaluation%' and td_path_pageview not like '%vehicle_inspection%') then 'Directory'
+  when td_path_pageview = '/directory/insurance.php' or td_path_pageview like '/car-insurance' then 'Insurance'
+  when td_path_pageview like '%sell-car%' or td_path_pageview like '%/quotz/%' or td_path_pageview like '%/consignment.php%' then 'Sell cars'
+  when td_path_pageview like '%/car_loan/%' and td_url_pageview like 'https%' then 'Car loan'
+  when td_path_pageview like '%/tools_tips%' or td_path_pageview like '%/resources/%' then 'Resources'
+  when td_path_pageview like '%/shop%' then 'E-shop'
+  when td_path_pageview like '%car_rental%' and td_path_pageview not like '%/articles/%' then 'Rent cars'
+  when td_path_pageview like '%/forum' or td_path_pageview like '%/forum/%' then 'Forum'
+  when td_path_pageview like '%/member/login%' or td_path_pageview like '%/member/registration%' then 'Login-Registration'
+  else 'Other'
+end as section_ 
+
+from "web_sgcm_silver_db".web_sgcm_pageviews where view_date>=cast((date_trunc('month', CURRENT_DATE) - INTERVAL '3' MONTH)as VARCHAR))
+select DISTINCT view_date,td_client_id_pageview,identity_,section_ from main 
+-- select distinct td_path_pageview from main where section_='Other' 
+
+
+
+
+

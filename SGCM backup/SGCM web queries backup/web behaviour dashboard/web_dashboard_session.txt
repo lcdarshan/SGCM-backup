@@ -1,0 +1,51 @@
+drop table if exists "web_dashboard_db".session_table;
+create table "web_dashboard_db".session_table
+as
+with b as --main data table 
+(
+  select concat(TD_TIME_FORMAT(time,'yyyy-MM-dd'),' 00:00:00') as _date ,td_client_id ,sgcm_session_id, time from "web_sgcm_bronze_db".web_sgcm_pageviews 
+  where sgcm_session_id is not null
+),
+sess_duration as
+(
+select _date as date_dur,ROUND(AVG(session_dur),1) session_duration from 
+(select _date,sgcm_session_id,round(((max(time)-min(time))/60.0),1) as session_dur from b  group by 1,2)
+group by 1
+),
+events_per_session as
+(
+select _date date_eps,count(distinct td_client_id) as td_client_ids,
+count(distinct sgcm_session_id) session_ids,
+count(*) total_events,
+ROUND(count(*) /(count(distinct sgcm_session_id)/1.0),2) as events_per_sess,
+ROUND((count(distinct sgcm_session_id)/1.0)/count(distinct td_client_id),2) as sess_per_visitors
+
+from b group by 1
+),
+
+bounce_rate as
+(
+  SELECT _date date_bounce, COUNT(sgcm_session_id) as bounced
+FROM (
+    SELECT _date, sgcm_session_id
+    FROM b
+    GROUP BY _date, sgcm_session_id
+    HAVING COUNT(td_client_id) = 1
+) AS subquery
+GROUP BY _date
+)
+select 
+  date_dur as date_session,
+  session_duration,
+  td_client_ids,
+  session_ids,
+  total_events,
+  events_per_sess,
+  sess_per_visitors,
+  bounced,
+  ROUND(((bounced/(session_ids/1.0))*100),2) as bounce_per
+
+from sess_duration
+left join events_per_session on date_dur=date_eps
+left join bounce_rate on date_dur=date_bounce
+

@@ -1,0 +1,41 @@
+drop table if exists "web_dashboard_db".main_overall_session_knownusers_analytical_table;
+create table "web_dashboard_db".main_overall_session_knownusers_analytical_table
+as
+SELECT t1._date,
+    COALESCE(total_users, 0) AS total_users,
+    COALESCE(total_events, 0) AS total_events,
+    COALESCE(new_users, 0) AS new_users,
+    COALESCE(daywise_distinct_users, 0) AS daywise_distinct_users,
+    COALESCE(daywise_total_events, 0) AS daywise_total_events,
+    COALESCE(session_duration, 0) AS session_duration,
+    COALESCE(session_ids, 0) AS session_ids,
+    COALESCE(bounced, 0) AS bounced,
+    COALESCE(events_per_sess, 0) AS events_per_sess,
+    COALESCE(sess_per_visitors, 0) AS sess_per_visitors,
+    COALESCE(daywise_known_users, 0) AS known_daywise_users,
+    COALESCE(daywise_events, 0) AS known_daywise_events,
+    COALESCE(known_users_total, 0) AS known_total_users,
+    COALESCE(events_per_user, 0) AS known_events_per_user,
+    COALESCE(total_sessions, 0) AS known_total_sessions,
+    COALESCE(sessions_per_user, 0) AS known_sessions_per_user,
+    COALESCE(events_per_session, 0) AS known_events_per_session,
+    COALESCE(unknown_users_total,0) as unknown_users_total
+FROM 
+    (SELECT _date, total_users, total_events, new_users 
+    FROM "web_dashboard_db".total_users_numbers) AS t1
+LEFT JOIN 
+    (SELECT distinct_users as daywise_distinct_users, total_events as daywise_total_events, view_date 
+    FROM "web_dashboard_db".day_wise_distinct_users) AS t2 
+ON t1._date = t2.view_date
+
+left join (select date_session,session_duration,session_ids,bounced,events_per_sess,sess_per_visitors from  "web_dashboard_db".session_table) t3
+on t3.date_session=t1._date
+
+left join (select _date,known_users_total,daywise_known_users,daywise_events,events_per_user,total_sessions,sessions_per_user,events_per_session from "web_dashboard_db".known_users) t4 
+on t1._date=t4._date
+
+left join (select _date,unknown_users_total from "web_dashboard_db".unknown_users) t5
+on t1._date=t5._date
+
+order by 1
+

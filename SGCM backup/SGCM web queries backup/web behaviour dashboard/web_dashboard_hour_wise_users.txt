@@ -1,0 +1,4 @@
+drop table if EXISTS "web_dashboard_db".hour_wise_users;
+create table "web_dashboard_db".hour_wise_users
+as
+select TD_TIME_FORMAT(time+28800,'HH') as _hour,count(distinct td_client_id) total_users from "web_sgcm_bronze_db".web_sgcm_pageviews group by 1
