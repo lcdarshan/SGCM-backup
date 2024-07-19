@@ -1,0 +1,3292 @@
+{
+  "title": "Cars dashboard",
+  "oid": "6581d778dd8254003343c62a",
+  "desc": "",
+  "source": null,
+  "type": "dashboard",
+  "style": {
+    "palette": {
+      "name": "Vivid",
+      "colors": [
+        "#00cee6",
+        "#9b9bd7",
+        "#6EDA55",
+        "#fc7570",
+        "#fbb755",
+        "#218A8C"
+      ]
+    }
+  },
+  "layout": {
+    "instanceid": "129CA-D2A0-D7",
+    "type": "columnar",
+    "columns": [
+      {
+        "width": 100,
+        "cells": [
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 742,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 70.4,
+                    "defaultWidth": 512,
+                    "widgetid": "65f27911a23ac00033a7d5eb"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 2048,
+                    "minWidth": 64,
+                    "maxWidth": 2048,
+                    "height": "36px",
+                    "defaultWidth": 128,
+                    "widgetid": "65828dc06c8a8d0033f68ac8"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "248px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581d7bbdd8254003343c632"
+                  }
+                ],
+                "width": 46.54226125137212,
+                "stretchable": false,
+                "pxlWidth": 424,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "248px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581dac4dd8254003343c64a"
+                  }
+                ],
+                "width": 53.45773874862788,
+                "stretchable": false,
+                "pxlWidth": 486.987,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "320px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6593ebbc22496400332fe6fc"
+                  }
+                ],
+                "width": 46.52567975830816,
+                "stretchable": false,
+                "pxlWidth": 423.837,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "320px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "65829daf6c8a8d0033f68b2b"
+                  }
+                ],
+                "width": 53.47432024169184,
+                "stretchable": false,
+                "pxlWidth": 487.15,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "272px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581db8ddd8254003343c650"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "256px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581dc42dd8254003343c655"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 2048,
+                    "minWidth": 64,
+                    "maxWidth": 2048,
+                    "height": "36px",
+                    "defaultWidth": 128,
+                    "widgetid": "65828de26c8a8d0033f68aca"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581e068dd8254003343c680"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 303.663,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581e0eadd8254003343c684"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 303.663,
+                "index": 1
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581ed6edd8254003343c6c3"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 303.663,
+                "index": 2
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "192px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "65938be6b42eb00033aa49e5"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          }
+        ],
+        "pxlWidth": 911,
+        "index": 0
+      }
+    ],
+    "container": {
+      "sizzle1710399771998": {
+        "undefined": {
+          "parentNode": [
+            558.1766890162753,
+            23,
+            true
+          ]
+        }
+      }
+    }
+  },
+  "original": null,
+  "dataExploration": false,
+  "lastOpened": null,
+  "previewLayout": [],
+  "datasource": {
+    "fullname": "localhost/dm_12404_user_car_insights_model",
+    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+    "address": "LocalHost",
+    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+    "live": false,
+    "title": "dm_12404_user_car_insights_model"
+  },
+  "filters": [
+    {
+      "jaql": {
+        "table": "sgcm_contacts",
+        "column": "source_contacts",
+        "dim": "[sgcm_contacts.source_contacts]",
+        "datatype": "text",
+        "collapsed": false,
+        "title": "Source",
+        "isDashboardFilter": true,
+        "datasource": {
+          "fullname": "localhost/dm_12404_user_car_insights_model",
+          "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "live": false,
+          "title": "dm_12404_user_car_insights_model"
+        },
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "EC8BC-0FE5-39",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "sgcm_contacts",
+        "column": "car_only_status",
+        "dim": "[sgcm_contacts.car_only_status]",
+        "datatype": "text",
+        "collapsed": true,
+        "title": "Car status",
+        "isDashboardFilter": true,
+        "datasource": {
+          "fullname": "localhost/dm_12404_user_car_insights_model",
+          "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "live": false,
+          "title": "dm_12404_user_car_insights_model"
+        },
+        "filter": {
+          "explicit": true,
+          "multiSelection": true,
+          "members": [
+            "Invalid",
+            "Valid"
+          ]
+        }
+      },
+      "instanceid": "8B231-2DBA-51",
+      "isCascading": false,
+      "disabled": false
+    }
+  ],
+  "editing": true,
+  "settings": {
+    "autoUpdateOnFiltersChange": true
+  },
+  "filterRelations": [],
+  "filterToDatasourceMapping": {},
+  "parentFolder": "658272431c234a00332b4bd3",
+  "allowChangeSubscription": false,
+  "subscription": {
+    "executionPerDay": 1,
+    "schedule": "* * * * * *",
+    "isDataChange": true,
+    "type": "onUpdate",
+    "reportType": {
+      "inline": true
+    },
+    "emailSettings": {
+      "isEmail": true,
+      "isPdf": false
+    },
+    "context": {
+      "dashboardid": "6581d778dd8254003343c62a"
+    },
+    "startAt": "2023-12-21",
+    "tzName": "Asia/Calcutta",
+    "timezone": -330,
+    "active": false,
+    "subscribe": false
+  },
+  "isPublic": null,
+  "widgets": [
+    {
+      "title": "Total cars",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581d7bbdd8254003343c632",
+      "desc": "The Dashboard filters 'Source' and 'Car status' can be applied",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-14T03:55:19.260Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([8F71B-D77])",
+                  "context": {
+                    "[8F71B-D77]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Number of cars"
+                },
+                "instanceid": "3D092-D687-68",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color",
+                    "color": "#07e5ff",
+                    "isHandPickedColor": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "5C134-C64C-70",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a"
+    },
+    {
+      "title": "Cars by source",
+      "type": "chart/pie",
+      "subtype": "pie/classic",
+      "oid": "6581dac4dd8254003343c64a",
+      "desc": "The Dashboard filters 'Source' and 'Car status' can be applied",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-14T03:55:19.260Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "source_contacts",
+                  "dim": "[sgcm_contacts.source_contacts]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "source_contacts"
+                },
+                "instanceid": "BB37F-5B30-09",
+                "format": {
+                  "members": {}
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([3E90E-D71])",
+                  "context": {
+                    "[3E90E-D71]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "count([carplate_contacts])"
+                },
+                "instanceid": "3AB22-482D-F9",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": false,
+          "position": "left"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": true,
+          "value": true,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "bySlicesCount",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": "10"
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "source_contacts",
+              "title": "source_contacts",
+              "singular": "source_contacts",
+              "plural": "source_contacts"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "24A80-7960-86",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "selectorLocked": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a"
+    },
+    {
+      "title": "Valid and Invalid cars by source",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "6581db8ddd8254003343c650",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "source_contacts",
+                  "dim": "[sgcm_contacts.source_contacts]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "Source"
+                },
+                "instanceid": "9EE62-616A-0D"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([3BFF6-C5D])",
+                  "context": {
+                    "[3BFF6-C5D]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Number of Cars"
+                },
+                "instanceid": "047E2-0C61-2F",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "car_only_status",
+                  "dim": "[sgcm_contacts.car_only_status]",
+                  "datatype": "text",
+                  "title": "Car status"
+                },
+                "instanceid": "E7381-8D45-88",
+                "format": {
+                  "members": {}
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "car_only_status",
+                  "dim": "[sgcm_contacts.car_only_status]",
+                  "datatype": "text",
+                  "title": "car_only_status",
+                  "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "exclude": {
+                      "members": [
+                        "N\\A"
+                      ]
+                    }
+                  },
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "097DC-769D-6A"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true,
+            "text": "Number of cars"
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "source_contacts",
+              "title": "source_contacts",
+              "singular": "source_contacts",
+              "plural": "source_contacts"
+            },
+            {
+              "id": "car_only_status",
+              "title": "car_only_status",
+              "singular": "car_only_status",
+              "plural": "car_only_status"
+            }
+          ]
+        }
+      },
+      "instanceid": "06125-D4CE-27",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        },
+        "selectorLocked": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "Top 15 car brands by car count",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "6581dc42dd8254003343c655",
+      "desc": "Widget filter 'Car make' is available.",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-14T07:01:56.742Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "car_make_contacts",
+                  "dim": "[sgcm_contacts.car_make_contacts]",
+                  "datatype": "text",
+                  "title": "Car make"
+                },
+                "instanceid": "C967B-4FF8-0E",
+                "format": {
+                  "continuous": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([89C98-533])",
+                  "context": {
+                    "[89C98-533]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Number of cars",
+                  "sort": "desc"
+                },
+                "instanceid": "A5788-84A8-6A",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color",
+                    "color": "#b4b4f9",
+                    "isHandPickedColor": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "car_make_contacts",
+                  "dim": "[sgcm_contacts.car_make_contacts]",
+                  "datatype": "text",
+                  "filter": {
+                    "top": 15,
+                    "by": {
+                      "type": "measure",
+                      "formula": "count([89C98-533])",
+                      "context": {
+                        "[89C98-533]": {
+                          "table": "sgcm_contacts",
+                          "column": "carplate_contacts",
+                          "dim": "[sgcm_contacts.carplate_contacts]",
+                          "datatype": "text",
+                          "merged": true,
+                          "title": "carplate_contacts"
+                        }
+                      },
+                      "title": "Number of cars",
+                      "sort": "desc"
+                    },
+                    "rankingMessage": "Number of cars"
+                  },
+                  "title": "Car make",
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "E740B-5F3B-0B"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "car_make",
+              "title": "Car make",
+              "singular": "Car make",
+              "plural": "Car make"
+            }
+          ]
+        }
+      },
+      "instanceid": "EC39E-B4CB-56",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "COE expiring",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581e068dd8254003343c680",
+      "desc": "Widget filter 'COE Expiration interval' is available.",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-14T07:01:56.742Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([758C6-CD6])",
+                  "context": {
+                    "[758C6-CD6]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Cars with COE expiration"
+                },
+                "instanceid": "64849-F0CC-3E",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "coe_expiry_date_contacts",
+                  "dim": "[sgcm_contacts.coe_expiry_date_contacts (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "filter": {
+                    "next": {
+                      "count": 90,
+                      "offset": 1
+                    }
+                  },
+                  "title": "COE Expiration interval",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  },
+                  "collapsed": true
+                },
+                "instanceid": "38C72-6C5D-B3",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "days_in_coe_expiry_date_contacts",
+              "title": "Days in coe_expiry_date_contacts",
+              "singular": "Days in coe_expiry_date_contacts",
+              "plural": "Days in coe_expiry_date_contacts"
+            }
+          ]
+        }
+      },
+      "instanceid": "FFC97-26D6-FB",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": "Warranty expiring",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581e0eadd8254003343c684",
+      "desc": "Widget filter 'Warranty Expiration Interval' is available.",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-14T07:01:56.742Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([99984-611])",
+                  "context": {
+                    "[99984-611]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Cars with warranty expiration"
+                },
+                "instanceid": "DD80D-A9DC-7A",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "warranty_end_date_contacts",
+                  "dim": "[sgcm_contacts.warranty_end_date_contacts (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "filter": {
+                    "next": {
+                      "count": 90,
+                      "offset": 1
+                    }
+                  },
+                  "collapsed": true,
+                  "title": "Warranty Expiration Interval",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "5604B-F6D0-15",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "years_in_warranty_end_date_contacts",
+              "title": "Years in warranty_end_date_contacts",
+              "singular": "Years in warranty_end_date_contacts",
+              "plural": "Years in warranty_end_date_contacts"
+            }
+          ]
+        }
+      },
+      "instanceid": "984EA-3A17-5A",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": "Insurance Expiring",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581ed6edd8254003343c6c3",
+      "desc": "Widget filter 'Insurance Expiration Interval' is available.",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-14T07:01:56.742Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([03326-663])",
+                  "context": {
+                    "[03326-663]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Cars with Insurance expiration"
+                },
+                "instanceid": "604E7-9128-87",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "insurance_expiry_date_contacts",
+                  "dim": "[sgcm_contacts.insurance_expiry_date_contacts (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "filter": {
+                    "next": {
+                      "count": 90,
+                      "offset": 1
+                    }
+                  },
+                  "collapsed": true,
+                  "title": "Insurance Expiration Interval",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "2B8B7-6500-C2",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "years_in_insurance_expiry_date_contacts",
+              "title": "Years in insurance_expiry_date_contacts",
+              "singular": "Years in insurance_expiry_date_contacts",
+              "plural": "Years in insurance_expiry_date_contacts"
+            }
+          ]
+        }
+      },
+      "instanceid": "2B23A-4C6A-E3",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": "RICHTEXT_MAIN.TITLE",
+      "type": "richtexteditor",
+      "subtype": "richtexteditor",
+      "oid": "65828dc06c8a8d0033f68ac8",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "content": {
+          "html": "<font size=\"5\"><b>Overview</b><br><br></font>",
+          "vAlign": "valign-middle",
+          "bgColor": "#bfbfbf",
+          "textAlign": "center"
+        }
+      },
+      "instanceid": "A45DC-2BC0-34",
+      "realTimeRefreshing": false,
+      "options": {
+        "triggersDomready": true,
+        "hideFromWidgetList": true,
+        "disableExportToCSV": true,
+        "disableExportToImage": true,
+        "toolbarButton": {
+          "css": "add-rich-text",
+          "tooltip": "RICHTEXT_MAIN.TOOLBAR_BUTTON"
+        },
+        "selector": false,
+        "disallowSelector": true,
+        "disallowWidgetTitle": true,
+        "supportsHierarchies": false,
+        "dashboardFiltersMode": "filter"
+      },
+      "dashboardid": "6581d778dd8254003343c62a"
+    },
+    {
+      "title": "RICHTEXT_MAIN.TITLE",
+      "type": "richtexteditor",
+      "subtype": "richtexteditor",
+      "oid": "65828de26c8a8d0033f68aca",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "content": {
+          "html": "<font size=\"5\"><b>Expirations within 90 days&nbsp;</b><br></font>",
+          "vAlign": "valign-middle",
+          "bgColor": "#bfbfbf",
+          "textAlign": "center"
+        }
+      },
+      "instanceid": "DCB0A-607E-6C",
+      "realTimeRefreshing": false,
+      "options": {
+        "triggersDomready": true,
+        "hideFromWidgetList": true,
+        "disableExportToCSV": true,
+        "disableExportToImage": true,
+        "toolbarButton": {
+          "css": "add-rich-text",
+          "tooltip": "RICHTEXT_MAIN.TOOLBAR_BUTTON"
+        },
+        "selector": false,
+        "disallowSelector": true,
+        "disallowWidgetTitle": true,
+        "supportsHierarchies": false,
+        "dashboardFiltersMode": "filter"
+      },
+      "dashboardid": "6581d778dd8254003343c62a"
+    },
+    {
+      "title": "Number of Valid/Invalid cars",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "65829daf6c8a8d0033f68b2b",
+      "desc": "Dashboard filter 'car_only_status' is not applicable to this widget.",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-03-12T20:17:10.800Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [
+            "8B231-2DBA-51"
+          ],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "car_only_status",
+                  "dim": "[sgcm_contacts.car_only_status]",
+                  "datatype": "text",
+                  "title": "car_only_status"
+                },
+                "instanceid": "3E5C7-2FD4-C6"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([77911-3CD])",
+                  "context": {
+                    "[77911-3CD]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "number of cars"
+                },
+                "instanceid": "2BD51-47FC-32",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "car_only_status",
+                  "dim": "[sgcm_contacts.car_only_status]",
+                  "datatype": "text",
+                  "title": "car_only_status",
+                  "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "exclude": {
+                      "members": [
+                        "N\\A"
+                      ]
+                    }
+                  },
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "6FE41-49BB-03"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "car_only_status",
+              "title": "car_only_status",
+              "singular": "car_only_status",
+              "plural": "car_only_status"
+            }
+          ]
+        }
+      },
+      "instanceid": "B3C27-D02C-E0",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        },
+        "selectorLocked": false
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "Road tax expiring",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "65938be6b42eb00033aa49e5",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "roadtax_expiry_date_contacts",
+                  "dim": "[sgcm_contacts.roadtax_expiry_date_contacts (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "quarters",
+                  "title": "Quarter"
+                },
+                "instanceid": "C7601-1729-F6",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([23A7C-A53])",
+                  "context": {
+                    "[23A7C-A53]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Cars with Road tax expiration"
+                },
+                "instanceid": "1380B-C403-2F",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color",
+                    "color": "#1de7ff",
+                    "isHandPickedColor": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "roadtax_expiry_date_contacts",
+                  "dim": "[sgcm_contacts.roadtax_expiry_date_contacts (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "quarters",
+                  "title": "Years in roadtax_expiry_date_contacts",
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "2025-01-01T00:00:00",
+                      "2024-10-01T00:00:00",
+                      "2024-07-01T00:00:00",
+                      "2024-04-01T00:00:00",
+                      "2024-01-01T00:00:00"
+                    ],
+                    "filter": {
+                      "turnedOff": true,
+                      "exclude": {
+                        "members": [
+                          "2024-01-01T00:00:00"
+                        ]
+                      }
+                    }
+                  },
+                  "collapsed": true,
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "4E531-8270-70",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "title": "Years in roadtax_expiry_date_contacts"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "quarter",
+              "title": "Quarter",
+              "singular": "Quarter",
+              "plural": "Quarter"
+            },
+            {
+              "id": "years_in_roadtax_expiry_date_contacts",
+              "title": "Years in roadtax_expiry_date_contacts",
+              "singular": "Years in roadtax_expiry_date_contacts",
+              "plural": "Years in roadtax_expiry_date_contacts"
+            }
+          ]
+        }
+      },
+      "instanceid": "6FDA9-7B85-6C",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "6581d778dd8254003343c62a",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "Number of cars by Number of source",
+      "type": "chart/pie",
+      "subtype": "pie/donut",
+      "oid": "6593ebbc22496400332fe6fc",
+      "desc": "'1' indicates that the car is from only one source..\n'2' indicates that the car is from two different sources.",
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model",
+        "lastBuildTime": "2024-01-02T11:38:19.935Z"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sgcm_contacts",
+                  "column": "number_of_sources",
+                  "dim": "[sgcm_contacts.number_of_sources]",
+                  "datatype": "numeric",
+                  "title": "number_of_sources"
+                },
+                "instanceid": "8E82C-BBF3-A8",
+                "format": {
+                  "members": {}
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([60734-C95])",
+                  "context": {
+                    "[60734-C95]": {
+                      "table": "sgcm_contacts",
+                      "column": "carplate_contacts",
+                      "dim": "[sgcm_contacts.carplate_contacts]",
+                      "datatype": "text",
+                      "title": "carplate_contacts"
+                    }
+                  },
+                  "title": "Number of cars"
+                },
+                "instanceid": "3C54B-12C1-5E",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "right"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": true,
+          "value": true,
+          "percent": true,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "byPercentage",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "number_of_sources",
+              "title": "number_of_sources",
+              "singular": "number_of_sources",
+              "plural": "number_of_sources"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "57E9B-98BD-9D",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "6581d778dd8254003343c62a"
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65f27911a23ac00033a7d5eb",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_user_car_insights_model",
+        "fullname": "LocalHost/dm_12404_user_car_insights_model",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaUSERXwAaCARXwAaINSIGHTSXwAaMODEL",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "showCarousel": true,
+          "body": [
+            {
+              "type": "Container",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "padding": "2px",
+                "backgroundColor": "white"
+              },
+              "items": [
+                {
+                  "type": "Image",
+                  "id": "",
+                  "class": "",
+                  "url": "https://i.i-sgcm.com/all/topheader/sgcm_logo.svg",
+                  "altText": "image descriptions",
+                  "size": "50%",
+                  "width": "150px",
+                  "style": {
+                    "margin-left": "10px"
+                  }
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "<span style='color: black; '>Cars</span><span style=color: #DE0806;>Dash</span><span style='color: black;'>board</span>",
+                  "style": {
+                    "text-align": "center",
+                    "font-weight": "bold",
+                    "font-size": "40px",
+                    "margin": "auto",
+                    "padding-right": "145px",
+                    "color": "#DE0806",
+                    "margin-top": "20px",
+                    "font": {
+                      "family": "sans-serif",
+                      "color": "#4CAF50",
+                      "style": "italic"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 70.4
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "87734-12D0-BF",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "6581d778dd8254003343c62a"
+    }
+  ],
+  "hierarchies": []
+}

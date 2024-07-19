@@ -1,0 +1,3280 @@
+{
+  "title": "SFMC/Braze dashboard",
+  "oid": "6581ca44dce88f0033cf8db2",
+  "desc": "",
+  "source": null,
+  "type": "dashboard",
+  "style": {
+    "palette": {
+      "name": "Vivid",
+      "colors": [
+        "#00cee6",
+        "#9b9bd7",
+        "#6EDA55",
+        "#fc7570",
+        "#fbb755",
+        "#218A8C"
+      ]
+    }
+  },
+  "layout": {
+    "instanceid": "BCE23-11F5-40",
+    "type": "columnar",
+    "columns": [
+      {
+        "width": 100,
+        "cells": [
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 742,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 70.4,
+                    "defaultWidth": 512,
+                    "widgetid": "65f28178a23ac00033a7d6a1"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 909.4,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 2048,
+                    "minWidth": 64,
+                    "maxWidth": 2048,
+                    "height": "36px",
+                    "defaultWidth": 128,
+                    "widgetid": "65828c4f6c8a8d0033f68ab6"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581cc57dce88f0033cf8dc2"
+                  }
+                ],
+                "width": 50,
+                "stretchable": false,
+                "pxlWidth": 455.5,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "65828cf46c8a8d0033f68aba",
+                    "height": 192
+                  }
+                ],
+                "width": 50,
+                "stretchable": false,
+                "pxlWidth": 455.5,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581d60edd8254003343c60f"
+                  }
+                ],
+                "width": 50,
+                "stretchable": false,
+                "pxlWidth": 455.5,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581ccf6dce88f0033cf8dc7"
+                  }
+                ],
+                "width": 50,
+                "stretchable": false,
+                "pxlWidth": 455.5,
+                "index": 1
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "260px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "658566014774e800338bd317"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 2048,
+                    "minWidth": 64,
+                    "maxWidth": 2048,
+                    "height": "36px",
+                    "defaultWidth": 128,
+                    "widgetid": "65828ccd6c8a8d0033f68ab8"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581cbefdce88f0033cf8dbe"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 303.663,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581ea1ddd8254003343c6b5"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 303.663,
+                "index": 1
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "6581eac9dd8254003343c6b9"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 303.663,
+                "index": 2
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "240px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "658262b51c234a00332b4b84"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": "352px",
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "65937efeb42eb00033aa49c0"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 384,
+                    "defaultWidth": 512,
+                    "widgetid": "65dc116babbd21003381c9e4"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 911,
+                "index": 0
+              }
+            ]
+          }
+        ],
+        "pxlWidth": 911,
+        "index": 0
+      }
+    ],
+    "container": {
+      "sizzle1710388958272": {
+        "undefined": {
+          "parentNode": [
+            2460.588281418197,
+            23,
+            true
+          ]
+        }
+      }
+    }
+  },
+  "original": null,
+  "dataExploration": false,
+  "lastOpened": null,
+  "previewLayout": [],
+  "datasource": {
+    "fullname": "localhost/dm_12404_user_car_insights_model",
+    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+    "address": "LocalHost",
+    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+    "live": false,
+    "title": "dm_12404_user_car_insights_model"
+  },
+  "filters": [
+    {
+      "jaql": {
+        "table": "email_engagement_behaviour",
+        "column": "sentdate_behaviour",
+        "dim": "[email_engagement_behaviour.sentdate_behaviour (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "months",
+        "collapsed": true,
+        "title": "Months in sentdate_behaviour",
+        "datasource": {
+          "fullname": "localhost/dm_12404_user_car_insights_model",
+          "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "live": false,
+          "title": "dm_12404_user_car_insights_model"
+        },
+        "isDashboardFilter": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "875AF-3C14-16",
+      "isCascading": false
+    },
+    {
+      "jaql": {
+        "table": "email_engagement_behaviour",
+        "column": "opendate_behaviour",
+        "dim": "[email_engagement_behaviour.opendate_behaviour (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "years",
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        },
+        "collapsed": true,
+        "title": "Years in opendate_behaviour",
+        "datasource": {
+          "fullname": "localhost/dm_12404_user_car_insights_model",
+          "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+          "live": false,
+          "title": "dm_12404_user_car_insights_model"
+        },
+        "isDashboardFilter": true
+      },
+      "instanceid": "35B4C-CEF8-9D",
+      "isCascading": false
+    }
+  ],
+  "editing": true,
+  "parentFolder": "6581275666998b00332e1d56",
+  "settings": {
+    "autoUpdateOnFiltersChange": true
+  },
+  "filterRelations": [],
+  "filterToDatasourceMapping": {},
+  "allowChangeSubscription": false,
+  "subscription": {
+    "executionPerDay": 1,
+    "schedule": "* * * * * *",
+    "isDataChange": true,
+    "type": "onUpdate",
+    "reportType": {
+      "inline": true
+    },
+    "emailSettings": {
+      "isEmail": true,
+      "isPdf": false
+    },
+    "context": {
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    "startAt": "2023-12-21",
+    "tzName": "Asia/Calcutta",
+    "timezone": -330,
+    "active": false,
+    "subscribe": false
+  },
+  "isPublic": null,
+  "widgets": [
+    {
+      "title": "EDM receivers",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581cbefdce88f0033cf8dbe",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([DFDA0-ED5])",
+                  "context": {
+                    "[DFDA0-ED5]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "emailaddress_behaviour",
+                      "dim": "[email_engagement_behaviour.emailaddress_behaviour]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "emailaddress_behaviour"
+                    }
+                  },
+                  "title": "SFMC users who received EDM"
+                },
+                "instanceid": "7C044-5C96-5F",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "C8FF6-2FD0-0E",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "Total users",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581cc57dce88f0033cf8dc2",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "attributes",
+                  "column": "ce_sfmc_user",
+                  "dim": "[attributes.ce_sfmc_user]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "CE+SFMC users"
+                },
+                "instanceid": "16D7C-5D44-66",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "CDB31-89C3-3A",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "Email subjects count",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581ccf6dce88f0033cf8dc7",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([DF37C-42E])",
+                  "context": {
+                    "[DF37C-42E]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "emailsubject_behaviour",
+                      "dim": "[email_engagement_behaviour.emailsubject_behaviour]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "emailsubject_behaviour"
+                    }
+                  },
+                  "title": "Number of email subject"
+                },
+                "instanceid": "860D3-22E9-AC",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "82FF5-6C66-8F",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "SFMC and CE overlap",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581d60edd8254003343c60f",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([682C4-B37])",
+                  "context": {
+                    "[682C4-B37]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "emailaddress_behaviour",
+                      "dim": "[email_engagement_behaviour.emailaddress_behaviour]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "emailaddress_behaviour"
+                    }
+                  },
+                  "title": "Number of CE users in SFMC"
+                },
+                "instanceid": "E125B-19ED-31",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "attributes",
+                  "column": "ce_user",
+                  "dim": "[attributes.ce_user]",
+                  "datatype": "numeric",
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "1"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "ce_user",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "AB323-EECF-86"
+              },
+              {
+                "jaql": {
+                  "table": "attributes",
+                  "column": "sfmc_user",
+                  "dim": "[attributes.sfmc_user]",
+                  "datatype": "numeric",
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "1"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "sfmc_user",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  }
+                },
+                "instanceid": "6BE80-AB85-02"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "ce_user",
+              "title": "ce_user",
+              "singular": "ce_user",
+              "plural": "ce_user"
+            },
+            {
+              "id": "sfmc_user",
+              "title": "sfmc_user",
+              "singular": "sfmc_user",
+              "plural": "sfmc_user"
+            }
+          ]
+        }
+      },
+      "instanceid": "D5226-F42D-87",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": "EDM openers",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581ea1ddd8254003343c6b5",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([DFD3A-CE9])",
+                  "context": {
+                    "[DFD3A-CE9]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "emailaddress_behaviour",
+                      "dim": "[email_engagement_behaviour.emailaddress_behaviour]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "emailaddress_behaviour"
+                    }
+                  },
+                  "title": "Users who opened the EDM"
+                },
+                "instanceid": "56BF7-20E0-43",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "attributes",
+                  "column": "total_number_of_opens",
+                  "dim": "[attributes.total_number_of_opens]",
+                  "datatype": "numeric",
+                  "filter": {
+                    "from": "1"
+                  },
+                  "title": "total_number_of_opens",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  },
+                  "collapsed": false
+                },
+                "instanceid": "DFB58-AF11-73"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "total_number_of_opens",
+              "title": "total_number_of_opens",
+              "singular": "total_number_of_opens",
+              "plural": "total_number_of_opens"
+            }
+          ]
+        }
+      },
+      "instanceid": "C32D5-66A6-9E",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "EDM clickers",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "6581eac9dd8254003343c6b9",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([7A0D4-EC4])",
+                  "context": {
+                    "[7A0D4-EC4]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "emailaddress_behaviour",
+                      "dim": "[email_engagement_behaviour.emailaddress_behaviour]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "emailaddress_behaviour"
+                    }
+                  },
+                  "title": "Users who clicked the EDM"
+                },
+                "instanceid": "EF7D7-306F-81",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "attributes",
+                  "column": "total_number_of_clicks",
+                  "dim": "[attributes.total_number_of_clicks]",
+                  "datatype": "numeric",
+                  "filter": {
+                    "from": 1
+                  },
+                  "title": "total_number_of_clicks",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  },
+                  "collapsed": false
+                },
+                "instanceid": "53844-C231-31"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "total_number_of_clicks",
+              "title": "total_number_of_clicks",
+              "singular": "total_number_of_clicks",
+              "plural": "total_number_of_clicks"
+            }
+          ]
+        }
+      },
+      "instanceid": "CF688-E161-12",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "EDM interaction funnel",
+      "type": "chart/funnel",
+      "subtype": "chart/funnel",
+      "oid": "658262b51c234a00332b4b84",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": []
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "sum([7A2F5-519])",
+                  "context": {
+                    "[7A2F5-519]": {
+                      "table": "attributes",
+                      "column": "total_mails",
+                      "dim": "[attributes.total_mails]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_mails"
+                    }
+                  },
+                  "title": "Total mails"
+                },
+                "instanceid": "2EAD2-2E19-61",
+                "format": {
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  },
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "separated": true,
+                    "isdefault": true
+                  }
+                }
+              },
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "sum([6EB6A-542])",
+                  "context": {
+                    "[6EB6A-542]": {
+                      "table": "attributes",
+                      "column": "total_number_of_opens",
+                      "dim": "[attributes.total_number_of_opens]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_number_of_opens"
+                    }
+                  },
+                  "title": "Total EDM opens"
+                },
+                "instanceid": "BFCAD-73FC-D0",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "separated": true,
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 1,
+                    "type": "color"
+                  }
+                }
+              },
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "sum([509B4-ECB])",
+                  "context": {
+                    "[509B4-ECB]": {
+                      "table": "attributes",
+                      "column": "total_number_of_clicks",
+                      "dim": "[attributes.total_number_of_clicks]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_number_of_clicks"
+                    }
+                  },
+                  "title": "Total clicks"
+                },
+                "instanceid": "83186-67D4-F6",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "decimals": "auto",
+                    "separated": true,
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 2,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "type": "regular",
+        "size": "regular",
+        "direction": "regular",
+        "legend": {
+          "enabled": false,
+          "position": "left"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": true,
+          "percent": true,
+          "value": true,
+          "decimals": false
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "B96E6-50FE-C3",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "RICHTEXT_MAIN.TITLE",
+      "type": "richtexteditor",
+      "subtype": "richtexteditor",
+      "oid": "65828c4f6c8a8d0033f68ab6",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "content": {
+          "html": "<span style=\"font-size: 24px;\"><b>Overview<br><br></b></span><blockquote style=\"margin: 0 0 0 40px; border: none; padding: 0px;\"><span style=\"font-size: 24px;\"><br></span></blockquote>",
+          "vAlign": "valign-middle",
+          "bgColor": "#bfbfbf",
+          "textAlign": "center"
+        }
+      },
+      "instanceid": "F7F0F-325D-38",
+      "realTimeRefreshing": false,
+      "options": {
+        "triggersDomready": true,
+        "hideFromWidgetList": true,
+        "disableExportToCSV": true,
+        "disableExportToImage": true,
+        "toolbarButton": {
+          "css": "add-rich-text",
+          "tooltip": "RICHTEXT_MAIN.TOOLBAR_BUTTON"
+        },
+        "selector": false,
+        "disallowSelector": true,
+        "disallowWidgetTitle": true,
+        "supportsHierarchies": false,
+        "dashboardFiltersMode": "filter"
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "RICHTEXT_MAIN.TITLE",
+      "type": "richtexteditor",
+      "subtype": "richtexteditor",
+      "oid": "65828ccd6c8a8d0033f68ab8",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "content": {
+          "html": "<font size=\"5\"><b>EDM Interactions</b></font>",
+          "vAlign": "valign-middle",
+          "bgColor": "#bfbfbf",
+          "textAlign": "center"
+        }
+      },
+      "instanceid": "2D310-449A-1E",
+      "realTimeRefreshing": false,
+      "options": {
+        "triggersDomready": true,
+        "hideFromWidgetList": true,
+        "disableExportToCSV": true,
+        "disableExportToImage": true,
+        "toolbarButton": {
+          "css": "add-rich-text",
+          "tooltip": "RICHTEXT_MAIN.TOOLBAR_BUTTON"
+        },
+        "selector": false,
+        "disallowSelector": true,
+        "disallowWidgetTitle": true,
+        "supportsHierarchies": false,
+        "dashboardFiltersMode": "filter"
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "SFMC user count",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "65828cf46c8a8d0033f68aba",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "count([DFDA0-ED5])",
+                  "context": {
+                    "[DFDA0-ED5]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "emailaddress_behaviour",
+                      "dim": "[email_engagement_behaviour.emailaddress_behaviour]",
+                      "datatype": "text",
+                      "merged": true,
+                      "title": "emailaddress_behaviour"
+                    }
+                  },
+                  "title": "SFMC users"
+                },
+                "instanceid": "7C044-5C96-5F",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "C8FF6-2FD0-0E",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "EDMs by Source",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "658566014774e800338bd317",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "email_engagement_behaviour",
+                  "column": "fromname",
+                  "dim": "[email_engagement_behaviour.fromname]",
+                  "datatype": "text",
+                  "title": "fromname"
+                },
+                "instanceid": "4E19F-9759-90"
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "DupCount([11B95-953])",
+                  "context": {
+                    "[11B95-953]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "fromname",
+                      "dim": "[email_engagement_behaviour.fromname]",
+                      "datatype": "text",
+                      "title": "fromname"
+                    }
+                  },
+                  "title": "Count of EDMs"
+                },
+                "instanceid": "B9EEF-3302-5B",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "fromname",
+              "title": "fromname",
+              "singular": "fromname",
+              "plural": "fromname"
+            }
+          ]
+        }
+      },
+      "instanceid": "B7D83-0430-C2",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    },
+    {
+      "title": "Top 10 EDM Subject by EDM Opens",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "65937efeb42eb00033aa49c0",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "email_engagement_behaviour",
+                  "column": "emailsubject_behaviour",
+                  "dim": "[email_engagement_behaviour.emailsubject_behaviour]",
+                  "datatype": "text",
+                  "title": "Email Subject"
+                },
+                "instanceid": "45478-C408-F0",
+                "format": {
+                  "continuous": false
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "sum([4178B-4D2])",
+                  "context": {
+                    "[4178B-4D2]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "numberofopens_behaviour",
+                      "dim": "[email_engagement_behaviour.numberofopens_behaviour]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total numberofopens_behaviour"
+                    }
+                  },
+                  "title": "Number of opens",
+                  "sort": "desc"
+                },
+                "instanceid": "842E6-2F73-68",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "email_engagement_behaviour",
+                  "column": "emailsubject_behaviour",
+                  "dim": "[email_engagement_behaviour.emailsubject_behaviour]",
+                  "datatype": "text",
+                  "title": "emailsubject_behaviour",
+                  "filter": {
+                    "top": 10,
+                    "by": {
+                      "type": "measure",
+                      "formula": "sum([4178B-4D2])",
+                      "context": {
+                        "[4178B-4D2]": {
+                          "table": "email_engagement_behaviour",
+                          "column": "numberofopens_behaviour",
+                          "dim": "[email_engagement_behaviour.numberofopens_behaviour]",
+                          "datatype": "numeric",
+                          "agg": "sum",
+                          "title": "Total numberofopens_behaviour"
+                        }
+                      },
+                      "title": "Number of opens"
+                    },
+                    "rankingMessage": "Number of opens"
+                  },
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  },
+                  "collapsed": false
+                },
+                "instanceid": "83117-8543-08"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "hideMinMax": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "email_subject",
+              "title": "Email Subject",
+              "singular": "Email Subject",
+              "plural": "Email Subject"
+            },
+            {
+              "id": "emailsubject_behaviour",
+              "title": "emailsubject_behaviour",
+              "singular": "emailsubject_behaviour",
+              "plural": "emailsubject_behaviour"
+            }
+          ]
+        }
+      },
+      "instanceid": "774CE-265D-84",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": "EDMs sent by date",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "65dc116babbd21003381c9e4",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_user_car_insights_model",
+        "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+        "live": false,
+        "title": "dm_12404_user_car_insights_model"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "email_engagement_behaviour",
+                  "column": "sentdate_behaviour",
+                  "dim": "[email_engagement_behaviour.sentdate_behaviour (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "title": "Date"
+                },
+                "instanceid": "0FD14-3EC0-15",
+                "field": {
+                  "id": "[email_engagement_behaviour.sentdate_behaviour (Calendar)]_days",
+                  "index": 0
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "DupCount([6F4BD-14D])",
+                  "context": {
+                    "[6F4BD-14D]": {
+                      "table": "email_engagement_behaviour",
+                      "column": "sentdate_behaviour",
+                      "dim": "[email_engagement_behaviour.sentdate_behaviour (Calendar)]",
+                      "datatype": "datetime",
+                      "merged": true,
+                      "level": "days",
+                      "title": "Days in sentdate_behaviour"
+                    }
+                  },
+                  "datatype": "numeric",
+                  "title": "Number of EDMs"
+                },
+                "instanceid": "69674-F16C-2C",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "email_engagement_behaviour",
+                  "column": "sentdate_behaviour",
+                  "dim": "[email_engagement_behaviour.sentdate_behaviour (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "title": "Days in sentdate_behaviour",
+                  "filter": {
+                    "last": {
+                      "count": 30,
+                      "offset": 0
+                    }
+                  },
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_user_car_insights_model",
+                    "id": "localhost_admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel",
+                    "live": false,
+                    "title": "dm_12404_user_car_insights_model"
+                  },
+                  "collapsed": true
+                },
+                "instanceid": "956CB-901E-4C",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": true,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": 0,
+          "labels": {
+            "enabled": false,
+            "types": {
+              "count": false,
+              "percentage": false,
+              "relative": false,
+              "totals": false
+            },
+            "stacked": false,
+            "stackedPercentage": false
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": true
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "days_in_sentdate_behaviour",
+              "title": "Days in sentdate_behaviour",
+              "singular": "Days in sentdate_behaviour",
+              "plural": "Days in sentdate_behaviour"
+            }
+          ]
+        }
+      },
+      "instanceid": "333BA-AAAB-E0",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": null,
+          "max": null
+        }
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65f28178a23ac00033a7d6a1",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_user_car_insights_model",
+        "fullname": "LocalHost/dm_12404_user_car_insights_model",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaUSERXwAaCARXwAaINSIGHTSXwAaMODEL",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAauserXwAacarXwAainsightsXwAamodel"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "showCarousel": true,
+          "body": [
+            {
+              "type": "Container",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "padding": "2px",
+                "backgroundColor": "white"
+              },
+              "items": [
+                {
+                  "type": "Image",
+                  "id": "",
+                  "class": "",
+                  "url": "https://i.i-sgcm.com/all/topheader/sgcm_logo.svg",
+                  "altText": "image descriptions",
+                  "size": "50%",
+                  "width": "150px",
+                  "style": {
+                    "margin-left": "10px"
+                  }
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "<span style='color: black; '>SFMC</span><span style=color: #DE0806;>Users</span><span style='color: black;'>Dashboard</span>",
+                  "style": {
+                    "text-align": "center",
+                    "font-weight": "bold",
+                    "font-size": "40px",
+                    "margin": "auto",
+                    "padding-right": "145px",
+                    "color": "#DE0806",
+                    "margin-top": "20px",
+                    "font": {
+                      "family": "sans-serif",
+                      "color": "#4CAF50",
+                      "style": "italic"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 70.4
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "E9475-290B-15",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "6581ca44dce88f0033cf8db2"
+    }
+  ],
+  "hierarchies": []
+}

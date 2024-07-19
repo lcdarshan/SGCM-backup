@@ -1,0 +1,4074 @@
+{
+  "title": "Rentcars",
+  "oid": "65ee7ecc4a9dd400333a2830",
+  "desc": "",
+  "source": null,
+  "type": "dashboard",
+  "style": {
+    "palette": {
+      "name": "Vivid",
+      "colors": [
+        "#00cee6",
+        "#9b9bd7",
+        "#6EDA55",
+        "#fc7570",
+        "#fbb755",
+        "#218A8C"
+      ]
+    }
+  },
+  "layout": {
+    "instanceid": "A22BA-F4A1-EF",
+    "type": "columnar",
+    "columns": [
+      {
+        "width": 100,
+        "cells": [
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 689,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 69.8177,
+                    "defaultWidth": 512,
+                    "widgetid": "65ee82234a9dd400333a284e"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 689,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "65fd162ada6a960033afc60d",
+                    "height": 63.3333
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 2048,
+                    "minWidth": 64,
+                    "maxWidth": 2048,
+                    "height": "40px",
+                    "defaultWidth": 128,
+                    "widgetid": "664ef51769df6d0033c5c2c9"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1301,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "height": 192,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "65ee800d4a9dd400333a2842"
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 651.5,
+                "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "65ee801e4a9dd400333a2846",
+                    "height": 192
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 325.75,
+                "index": 1
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 64,
+                    "maxHeight": 1028,
+                    "minWidth": 48,
+                    "maxWidth": 1028,
+                    "defaultWidth": 512,
+                    "widgetid": "664ef59969df6d0033c5c2cf",
+                    "height": 192
+                  }
+                ],
+                "width": 33.333333333333336,
+                "stretchable": false,
+                "pxlWidth": 325.75,
+                "index": 2
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 689,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "65fd1640da6a960033afc611",
+                    "height": 63.3333
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "65fd1726da6a960033afc615",
+                    "height": "356px"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 128,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": "356px",
+                    "defaultWidth": 512,
+                    "widgetid": "65ee7f574a9dd400333a283d",
+                    "autoHeight": "739px"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "65ee842e4a9dd400333a2857",
+                    "height": "356px"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "defaultWidth": 512,
+                    "widgetid": "6616122042fae40033dd2875",
+                    "height": "356px"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 689,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 63.3333,
+                    "defaultWidth": 512,
+                    "widgetid": "65fd15bcda6a960033afc609"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 96,
+                    "maxHeight": 2048,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 384,
+                    "defaultWidth": 512,
+                    "widgetid": "65fd15f8da6a960033afc60b"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "subcells": [
+              {
+                "elements": [
+                  {
+                    "minHeight": 68,
+                    "maxHeight": 689,
+                    "minWidth": 128,
+                    "maxWidth": 2048,
+                    "height": 63.9974,
+                    "defaultWidth": 512,
+                    "widgetid": "65ee85e74a9dd400333a2863"
+                  }
+                ],
+                "width": 100,
+                "stretchable": false,
+                "pxlWidth": 1303,
+                "index": 0
+              }
+            ]
+          }
+        ],
+        "pxlWidth": 1303,
+        "index": 0
+      }
+    ],
+    "container": {
+      "sizzle1716445522114": {
+        "undefined": {
+          "parentNode": [
+            7269.710214202368,
+            29,
+            true
+          ]
+        }
+      }
+    }
+  },
+  "original": null,
+  "dataExploration": false,
+  "lastOpened": null,
+  "previewLayout": [],
+  "datasource": {
+    "fullname": "localhost/dm_12404_web_dashboard",
+    "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+    "address": "LocalHost",
+    "database": "admXwAa12404XwAawebXwAadashboard",
+    "live": false,
+    "title": "dm_12404_web_dashboard"
+  },
+  "filters": [
+    {
+      "jaql": {
+        "table": "fourmonthsdata",
+        "column": "view_date",
+        "dim": "[fourmonthsdata.view_date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "days",
+        "collapsed": true,
+        "title": "Days",
+        "datasource": {
+          "fullname": "localhost/dm_12404_web_dashboard",
+          "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAawebXwAadashboard",
+          "live": false,
+          "title": "dm_12404_web_dashboard"
+        },
+        "isDashboardFilter": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "FCAA6-D38E-BF",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "fourmonthsdata",
+        "column": "view_date",
+        "dim": "[fourmonthsdata.view_date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "weeks",
+        "firstday": "mon",
+        "collapsed": true,
+        "title": "Weeks",
+        "datasource": {
+          "fullname": "localhost/dm_12404_web_dashboard",
+          "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAawebXwAadashboard",
+          "live": false,
+          "title": "dm_12404_web_dashboard"
+        },
+        "isDashboardFilter": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "28EAD-EA88-70",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "fourmonthsdata",
+        "column": "view_date",
+        "dim": "[fourmonthsdata.view_date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "months",
+        "collapsed": true,
+        "title": "Months",
+        "datasource": {
+          "fullname": "localhost/dm_12404_web_dashboard",
+          "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAawebXwAadashboard",
+          "live": false,
+          "title": "dm_12404_web_dashboard"
+        },
+        "isDashboardFilter": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "32BB2-A0DE-C0",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "fourmonthsdata",
+        "column": "view_date",
+        "dim": "[fourmonthsdata.view_date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "level": "years",
+        "collapsed": true,
+        "title": "Years",
+        "datasource": {
+          "fullname": "localhost/dm_12404_web_dashboard",
+          "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+          "address": "LocalHost",
+          "database": "admXwAa12404XwAawebXwAadashboard",
+          "live": false,
+          "title": "dm_12404_web_dashboard"
+        },
+        "isDashboardFilter": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "68B92-33C7-76",
+      "isCascading": false,
+      "disabled": false
+    }
+  ],
+  "editing": true,
+  "parentFolder": "65cb28deba2bfa00335028b9",
+  "settings": {
+    "autoUpdateOnFiltersChange": true
+  },
+  "allowChangeSubscription": false,
+  "subscription": {
+    "executionPerDay": 1,
+    "schedule": "* * * * * *",
+    "isDataChange": true,
+    "type": "onUpdate",
+    "reportType": {
+      "inline": true
+    },
+    "emailSettings": {
+      "isEmail": true,
+      "isPdf": false
+    },
+    "context": {
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    "startAt": "2024-03-18",
+    "tzName": "Asia/Calcutta",
+    "timezone": -330,
+    "active": false,
+    "subscribe": false
+  },
+  "isPublic": null,
+  "filterRelations": [],
+  "filterToDatasourceMapping": {},
+  "widgets": [
+    {
+      "title": "New users",
+      "type": "chart/line",
+      "subtype": "line/basic",
+      "oid": "65ee7f574a9dd400333a283d",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_web_dashboard",
+        "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard",
+        "live": false,
+        "title": "dm_12404_web_dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "x-axis",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sectionwise_newusers_analytical_table",
+                  "column": "date_",
+                  "dim": "[sectionwise_newusers_analytical_table.date_ (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "title": "Days in date_"
+                },
+                "instanceid": "1476B-657C-E4",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sectionwise_newusers_analytical_table",
+                  "column": "new_users",
+                  "dim": "[sectionwise_newusers_analytical_table.new_users]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total new_users"
+                },
+                "instanceid": "8CC94-5491-12",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "sectionwise_newusers_analytical_table",
+                  "column": "sections",
+                  "dim": "[sectionwise_newusers_analytical_table.sections]",
+                  "datatype": "text",
+                  "merged": true,
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "car rental"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "sections",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_web_dashboard",
+                    "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard",
+                    "live": false,
+                    "title": "dm_12404_web_dashboard"
+                  }
+                },
+                "instanceid": "3EAB0-4DB4-D5"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "lineWidth": {
+          "width": "bold"
+        },
+        "legend": {
+          "enabled": false,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": -90
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "days_in_date_",
+              "title": "Days in date_",
+              "singular": "Days in date_",
+              "plural": "Days in date_"
+            },
+            {
+              "id": "sections",
+              "title": "sections",
+              "singular": "sections",
+              "plural": "sections"
+            }
+          ]
+        }
+      },
+      "instanceid": "B498C-EAC1-B9",
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": 0,
+          "max": 183
+        }
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": "Total users",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "65ee800d4a9dd400333a2842",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "td_client_id_pageview",
+                  "dim": "[fourmonthsdata.td_client_id_pageview]",
+                  "datatype": "text",
+                  "merged": true,
+                  "agg": "count",
+                  "title": "# of unique td_client_id_pageview"
+                },
+                "instanceid": "2DA5B-9DC4-77",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "section_",
+                  "dim": "[fourmonthsdata.section_]",
+                  "datatype": "text",
+                  "merged": true,
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "Rent cars"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "section_",
+                  "datasource": {
+                    "title": "dm_12404_web_dashboard",
+                    "fullname": "LocalHost/dm_12404_web_dashboard",
+                    "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard"
+                  }
+                },
+                "instanceid": "CA2B4-31A8-CC"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": false
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "section_",
+              "title": "section_",
+              "singular": "section_",
+              "plural": "section_"
+            }
+          ]
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        }
+      },
+      "instanceid": "7C2D3-C3F5-FD",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": "Total known users",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "65ee801e4a9dd400333a2846",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "td_client_id_pageview",
+                  "dim": "[fourmonthsdata.td_client_id_pageview]",
+                  "datatype": "text",
+                  "merged": true,
+                  "agg": "count",
+                  "title": "# of unique td_client_id_pageview"
+                },
+                "instanceid": "7496C-2833-C2",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "section_",
+                  "dim": "[fourmonthsdata.section_]",
+                  "datatype": "text",
+                  "merged": true,
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "Rent cars"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "section_",
+                  "datasource": {
+                    "title": "dm_12404_web_dashboard",
+                    "fullname": "LocalHost/dm_12404_web_dashboard",
+                    "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard"
+                  }
+                },
+                "instanceid": "13034-C1E8-8B"
+              },
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "identity_",
+                  "dim": "[fourmonthsdata.identity_]",
+                  "datatype": "text",
+                  "merged": true,
+                  "filter": {
+                    "explicit": false,
+                    "multiSelection": true,
+                    "exclude": {
+                      "members": [
+                        "U"
+                      ]
+                    }
+                  },
+                  "collapsed": true,
+                  "title": "identity_",
+                  "datasource": {
+                    "title": "dm_12404_web_dashboard",
+                    "fullname": "LocalHost/dm_12404_web_dashboard",
+                    "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard"
+                  }
+                },
+                "instanceid": "0003E-5492-42"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": false
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "section_",
+              "title": "section_",
+              "singular": "section_",
+              "plural": "section_"
+            },
+            {
+              "id": "identity_",
+              "title": "identity_",
+              "singular": "identity_",
+              "plural": "identity_"
+            }
+          ]
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        }
+      },
+      "instanceid": "7C2D3-C3F5-FD",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65ee82234a9dd400333a284e",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "showCarousel": true,
+          "body": [
+            {
+              "type": "Container",
+              "style": {
+                "display": "flex",
+                "flex-direction": "row",
+                "padding": "2px",
+                "backgroundColor": "white"
+              },
+              "items": [
+                {
+                  "type": "Image",
+                  "id": "",
+                  "class": "",
+                  "url": "https://i.i-sgcm.com/all/topheader/sgcm_logo.svg",
+                  "altText": "image descriptions",
+                  "size": "50%",
+                  "width": "150px",
+                  "style": {
+                    "margin-left": "10px"
+                  }
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "<span style=color: #DE0806;'>R</span><span style='color: black; '>ent</span><span style=color: #DE0806;>C</span><span style='color: black;'>ars</span>",
+                  "style": {
+                    "text-align": "center",
+                    "font-weight": "bold",
+                    "font-size": "40px",
+                    "margin": "auto",
+                    "padding-right": "145px",
+                    "color": "#DE0806",
+                    "margin-top": "20px",
+                    "font": {
+                      "family": "sans-serif",
+                      "color": "#4CAF50",
+                      "style": "italic"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 69.8177
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "E25B1-3708-D6",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": "Known users",
+      "type": "chart/line",
+      "subtype": "line/basic",
+      "oid": "65ee842e4a9dd400333a2857",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_web_dashboard",
+        "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard",
+        "live": false,
+        "title": "dm_12404_web_dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "x-axis",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "date_rentcars",
+                  "dim": "[rentcars_analytical_table.date_rentcars (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "title": "Days in date_rentcars"
+                },
+                "instanceid": "453AD-D874-67",
+                "panel": "rows",
+                "field": {
+                  "id": "[rentcars_analytical_table.date_rentcars (Calendar)]_days",
+                  "index": 0
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "day_wise_known_users",
+                  "dim": "[rentcars_analytical_table.day_wise_known_users]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total day_wise_known_users"
+                },
+                "instanceid": "991E4-A616-9C",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "date_rentcars",
+                  "dim": "[rentcars_analytical_table.date_rentcars (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "filter": {
+                    "from": "2023-12-14"
+                  },
+                  "title": "Days in date_rentcars",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_web_dashboard",
+                    "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard",
+                    "live": false,
+                    "title": "dm_12404_web_dashboard"
+                  },
+                  "collapsed": true
+                },
+                "instanceid": "F26A7-0859-20",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "lineWidth": {
+          "width": "bold"
+        },
+        "legend": {
+          "enabled": false,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": -90
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "days_in_date_rentcars",
+              "title": "Days in date_rentcars",
+              "singular": "Days in date_rentcars",
+              "plural": "Days in date_rentcars"
+            }
+          ]
+        }
+      },
+      "instanceid": "B498C-EAC1-B9",
+      "realTimeRefreshing": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": 0,
+          "max": 149
+        }
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830",
+      "viewState": {
+        "activeTab": "design"
+      }
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65ee85e74a9dd400333a2863",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "titleStyle": [
+            {
+              "display": "none"
+            }
+          ],
+          "showCarousel": true,
+          "carouselAnimation": {
+            "showButtons": false
+          },
+          "body": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "separator": true,
+                  "spacing": "none",
+                  "style": {
+                    "background": "linear-gradient(to bottom, white, white)",
+                    "display": "flex",
+                    "flex-direction": "row"
+                  },
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "ActionSet",
+                          "style": {
+                            "justify-content": "center",
+                            "margin": "auto"
+                          },
+                          "actions": [
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Main",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65d240c6941efb0033f15f87?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Insurance",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65cb29d3ba2bfa00335028bb?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Used cars",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65d33a0aea143b00336b6edb?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Articles",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65e9e0a6b7199a0033a63914?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Car loan",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65eaa34b72d4ca003331ae3b?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Directory",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65ead568002aa1003332a7d2?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "E-shop",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65cdd0e418442800331df662?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Forum",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65eae6f6002aa1003332a80a?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "New cars",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65eea1c82df98a003369c88c?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Resources",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65ec80a9dbca620033a172ee?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            },
+                            {
+                              "type": "Action.OpenUrl",
+                              "title": "Sell cars",
+                              "url": "https://td-us01-02.sisense.com/app/main/dashboards/65f3d54f38a5ee0033c76286?folder=65cb28deba2bfa00335028b9",
+                              "style": {
+                                "background-color": "#DE0806",
+                                "color": "#FFFFFF",
+                                "padding": "2.5px 20px",
+                                "text-align": "center",
+                                "display": "inline-block",
+                                "text-decoration": "none"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "style": {},
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 63.9974
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "F263E-C531-04",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65fd15bcda6a960033afc609",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "titleStyle": [
+            {
+              "display": "none"
+            }
+          ],
+          "showCarousel": true,
+          "carouselAnimation": {
+            "showButtons": false
+          },
+          "body": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "separator": true,
+                  "spacing": "none",
+                  "style": {
+                    "background": "linear-gradient(to bottom, white, white)",
+                    "display": "flex",
+                    "flex-direction": "row"
+                  },
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "text": "Preferences",
+                          "style": {
+                            "text-align": "center",
+                            "font-weight": "bold",
+                            "font-size": "32px",
+                            "margin": "10px",
+                            "color": "#DE0806"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "style": {},
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 63.3333
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "1076B-4688-19",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": "Total users",
+      "type": "chart/pie",
+      "subtype": "pie/ring",
+      "oid": "65fd15f8da6a960033afc60b",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_preferences_analytical_table",
+                  "column": "click_text",
+                  "dim": "[rentcars_preferences_analytical_table.click_text]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "click_text"
+                },
+                "instanceid": "40109-A85A-71",
+                "format": {
+                  "members": {}
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_preferences_analytical_table",
+                  "column": "total_users",
+                  "dim": "[rentcars_preferences_analytical_table.total_users]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total total_users"
+                },
+                "instanceid": "3DA6F-D8A3-1A",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": false,
+          "position": "bottom"
+        },
+        "labels": {
+          "enabled": true,
+          "categories": true,
+          "value": true,
+          "percent": false,
+          "decimals": false,
+          "fontFamily": "Open Sans",
+          "color": "red"
+        },
+        "convolution": {
+          "enabled": true,
+          "selectedConvolutionType": "byPercentage",
+          "minimalIndependentSlicePercentage": 3,
+          "independentSlicesCount": 7
+        },
+        "dataLimits": {
+          "seriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "seriesLabels": {
+          "enabled": false,
+          "rotation": 0
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": true
+        },
+        "yAxis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "click_text",
+              "title": "click_text",
+              "singular": "click_text",
+              "plural": "click_text"
+            }
+          ]
+        },
+        "automaticHeight": false
+      },
+      "instanceid": "96DD0-7A5C-0F",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830",
+      "viewState": {
+        "activeTab": "filters"
+      }
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65fd162ada6a960033afc60d",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "titleStyle": [
+            {
+              "display": "none"
+            }
+          ],
+          "showCarousel": true,
+          "carouselAnimation": {
+            "showButtons": false
+          },
+          "body": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "separator": true,
+                  "spacing": "none",
+                  "style": {
+                    "background": "linear-gradient(to bottom, white, white)",
+                    "display": "flex",
+                    "flex-direction": "row"
+                  },
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "text": "Overall",
+                          "style": {
+                            "text-align": "center",
+                            "font-weight": "bold",
+                            "font-size": "32px",
+                            "margin": "10px",
+                            "color": "#DE0806"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "style": {},
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 63.3333
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "1076B-4688-19",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": ".",
+      "type": "BloX",
+      "subtype": "BloX",
+      "oid": "65fd1640da6a960033afc611",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "Items",
+            "items": []
+          },
+          {
+            "name": "Values",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "currentCard": {
+          "style": "",
+          "script": "",
+          "title": "",
+          "titleStyle": [
+            {
+              "display": "none"
+            }
+          ],
+          "showCarousel": true,
+          "carouselAnimation": {
+            "showButtons": false
+          },
+          "body": [
+            {
+              "type": "Container",
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "separator": true,
+                  "spacing": "none",
+                  "style": {
+                    "background": "linear-gradient(to bottom, white, white)",
+                    "display": "flex",
+                    "flex-direction": "row"
+                  },
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "text": "Day wise",
+                          "style": {
+                            "text-align": "center",
+                            "font-weight": "bold",
+                            "font-size": "32px",
+                            "margin": "10px",
+                            "color": "#DE0806"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "style": {},
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "actions": []
+        },
+        "currentConfig": {
+          "fontFamily": "Open Sans",
+          "fontSizes": {
+            "default": 14,
+            "small": 16,
+            "medium": 20,
+            "large": 50,
+            "extraLarge": 32
+          },
+          "fontWeights": {
+            "default": 500,
+            "light": 100,
+            "bold": 1000
+          },
+          "containerStyles": {
+            "default": {
+              "backgroundColor": "#ffcb05",
+              "foregroundColors": {
+                "default": {
+                  "normal": "#000000"
+                },
+                "white": {
+                  "normal": "#ffffff"
+                },
+                "grey": {
+                  "normal": "#5C6372"
+                },
+                "orange": {
+                  "normal": "#f2B900"
+                },
+                "yellow": {
+                  "normal": "#ffcb05"
+                },
+                "black": {
+                  "normal": "#000000"
+                },
+                "lightGreen": {
+                  "normal": "#3ADCCA"
+                },
+                "green": {
+                  "normal": "#54a254"
+                },
+                "red": {
+                  "normal": "#dd1111"
+                },
+                "accent": {
+                  "normal": "#2E89FC"
+                },
+                "good": {
+                  "normal": "#54a254"
+                },
+                "warning": {
+                  "normal": "#e69500"
+                },
+                "attention": {
+                  "normal": "#cc3300"
+                }
+              }
+            }
+          },
+          "imageSizes": {
+            "default": 40,
+            "small": 40,
+            "medium": 80,
+            "large": 160
+          },
+          "imageSet": {
+            "imageSize": "medium",
+            "maxImageHeight": 100
+          },
+          "actions": {
+            "color": "",
+            "backgroundColor": "white",
+            "maxActions": 5,
+            "spacing": "extraLarge",
+            "buttonSpacing": 20,
+            "actionsOrientation": "horizontal",
+            "actionAlignment": "center",
+            "showCard": {
+              "actionMode": "inline",
+              "inlineTopMargin": 16,
+              "style": "default"
+            }
+          },
+          "spacing": {
+            "default": 5,
+            "small": 20,
+            "medium": 60,
+            "large": 20,
+            "extraLarge": 40,
+            "padding": 0
+          },
+          "separator": {
+            "lineThickness": 1,
+            "lineColor": "#eeeeee"
+          },
+          "factSet": {
+            "title": {
+              "size": "default",
+              "color": "default",
+              "weight": "bold",
+              "warp": true
+            },
+            "value": {
+              "size": "default",
+              "color": "default",
+              "weight": "default",
+              "warp": true
+            },
+            "spacing": 20
+          },
+          "supportsInteractivity": true,
+          "imageBaseUrl": "",
+          "height": 63.3333
+        },
+        "currentCardName": "default",
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": []
+        }
+      },
+      "instanceid": "1076B-4688-19",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 4,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "drilledDashboardDisplay": {},
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "title": false,
+        "drillTarget": "dummy",
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": "Users",
+      "type": "chart/column",
+      "subtype": "column/classic",
+      "oid": "65fd1726da6a960033afc615",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_web_dashboard",
+        "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard",
+        "live": false,
+        "title": "dm_12404_web_dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "categories",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "date_rentcars",
+                  "dim": "[rentcars_analytical_table.date_rentcars (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "title": "Days in date_rentcars"
+                },
+                "instanceid": "453AD-D874-67",
+                "panel": "rows",
+                "field": {
+                  "id": "[rentcars_analytical_table.date_rentcars (Calendar)]_days",
+                  "index": 0
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "total_users_daywise",
+                  "dim": "[rentcars_analytical_table.total_users_daywise]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total total_users_daywise"
+                },
+                "instanceid": "5B7DE-6BA6-26",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "legend": {
+          "enabled": false,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": -90,
+          "labels": {
+            "enabled": false,
+            "stacked": false,
+            "stackedPercentage": false,
+            "types": {
+              "count": false,
+              "relative": false,
+              "percentage": false,
+              "totals": false
+            }
+          }
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true,
+          "hideMinMax": false
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "lineWidth": {
+          "width": "bold"
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "days_in_date_rentcars",
+              "title": "Days in date_rentcars",
+              "singular": "Days in date_rentcars",
+              "plural": "Days in date_rentcars"
+            }
+          ]
+        }
+      },
+      "instanceid": "9789B-8659-E6",
+      "realTimeRefreshing": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": 0,
+          "max": 202
+        }
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": "Events per visitors (EPV)",
+      "type": "chart/line",
+      "subtype": "line/basic",
+      "oid": "6616122042fae40033dd2875",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_web_dashboard",
+        "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard",
+        "live": false,
+        "title": "dm_12404_web_dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "x-axis",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "date_rentcars",
+                  "dim": "[rentcars_analytical_table.date_rentcars (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "title": "Days in date_rentcars"
+                },
+                "instanceid": "453AD-D874-67",
+                "panel": "rows",
+                "field": {
+                  "id": "[rentcars_analytical_table.date_rentcars (Calendar)]_days",
+                  "index": 0
+                },
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[1CC99-4F1]/[2EFF6-D26]",
+                  "context": {
+                    "[1CC99-4F1]": {
+                      "table": "rentcars_analytical_table",
+                      "column": "total_events_daywise",
+                      "dim": "[rentcars_analytical_table.total_events_daywise]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_events_daywise"
+                    },
+                    "[2EFF6-D26]": {
+                      "table": "rentcars_analytical_table",
+                      "column": "total_users_daywise",
+                      "dim": "[rentcars_analytical_table.total_users_daywise]",
+                      "datatype": "numeric",
+                      "agg": "sum",
+                      "title": "Total total_users_daywise"
+                    }
+                  },
+                  "title": "Formula"
+                },
+                "instanceid": "25E12-0B5D-39",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": true
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "break by",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "rentcars_analytical_table",
+                  "column": "date_rentcars",
+                  "dim": "[rentcars_analytical_table.date_rentcars (Calendar)]",
+                  "datatype": "datetime",
+                  "merged": true,
+                  "level": "days",
+                  "filter": {
+                    "from": "2023-12-14"
+                  },
+                  "title": "Days in date_rentcars",
+                  "datasource": {
+                    "fullname": "localhost/dm_12404_web_dashboard",
+                    "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard",
+                    "live": false,
+                    "title": "dm_12404_web_dashboard"
+                  },
+                  "collapsed": true
+                },
+                "instanceid": "F26A7-0859-20",
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "dateAndTime": "MM/dd/y HH:mm",
+                    "isdefault": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "lineWidth": {
+          "width": "bold"
+        },
+        "legend": {
+          "enabled": false,
+          "position": "bottom"
+        },
+        "seriesLabels": {
+          "enabled": true,
+          "rotation": -90
+        },
+        "markers": {
+          "enabled": false,
+          "fill": "filled",
+          "size": "small"
+        },
+        "xAxis": {
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "x2Title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "isIntervalEnabled": false
+        },
+        "yAxis": {
+          "inactive": false,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": true,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "y2Axis": {
+          "inactive": true,
+          "enabled": true,
+          "ticks": true,
+          "labels": {
+            "enabled": true,
+            "rotation": 0
+          },
+          "title": {
+            "enabled": false
+          },
+          "gridLines": false,
+          "logarithmic": false,
+          "isIntervalEnabled": true
+        },
+        "navigator": {
+          "enabled": true
+        },
+        "dataLimits": {
+          "seriesCapacity": 50,
+          "categoriesCapacity": 100000
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "days_in_date_rentcars",
+              "title": "Days in date_rentcars",
+              "singular": "Days in date_rentcars",
+              "plural": "Days in date_rentcars"
+            }
+          ]
+        }
+      },
+      "instanceid": "B498C-EAC1-B9",
+      "realTimeRefreshing": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "viewState": {
+        "activeTab": "design"
+      },
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+          "min": 0,
+          "max": 168
+        }
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": "RICHTEXT_MAIN.TITLE",
+      "type": "richtexteditor",
+      "subtype": "richtexteditor",
+      "oid": "664ef51769df6d0033c5c2c9",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "fullname": "localhost/dm_12404_web_dashboard",
+        "id": "localhost_admXwAa12404XwAawebXwAadashboard",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard",
+        "live": false,
+        "title": "dm_12404_web_dashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "content": {
+          "html": "<ul><li style=\"text-align: left;\"><font size=\"5\">This section shows only 4 months data</font></li></ul>",
+          "vAlign": "valign-middle",
+          "bgColor": "#FFFFFF",
+          "textAlign": "center"
+        }
+      },
+      "instanceid": "6B301-D2EA-4B",
+      "realTimeRefreshing": false,
+      "options": {
+        "triggersDomready": true,
+        "hideFromWidgetList": true,
+        "disableExportToCSV": true,
+        "disableExportToImage": true,
+        "toolbarButton": {
+          "css": "add-rich-text",
+          "tooltip": "RICHTEXT_MAIN.TOOLBAR_BUTTON"
+        },
+        "selector": false,
+        "disallowSelector": true,
+        "disallowWidgetTitle": true,
+        "supportsHierarchies": false,
+        "dashboardFiltersMode": "filter"
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    },
+    {
+      "title": "Total unknown users",
+      "type": "indicator",
+      "subtype": "indicator/numeric",
+      "oid": "664ef59969df6d0033c5c2cf",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "dm_12404_web_dashboard",
+        "fullname": "LocalHost/dm_12404_web_dashboard",
+        "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+        "address": "LocalHost",
+        "database": "admXwAa12404XwAawebXwAadashboard"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "ids": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "td_client_id_pageview",
+                  "dim": "[fourmonthsdata.td_client_id_pageview]",
+                  "datatype": "text",
+                  "merged": true,
+                  "agg": "count",
+                  "title": "# of unique td_client_id_pageview"
+                },
+                "instanceid": "7496C-2833-C2",
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "colorIndex": 0,
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": [
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "section_",
+                  "dim": "[fourmonthsdata.section_]",
+                  "datatype": "text",
+                  "merged": true,
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "Rent cars"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "section_",
+                  "datasource": {
+                    "title": "dm_12404_web_dashboard",
+                    "fullname": "LocalHost/dm_12404_web_dashboard",
+                    "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard"
+                  }
+                },
+                "instanceid": "13034-C1E8-8B"
+              },
+              {
+                "jaql": {
+                  "table": "fourmonthsdata",
+                  "column": "identity_",
+                  "dim": "[fourmonthsdata.identity_]",
+                  "datatype": "text",
+                  "merged": true,
+                  "filter": {
+                    "explicit": true,
+                    "multiSelection": true,
+                    "members": [
+                      "U"
+                    ]
+                  },
+                  "collapsed": true,
+                  "title": "identity_",
+                  "datasource": {
+                    "title": "dm_12404_web_dashboard",
+                    "fullname": "LocalHost/dm_12404_web_dashboard",
+                    "id": "aLOCALHOST_aDMXwAa12404XwAaWEBXwAaDASHBOARD",
+                    "address": "LocalHost",
+                    "database": "admXwAa12404XwAawebXwAadashboard"
+                  }
+                },
+                "instanceid": "0003E-5492-42"
+              }
+            ]
+          }
+        ],
+        "usedFormulasMapping": {}
+      },
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": false
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "narration": {
+          "enabled": false,
+          "display": "above",
+          "format": "bullets",
+          "verbosity": "medium",
+          "up_sentiment": "good",
+          "aggregation": "sum",
+          "labels": [
+            {
+              "id": "section_",
+              "title": "section_",
+              "singular": "section_",
+              "plural": "section_"
+            },
+            {
+              "id": "identity_",
+              "title": "identity_",
+              "singular": "identity_",
+              "plural": "identity_"
+            }
+          ]
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        }
+      },
+      "instanceid": "7C2D3-C3F5-FD",
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "forceZeroInsteadNull": false,
+        "mergeTargetDashboardFilters": false,
+        "saveDisabledTargetFilters": false,
+        "drillToDashboardByName": false
+      },
+      "realTimeRefreshing": false,
+      "viewState": {
+        "activeTab": "filters"
+      },
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "65ee7ecc4a9dd400333a2830"
+    }
+  ],
+  "hierarchies": []
+}
